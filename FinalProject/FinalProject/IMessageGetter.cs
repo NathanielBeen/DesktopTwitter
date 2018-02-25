@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace FinalProject
 {
-    class Viewer
+    interface IMessageGetter
     {
+        List<Message> Messages { get; set; }
+
+        List<Message> getMessages();
     }
 }
