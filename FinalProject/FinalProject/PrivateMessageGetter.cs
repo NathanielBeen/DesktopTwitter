@@ -9,7 +9,6 @@ namespace FinalProject
 {
     class PrivateMessageGetter : IMessageGetter
     {
-        public List<Message> Messages { get; set; }
 
         public PrivateMessageGetter()
         {

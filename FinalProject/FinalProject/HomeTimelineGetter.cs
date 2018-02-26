@@ -11,7 +11,7 @@ namespace FinalProject
     class HomeTimelineGetter : TweetGetter
     {
 
-        public HomeTimelineGetter() : base() { }
+        public HomeTimelineGetter(MessageFilter filter) : base(filter) { }
 
         public override List<ITweet> getITweets()
         {

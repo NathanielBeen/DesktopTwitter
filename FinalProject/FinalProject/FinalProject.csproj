@@ -119,13 +119,20 @@
     </ApplicationDefinition>
     <Compile Include="ConversationGetter.cs" />
     <Compile Include="HomeTimelineGetter.cs" />
+    <Compile Include="IFilterComponent.cs" />
     <Compile Include="IMessageGetter.cs" />
+    <Compile Include="MessageFilter.cs" />
+    <Compile Include="MessageViewer.cs" />
     <Compile Include="PrivateMessageGetter.cs" />
     <Compile Include="Tweet.cs" />
     <Compile Include="TweetGetter.cs" />
     <Compile Include="TweetReply.cs" />
     <Compile Include="TweetSearchGetter.cs" />
+    <Compile Include="UserBlacklistComponent.cs" />
     <Compile Include="UserTimelineGetter.cs" />
+    <Compile Include="UserWhitelistComponent.cs" />
+    <Compile Include="WordBlackListComponent.cs" />
+    <Compile Include="WordWhitelistComponent.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

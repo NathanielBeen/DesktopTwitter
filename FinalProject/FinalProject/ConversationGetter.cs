@@ -9,8 +9,6 @@ namespace FinalProject
 {
     class ConversationGetter : IMessageGetter
     {
-        public List<Message> Messages { get; set; }
-
         public ConversationGetter() { }
 
         public List<Message> getMessages()

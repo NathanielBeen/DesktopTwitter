@@ -10,18 +10,25 @@ namespace FinalProject
 {
     class TweetGetter : IMessageGetter
     {
-        public List<Message> Messages { get; set; }
-        //add reference to filter
+        public MessageFilter Filter { get; set; }
 
-        public TweetGetter() { }
+        public TweetGetter(MessageFilter filter)
+        {
+            Filter = filter;
+        }
 
         public List<Message> getMessages()
         {
             List<ITweet> baseTweets = getITweets();
             List<Message> constructedMessages = convertITweetsToMessages(baseTweets);
-            //filter messages
+            var filteredMessages = new List<Message>();
+            foreach (Message message in constructedMessages)
+            {
+                if (Filter.messagePassesFilter(message)) { filteredMessages.Add(message); }
+                //possibly add a default to note a tweet has been blocked
+            }
 
-            return constructedMessages;
+            return filteredMessages;
         }
 
         public virtual List<ITweet> getITweets()

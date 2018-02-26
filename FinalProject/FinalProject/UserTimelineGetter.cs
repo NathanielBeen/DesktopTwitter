@@ -12,8 +12,8 @@ namespace FinalProject
     {
         //user to get the tweets from
 
-        public UserTimelineGetter()
-            :base()
+        public UserTimelineGetter(MessageFilter filter)
+            :base(filter)
         {
             //inputs: user to get tweets from
         }

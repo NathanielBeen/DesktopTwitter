@@ -8,8 +8,6 @@ namespace FinalProject
 {
     interface IMessageGetter
     {
-        List<Message> Messages { get; set; }
-
         List<Message> getMessages();
     }
 }

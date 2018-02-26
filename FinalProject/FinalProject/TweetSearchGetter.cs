@@ -11,8 +11,8 @@ namespace FinalProject
     {
         //reference to search object
 
-        public TweetSearchGetter()
-            : base()
+        public TweetSearchGetter(MessageFilter filter)
+            : base(filter)
         {
             //inputs: search object
         }
