@@ -12,7 +12,7 @@ namespace FinalProject
     {
         public const string CONSUMERKEY;
         public const string CONSUMERSECRET;
-
+        private var context;
         public TwitterCredentials AppCredentials { get; set; }
 
         public Authentication()
@@ -21,13 +21,14 @@ namespace FinalProject
         }
         public void login()
         {
-            var url = CredentialsCreator.GetAuthorizationURL(AppCredentials);
-            Process.Start(url);
+            context = AuthFlow.InitAuthentication(AppCredentials);
+            Process.Start(context.AuthorizationURL);
         }
         public void RecievePin(string pin)
         {
-            var userCredentials = CredentialsCreator.GetCredentialsFromVerifierCode(pin, AppCredentials);
+            var userCredentials = AuthFlow.CreateCredentialsFromVerifierCode(pin, context);
             Auth.SetCredentials(userCredentials);
         }
+        
     }
 }
