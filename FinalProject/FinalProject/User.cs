@@ -8,8 +8,8 @@ namespace FinalProject
 {
     class User
     {
-        public string name { get; set; }
-        public string handle { get; set; }
+        public string Name { get; set; }
+        public string Handle { get; set; }
         public System.Drawing.Bitmap image { get; set; }
 
         public void Retweet(Tweet currentTweet)

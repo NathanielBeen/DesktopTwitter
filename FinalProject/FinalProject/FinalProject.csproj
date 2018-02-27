@@ -183,6 +183,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Authentication.cs" />
     <Compile Include="ConversationGetter.cs" />
     <Compile Include="HomeTimelineGetter.cs" />
     <Compile Include="IFilterComponent.cs" />
