@@ -10,6 +10,7 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace FinalProject
@@ -17,11 +18,21 @@ namespace FinalProject
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class LoginWindow : Window
     {
-        public MainWindow()
+        private Authentication auth;
+        public LoginWindow()
         {
             InitializeComponent();
+            auth = new Authentication();
+        }
+
+        private void loginBtn_Click(object sender, RoutedEventArgs e)
+        {
+            auth.recievePin(pinTxt.Text);
+            var main = new MainWindow();
+            main.Show();
+            Hide();
         }
     }
 }

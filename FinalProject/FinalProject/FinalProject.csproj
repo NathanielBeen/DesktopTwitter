@@ -188,6 +188,9 @@
     <Compile Include="HomeTimelineGetter.cs" />
     <Compile Include="IFilterComponent.cs" />
     <Compile Include="IMessageGetter.cs" />
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="MessageFilter.cs" />
     <Compile Include="MessageViewer.cs" />
     <Compile Include="PrivateMessageGetter.cs" />
@@ -201,7 +204,7 @@
     <Compile Include="UserWhitelistComponent.cs" />
     <Compile Include="WordBlackListComponent.cs" />
     <Compile Include="WordWhitelistComponent.cs" />
-    <Page Include="MainWindow.xaml">
+    <Page Include="LoginWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -211,10 +214,14 @@
     </Compile>
     <Compile Include="Conversations.cs" />
     <Compile Include="DirectMessage.cs" />
-    <Compile Include="MainWindow.xaml.cs">
-      <DependentUpon>MainWindow.xaml</DependentUpon>
+    <Compile Include="LoginWindow.xaml.cs">
+      <DependentUpon>LoginWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="MainWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Message.cs" />
