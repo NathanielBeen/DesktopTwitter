@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Tweetinvi;
+using Tweetinvi.Models;
 
 namespace FinalProject
 {
@@ -20,5 +22,11 @@ namespace FinalProject
     {
         public int likes { get; set; }
         public int retweets { get; set; }
+
+        public Tweet(IUser sender, string text, long id, DateTime Time, int likes, int retweets) : base(sender, text, id, Time)
+        {
+
+        }
+
     }
 }
