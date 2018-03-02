@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Tweetinvi.Models;
 
 namespace FinalProject
 {
@@ -19,9 +20,20 @@ namespace FinalProject
     /// </summary>
     public partial class MainWindow : Window
     {
-        public MainWindow()
+        public AppState State { get; set; }
+
+        public MainWindow(AppState state)
         {
+            State = state;
             InitializeComponent();
+            //temporary to show login
+            setLoginText();
+        }
+
+        public void setLoginText()
+        {
+            string username = State.CurrentUser.ScreenName;
+            loginLbl.Content = "Yay! " + username + " logged in!";
         }
     }
 }

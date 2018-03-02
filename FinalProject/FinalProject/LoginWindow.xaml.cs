@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Tweetinvi.Models;
 
 namespace FinalProject
 {
@@ -20,17 +21,30 @@ namespace FinalProject
     /// </summary>
     public partial class LoginWindow : Window
     {
-        private Authentication auth;
+        private Login login;
         public LoginWindow()
         {
             InitializeComponent();
-            auth = new Authentication();
+            login = new Login();
+            login.redirectToTwitter();
         }
 
         private void loginBtn_Click(object sender, RoutedEventArgs e)
         {
-            auth.recievePin(pinTxt.Text);
-            var main = new MainWindow();
+            AppState state = login.attemptLogin(pinTxt.Text);
+            if (state == null) { NotifyInvalidLogin(); }
+            else { launchMainWindow(state); }
+        }
+
+        private void NotifyInvalidLogin()
+        {
+            pinTxt.Text = "invalid login.";
+            login.redirectToTwitter();
+        }
+
+        private void launchMainWindow(AppState state)
+        {
+            var main = new MainWindow(state);
             main.Show();
             Hide();
         }

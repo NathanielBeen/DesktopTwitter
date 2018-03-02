@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Tweetinvi;
+using Tweetinvi.Logic;
 using Tweetinvi.Models;
 
 namespace FinalProject
@@ -19,10 +20,9 @@ namespace FinalProject
         public Authentication()
         {
             AppCredentials = new TwitterCredentials(CONSUMERKEY, CONSUMERSECRET);
-            login();
         }
 
-        public void login()
+        public void redirectToTwitter()
         {
             context = AuthFlow.InitAuthentication(AppCredentials);
             Process.Start(context.AuthorizationURL);
@@ -34,5 +34,9 @@ namespace FinalProject
             Auth.SetCredentials(userCredentials);
         }
         
+        public IAuthenticatedUser generateCurrentUser()
+        {
+            return Tweetinvi.User.GetAuthenticatedUser();
+        }
     }
 }

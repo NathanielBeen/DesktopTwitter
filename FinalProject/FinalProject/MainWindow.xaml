@@ -7,6 +7,6 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="300" Width="300">
     <Grid>
-        <Label>Yay! You logged in</Label>
+        <Label Name="loginLbl"></Label>
     </Grid>
 </Window>
