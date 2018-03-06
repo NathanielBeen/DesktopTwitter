@@ -18,13 +18,23 @@ namespace FinalProject
      * Mentions - ITweet.UserMentions
      * (for reply class) ITweet.RetweetedTweet
      */
-    class Tweet : Message
+    class Tweet
     {
-        public int likes { get; set; }
-        public int retweets { get; set; }
+        public int Likes { get; set; }
+        public int Retweets { get; set; }
+        public string Text { get; set; }
+        public long Id { get; set; }
+        public IUser Creator { get; set; }
+        public DateTime Time { get; set; }
 
-        public Tweet(IUser sender, string text, long id, DateTime Time, int likes, int retweets) : base(sender, text, id, Time)
+        public Tweet(ITweet tweet)
         {
+            Likes = tweet.FavoriteCount;
+            Retweets = tweet.RetweetCount;
+            Text = tweet.Text;
+            Id = tweet.Id;
+            Creator = tweet.CreatedBy;
+            Time = tweet.CreatedAt;
 
         }
 

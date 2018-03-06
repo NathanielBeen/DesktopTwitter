@@ -97,3 +97,4 @@ C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\obj\Debug\Final
 C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\obj\Debug\FinalProject.exe
 C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\obj\Debug\FinalProject.pdb
 C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\obj\Debug\FinalProject.csprojResolveAssemblyReference.cache
+C:\Users\tyler\Documents\Programs\BACS387\final-project\FinalProject\FinalProject\bin\Debug\FinalProject.exe.config

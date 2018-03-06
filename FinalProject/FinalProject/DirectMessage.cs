@@ -19,9 +19,18 @@ namespace FinalProject
     class DirectMessage : Message
     {
         public IUser Receiver { get; set; }
+        public IUser Sender { get; set; }
+        public long Id { get; set; }
+        public string Text { get; set; }
+        public DateTime Time { get; set; }
 
-        public DirectMessage(IUser sender, string text, long id, DateTime Time, IUser receiver ) : base(sender, text, id, Time)
+        public DirectMessage(IMessage message, IUser sender, IUser receiver)
         {
+            Text = message.Text;
+            Id = message.Id;
+            sender = Sender;
+            receiver = Receiver;
+            Time = message.CreatedAt;
         }
         
     }
