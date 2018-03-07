@@ -32,6 +32,5 @@ namespace FinalProject
             receiver = Receiver;
             Time = message.CreatedAt;
         }
-        
     }
 }

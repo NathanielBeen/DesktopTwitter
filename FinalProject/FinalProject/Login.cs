@@ -21,14 +21,14 @@ namespace FinalProject
             authentication.redirectToTwitter();
         }
 
-        public AppState attemptLogin(string pin)
+        public CurrentUser attemptLogin(string pin)
         {
             authentication.recievePin(pin);
             try
             {
                 IAuthenticatedUser user = Tweetinvi.User.GetAuthenticatedUser();
                 if (user == null) { return null; }
-                else { return new AppState(user); }
+                else { return new CurrentUser(user); }
             }
             catch { return null; }
         }

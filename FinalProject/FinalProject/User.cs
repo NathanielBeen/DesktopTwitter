@@ -3,32 +3,22 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Tweetinvi.Logic;
 
 namespace FinalProject
 {
-    class User
+    public class User
     {
+        public long ID { get; set; }
         public string Name { get; set; }
         public string Handle { get; set; }
-        public System.Drawing.Bitmap image { get; set; }
+        //public System.Drawing.Bitmap image { get; set; }
 
-        public void Retweet(Tweet currentTweet)
+        public User(long id, string name, string handle)
         {
-            int retweet = currentTweet.retweets;
-            retweet += 1;
-            currentTweet.retweets = retweet;
-            /*Copy tweet body and then post it to timeline**/
+            ID = id;
+            Name = name;
+            Handle = handle;
         }
-        public void Like(Tweet currentTweet)
-        {
-            int like = currentTweet.likes;
-            like += 1;
-            currentTweet.likes = like;
-        }
-        public void Logout()
-        {
-
-        }
-
     }
 }

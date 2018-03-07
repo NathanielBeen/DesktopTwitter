@@ -20,20 +20,14 @@ namespace FinalProject
     /// </summary>
     public partial class MainWindow : Window
     {
-        public AppState State { get; set; }
+        private TwitterApplication app;
 
-        public MainWindow(AppState state)
+        public MainWindow(CurrentUser user)
         {
-            State = state;
+            app = new TwitterApplication(user);
             InitializeComponent();
-            //temporary to show login
-            setLoginText();
+            directMessageControl.UserAction = new GuiUserAction(app);
         }
 
-        public void setLoginText()
-        {
-            string username = State.CurrentUser.ScreenName;
-            loginLbl.Content = "Yay! " + username + " logged in!";
-        }
     }
 }

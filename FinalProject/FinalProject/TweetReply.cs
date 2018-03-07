@@ -9,10 +9,12 @@ namespace FinalProject
 {
     class TweetReply : Tweet
     {
-        public TweetReply(IUser sender, string text, long id, DateTime Time, int likes, int retweets) 
-            :base(sender, text, id, Time, likes, retweets)
+        public long? RepliedTweetID { get; set; }
+        
+        public TweetReply(ITweet tweet) 
+            :base(tweet)
         {
-
+            RepliedTweetID = tweet.InReplyToStatusId;
         }
     }
 }

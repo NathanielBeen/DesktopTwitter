@@ -31,9 +31,9 @@ namespace FinalProject
 
         private void loginBtn_Click(object sender, RoutedEventArgs e)
         {
-            AppState state = login.attemptLogin(pinTxt.Text);
-            if (state == null) { NotifyInvalidLogin(); }
-            else { launchMainWindow(state); }
+            CurrentUser user = login.attemptLogin(pinTxt.Text);
+            if (user == null) { NotifyInvalidLogin(); }
+            else { launchMainWindow(user); }
         }
 
         private void NotifyInvalidLogin()
@@ -42,9 +42,9 @@ namespace FinalProject
             login.redirectToTwitter();
         }
 
-        private void launchMainWindow(AppState state)
+        private void launchMainWindow(CurrentUser user)
         {
-            var main = new MainWindow(state);
+            var main = new MainWindow(user);
             main.Show();
             Hide();
         }
