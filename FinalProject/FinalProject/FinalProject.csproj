@@ -187,21 +187,31 @@
     <Compile Include="Authentication.cs" />
     <Compile Include="ConversationGetter.cs" />
     <Compile Include="CurrentUser.cs" />
+    <Compile Include="DirectMessagePage.xaml.cs">
+      <DependentUpon>DirectMessagePage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="GuiMessage.cs" />
     <Compile Include="GuiUserAction.cs" />
     <Compile Include="HomeTimelineGetter.cs" />
     <Compile Include="IFilterComponent.cs" />
     <Compile Include="IMessageGetter.cs" />
     <Compile Include="Login.cs" />
+    <Compile Include="MainPage.xaml.cs">
+      <DependentUpon>MainPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="MainWindowView.cs" />
     <Compile Include="MessageFilter.cs" />
     <Compile Include="DirectMessageSenderControl.xaml.cs">
       <DependentUpon>DirectMessageSenderControl.xaml</DependentUpon>
     </Compile>
-    <Compile Include="MessageViewer.cs" />
+    <Compile Include="MessageCollection.cs" />
     <Compile Include="PrivateMessageGetter.cs" />
+    <Compile Include="SelectedUserPage.xaml.cs">
+      <DependentUpon>SelectedUserPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Tweet.cs" />
     <Compile Include="TweetGetter.cs" />
     <Compile Include="TweetReply.cs" />
@@ -213,6 +223,10 @@
     <Compile Include="UserWhitelistComponent.cs" />
     <Compile Include="WordBlackListComponent.cs" />
     <Compile Include="WordWhitelistComponent.cs" />
+    <Page Include="DirectMessagePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="LoginWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -227,11 +241,19 @@
       <DependentUpon>LoginWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="MainPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="DirectMessageSenderControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SelectedUserPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

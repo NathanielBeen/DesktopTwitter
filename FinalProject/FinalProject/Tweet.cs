@@ -18,7 +18,7 @@ namespace FinalProject
      * Mentions - ITweet.UserMentions
      * (for reply class) ITweet.RetweetedTweet
      */
-    class Tweet
+    public class Tweet
     {
         public int Likes { get; set; }
         public int Retweets { get; set; }

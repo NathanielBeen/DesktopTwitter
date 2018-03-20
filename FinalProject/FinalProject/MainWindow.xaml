@@ -6,7 +6,54 @@
         xmlns:local="clr-namespace:FinalProject"
         mc:Ignorable="d"
         Title="MainWindow" Height="300" Width="300">
+    <Window.Resources>
+        <Style TargetType="RadioButton" BasedOn="{StaticResource {x:Type ToggleButton}}" />
+        <local:IntToBooleanConverter x:Key="Converter"/>
+        <DataTemplate x:Key="MainPage" DataType="{x:Type local:MainWindowView}">
+            <local:MainPage/>
+        </DataTemplate>
+        <DataTemplate x:Key="SelectedUserPage" DataType="{x:Type local:MainWindowView}">
+            <local:SelectedUserPage/>
+        </DataTemplate>
+        <DataTemplate x:Key="DirectMessagePage" DataType="{x:Type local:MainWindowView}">
+            <local:DirectMessagePage/>
+        </DataTemplate>
+    </Window.Resources>
     <Grid>
-        <local:DirectMessageSenderControl x:Name="directMessageControl"/>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="8*"/>
+        </Grid.RowDefinitions>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <RadioButton Grid.Column="0" GroupName="navigation" Content="Main Page"
+                         IsChecked="{Binding Path=ViewMode, Converter={StaticResource Converter}, ConverterParameter={x:Static local:MainWindowView.MAIN_VIEW}}"/>
+            <RadioButton Grid.Column="1" GroupName="navigation" Content="User Page"
+                        IsChecked="{Binding Path=ViewMode, Converter={StaticResource Converter}, ConverterParameter={x:Static local:MainWindowView.USER_VIEW}}"/>
+            <RadioButton Grid.Column="2" GroupName="navigation" Content="Message Page"
+                        IsChecked="{Binding Path=ViewMode, Converter={StaticResource Converter}, ConverterParameter={x:Static local:MainWindowView.DM_VIEW}}"/>
+
+        </Grid>
+        <UserControl Grid.Row="1">
+            <ContentControl Content="{Binding}">
+                <ContentControl.Style>
+                    <Style TargetType="{x:Type ContentControl}">
+                        <Setter Property="ContentTemplate" Value="{StaticResource MainPage}"/>
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding ViewMode}" Value="{x:Static local:MainWindowView.USER_VIEW}">
+                                <Setter Property="ContentTemplate" Value="{StaticResource SelectedUserPage}"/>
+                            </DataTrigger>
+                            <DataTrigger Binding="{Binding ViewMode}" Value="{x:Static local:MainWindowView.DM_VIEW}">
+                                <Setter Property="ContentTemplate" Value="{StaticResource DirectMessagePage}"/>
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </ContentControl.Style>
+            </ContentControl>
+        </UserControl>
     </Grid>
 </Window>

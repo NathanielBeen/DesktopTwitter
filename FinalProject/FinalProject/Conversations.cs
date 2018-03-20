@@ -12,7 +12,7 @@ namespace FinalProject
         List<Message> conversation = new List<Message>();
 
         public Conversations(IUser sender, string text, long id, DateTime Time)
-            :base(sender, text, id, Time)
+            :base()
         {
 
         }

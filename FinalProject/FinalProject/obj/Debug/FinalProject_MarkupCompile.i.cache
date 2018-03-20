@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\App.xaml
-3963389529
+61331359998
 
-38-2033132961
+421161795171
 101-1238968913
-LoginWindow.xaml;MainWindow.xaml;DirectMessageSenderControl.xaml;
+DirectMessagePage.xaml;LoginWindow.xaml;MainPage.xaml;MainWindow.xaml;DirectMessageSenderControl.xaml;SelectedUserPage.xaml;
 
-False
+True
 

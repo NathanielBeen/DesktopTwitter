@@ -1,22 +1,23 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace FinalProject
 {
-    class MessageViewer
+    class MessageCollection
     {
-        public List<Message> Messages { get; private set; }
+        public ObservableCollection<Message> Messages { get; private set; }
 
-        public MessageViewer()
+        public MessageCollection()
         {
             //maybe create with a currentSelection object?
-            Messages = getMessages();
+            Messages = new ObservableCollection<Message>(setMessages());
         }
 
-        public List<Message> getMessages()
+        public List<Message> setMessages()
         {
             IMessageGetter messageGetter = buildMessageGetter();
             return messageGetter.getMessages();
