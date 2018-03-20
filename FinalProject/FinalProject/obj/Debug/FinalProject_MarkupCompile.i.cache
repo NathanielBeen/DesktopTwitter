@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\obj\Debug\
+C:\Users\Scott\source\repos\Final-Project\FinalProject\FinalProject\obj\Debug\
 FinalProject
 none
 false
 DEBUG;TRACE
-C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\App.xaml
-61331359998
+C:\Users\Scott\source\repos\Final-Project\FinalProject\FinalProject\App.xaml
+9-309154019
 
-421161795171
-101-1238968913
-DirectMessagePage.xaml;LoginWindow.xaml;MainPage.xaml;MainWindow.xaml;DirectMessageSenderControl.xaml;SelectedUserPage.xaml;
+481867310904
+1011941368412
+Model Xaml\Custom Controls\DirectMessageControl.xaml;Model Xaml\Custom Pages\DirectMessagePage.xaml;Model Xaml\LoginWindow.xaml;Model Xaml\Custom Pages\MainPage.xaml;Model Xaml\MainWindow.xaml;Model Xaml\Custom Controls\DirectMessageSenderControl.xaml;Model Xaml\Custom Controls\MessageCollectionControl.xaml;Model Xaml\Custom Pages\SelectedUserPage.xaml;Model Xaml\Custom Controls\TweetControl.xaml;
 
-True
+False
 
