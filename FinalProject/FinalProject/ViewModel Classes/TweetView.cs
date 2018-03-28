@@ -1,8 +1,10 @@
-﻿using System;
+﻿using FinalProject.ViewModel_Classes;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 
 namespace FinalProject
 {
@@ -26,9 +28,27 @@ namespace FinalProject
         {
             get { return tweet.Creator.ScreenName; }
         }
-        public TweetView (Tweet t)
+
+        private ClickDelegate clickDelegate;
+
+        private ICommand selectUserCommand;
+        public ICommand SelectUserCommand
+        {
+            get
+            {
+                return selectUserCommand ?? (selectUserCommand = new RelayCommand(() => HandleUserSelection()));
+            }
+        }
+
+        public TweetView(Tweet t, ClickDelegate del)
         {
             tweet = t;
+            clickDelegate = del;
+        }
+
+        public void HandleUserSelection()
+        {
+            clickDelegate?.Invoke(MainWindowView.USER_SELECT, Username);
         }
     }
 }

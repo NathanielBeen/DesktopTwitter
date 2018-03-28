@@ -20,6 +20,6 @@
             <RowDefinition Height="9*"/>
         </Grid.RowDefinitions>
         <Label Grid.Row="0" Content="Heres a label if we need it" HorizontalAlignment="Center"/>
-        <ListBox Grid.Row="1" ItemsSource="{Binding Path=Messages}"/>
+        <ListBox Grid.Row="1" ItemsSource="{Binding Path=Messages}" HorizontalContentAlignment="Stretch"/>
     </Grid>
 </UserControl>

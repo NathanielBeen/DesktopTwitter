@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace FinalProject
 {
-    class WordBlackListComponent : IFilterComponent
+    public class WordBlackListComponent : IFilterComponent
     {
         private List<string> wordsToExclude;
 

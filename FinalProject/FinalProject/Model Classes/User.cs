@@ -20,5 +20,14 @@ namespace FinalProject
             Name = name;
             Handle = handle;
         }
+
+        public User(string username)
+        {
+            var user = Tweetinvi.User.GetUserFromScreenName(username);
+
+            ID = user.Id;
+            Name = user.Name;
+            Handle = user.ScreenName;
+        }
     }
 }

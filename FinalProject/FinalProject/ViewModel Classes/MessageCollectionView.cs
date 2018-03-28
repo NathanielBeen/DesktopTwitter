@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
@@ -10,12 +11,16 @@ namespace FinalProject
     public class MessageCollectionView
     {
         public ObservableCollection<IMessageView> Messages { get; }
-        private CurrentUser user;
+        private TwitterApplication application;
+        private ClickDelegate clickDelegate;
 
-        public MessageCollectionView()
+        public MessageCollectionView(TwitterApplication app, ClickDelegate click)
         {
             //maybe create with a currentSelection object?
             Messages = new ObservableCollection<IMessageView>();
+
+            application = app;
+            clickDelegate = click;
         }
 
         public void SetNewMessages(List<Message> modelMessages)
@@ -33,11 +38,25 @@ namespace FinalProject
 
         public IMessageView BuildMessage(Message message)
         {
-            if (message is Tweet) { return new TweetView((Tweet)message); }
-            else if (message is DirectMessage) { return new DirectMessageView((DirectMessage)message, user); }
+            if (message is Tweet) { return new TweetView((Tweet)message, clickDelegate); }
+            else if (message is DirectMessage) { return new DirectMessageView((DirectMessage)message, application.User); }
             return null;
         }
 
-        public void SetCurrentUser(CurrentUser u) { user = u; }
+        public void ChangeViewMode(int newMode, User selectedUser)
+        {
+            var messageList = new List<Message>();
+            switch (newMode)
+            {
+                case MainWindowView.MAIN_VIEW:
+                    messageList = application.getHomeTimeline();
+                    break;
+                case MainWindowView.USER_VIEW:
+                    messageList = application.getUserTimeline(selectedUser);
+                    break;
+            }
+
+            SetNewMessages(messageList);
+        }
     }
 }

@@ -20,7 +20,8 @@ namespace FinalProject
         public bool sendDirectMessage(string text)
         {
             var message = new GuiMessage(text, selectedUser.ID);
-            return app.CurrentUser.sendDirectMessage(message);
+            //return app.CurrentUser.sendDirectMessage(message);
+            return false;
         }
     }
 }

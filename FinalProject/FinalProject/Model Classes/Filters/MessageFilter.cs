@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace FinalProject
 {
-    class MessageFilter
+    public class MessageFilter
     {
         public const int WORD_WHITELIST = 0;
         public const int WORD_BLACKLIST = 1;

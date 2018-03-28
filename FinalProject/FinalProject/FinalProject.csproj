@@ -39,6 +39,9 @@
     <Reference Include="Autofac, Version=4.6.2.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
       <HintPath>..\packages\Autofac.4.6.2\lib\net45\Autofac.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.Expression.Interactions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Windows.Interactivity.WPF.2.0.20525\lib\net40\Microsoft.Expression.Interactions.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.Win32.Primitives, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Win32.Primitives.4.3.0\lib\net46\Microsoft.Win32.Primitives.dll</HintPath>
       <Private>True</Private>
@@ -123,6 +126,9 @@
     <Reference Include="System.Security.Cryptography.X509Certificates, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Security.Cryptography.X509Certificates.4.3.0\lib\net461\System.Security.Cryptography.X509Certificates.dll</HintPath>
     </Reference>
+    <Reference Include="System.Windows.Interactivity, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Windows.Interactivity.WPF.2.0.20525\lib\net40\System.Windows.Interactivity.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -175,10 +181,15 @@
     <Compile Include="Model Classes\Authentication.cs" />
     <Compile Include="Model Classes\Getters\ConversationGetter.cs" />
     <Compile Include="ViewModel Classes\CurrentUser.cs" />
-    <Compile Include="Model Xaml\Custom Controls\DirectMessageControl.xaml.cs">
+    <Compile Include="ViewModel Classes\RelayCommand.cs" />
+    <Compile Include="ViewModel Classes\TweetSenderView.cs" />
+    <Compile Include="ViewXaml\Custom Controls\DirectMessageControl.xaml.cs">
       <DependentUpon>DirectMessageControl.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Model Xaml\Custom Pages\DirectMessagePage.xaml.cs">
+    <Compile Include="ViewXaml\Custom Controls\TweetSenderControl.xaml.cs">
+      <DependentUpon>TweetSenderControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewXaml\Custom Pages\DirectMessagePage.xaml.cs">
       <DependentUpon>DirectMessagePage.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewModel Classes\DirectMessageView.cs" />
@@ -189,27 +200,27 @@
     <Compile Include="Model Classes\Getters\IMessageGetter.cs" />
     <Compile Include="ViewModel Classes\IMessageView.cs" />
     <Compile Include="Model Classes\Login.cs" />
-    <Compile Include="Model Xaml\Custom Pages\MainPage.xaml.cs">
+    <Compile Include="ViewXaml\Custom Pages\MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Model Xaml\MainWindow.xaml.cs">
+    <Compile Include="ViewXaml\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewModel Classes\MainWindowView.cs" />
-    <Compile Include="Model Xaml\Custom Controls\MessageCollectionControl.xaml.cs">
+    <Compile Include="ViewXaml\Custom Controls\MessageCollectionControl.xaml.cs">
       <DependentUpon>MessageCollectionControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="Model Classes\Filters\MessageFilter.cs" />
-    <Compile Include="Model Xaml\Custom Controls\DirectMessageSenderControl.xaml.cs">
+    <Compile Include="ViewXaml\Custom Controls\DirectMessageSenderControl.xaml.cs">
       <DependentUpon>DirectMessageSenderControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewModel Classes\MessageCollectionView.cs" />
     <Compile Include="Model Classes\Getters\DirectMessageGetter.cs" />
-    <Compile Include="Model Xaml\Custom Pages\SelectedUserPage.xaml.cs">
+    <Compile Include="ViewXaml\Custom Pages\SelectedUserPage.xaml.cs">
       <DependentUpon>SelectedUserPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Model Classes\Tweet.cs" />
-    <Compile Include="Model Xaml\Custom Controls\TweetControl.xaml.cs">
+    <Compile Include="ViewXaml\Custom Controls\TweetControl.xaml.cs">
       <DependentUpon>TweetControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="Model Classes\Getters\TweetGetter.cs" />
@@ -223,15 +234,19 @@
     <Compile Include="Model Classes\Filters\UserWhitelistComponent.cs" />
     <Compile Include="Model Classes\Filters\WordBlackListComponent.cs" />
     <Compile Include="Model Classes\Filters\WordWhitelistComponent.cs" />
-    <Page Include="Model Xaml\Custom Controls\DirectMessageControl.xaml">
+    <Page Include="ViewXaml\Custom Controls\DirectMessageControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Model Xaml\Custom Pages\DirectMessagePage.xaml">
+    <Page Include="ViewXaml\Custom Controls\TweetSenderControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Model Xaml\LoginWindow.xaml">
+    <Page Include="ViewXaml\Custom Pages\DirectMessagePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ViewXaml\LoginWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -241,31 +256,31 @@
     </Compile>
     <Compile Include="Model Classes\Conversations.cs" />
     <Compile Include="Model Classes\DirectMessage.cs" />
-    <Compile Include="Model Xaml\LoginWindow.xaml.cs">
+    <Compile Include="ViewXaml\LoginWindow.xaml.cs">
       <DependentUpon>LoginWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="Model Xaml\Custom Pages\MainPage.xaml">
+    <Page Include="ViewXaml\Custom Pages\MainPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Model Xaml\MainWindow.xaml">
+    <Page Include="ViewXaml\MainWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Model Xaml\Custom Controls\DirectMessageSenderControl.xaml">
+    <Page Include="ViewXaml\Custom Controls\DirectMessageSenderControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Model Xaml\Custom Controls\MessageCollectionControl.xaml">
+    <Page Include="ViewXaml\Custom Controls\MessageCollectionControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Model Xaml\Custom Pages\SelectedUserPage.xaml">
+    <Page Include="ViewXaml\Custom Pages\SelectedUserPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Model Xaml\Custom Controls\TweetControl.xaml">
+    <Page Include="ViewXaml\Custom Controls\TweetControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

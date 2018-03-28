@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Tweetinvi;
 using Tweetinvi.Models;
 
 namespace FinalProject
@@ -29,7 +30,7 @@ namespace FinalProject
         public bool sendTweet(GuiMessage message)
         {
             var sentTweet = Tweetinvi.Tweet.PublishTweet(message.Text);
-            return sentTweet.IsTweetPublished;
+            return sentTweet?.IsTweetPublished ?? false;
         }
 
         public bool sendDirectMessage(GuiMessage message)

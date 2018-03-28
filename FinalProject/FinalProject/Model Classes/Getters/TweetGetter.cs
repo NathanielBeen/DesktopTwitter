@@ -21,13 +21,7 @@ namespace FinalProject
         {
             List<ITweet> baseTweets = getITweets();
             List<Message> constructedMessages = convertITweetsToMessages(baseTweets);
-            var filteredMessages = new List<Message>();
-            foreach (Message message in constructedMessages)
-            {
-                if (Filter.messagePassesFilter(message)) { filteredMessages.Add(message); }
-                //possibly add a default to note a tweet has been blocked
-            }
-
+            List<Message> filteredMessages = filterTweets(constructedMessages);
             return filteredMessages;
         }
 
@@ -41,9 +35,23 @@ namespace FinalProject
             var constructedMessages = new List<Message>();
             foreach (ITweet tweet in baseTweets)
             {
-                //convert to tweet, add to constructedMessags
+                constructedMessages.Add(new Tweet(tweet));
             }
             return constructedMessages;
+        }
+
+        public List<Message> filterTweets(List<Message> constructedMessages)
+        {
+            if (Filter == null) { return constructedMessages; }
+
+            var filteredMessages = new List<Message>();
+            foreach (Message message in constructedMessages)
+            {
+                if (Filter.messagePassesFilter(message)) { filteredMessages.Add(message); }
+                //possibly add a default to note a tweet has been blocked
+            }
+
+            return filteredMessages;
         }
     }
 }

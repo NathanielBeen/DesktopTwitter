@@ -16,20 +16,13 @@ using System.Windows.Shapes;
 namespace FinalProject
 {
     /// <summary>
-    /// Interaction logic for MessageCollectionControl.xaml
+    /// Interaction logic for TweetSenderControl.xaml
     /// </summary>
-    public partial class MessageCollectionControl : UserControl
+    public partial class TweetSenderControl : UserControl
     {
-        private MessageCollectionView view;
-        public MessageCollectionControl()
+        public TweetSenderControl()
         {
             InitializeComponent();
-        }
-
-        public MessageCollectionControl(MessageCollectionView v) : base()
-        {
-            view = v;
-            DataContext = view;
         }
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace FinalProject
 {
-    interface IFilterComponent
+    public interface IFilterComponent
     {
         void addToFilter(string s);
         void removeFromFilter(string s);

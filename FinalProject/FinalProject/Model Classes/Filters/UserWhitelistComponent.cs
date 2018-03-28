@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace FinalProject
 {
-    class UserWhitelistComponent : IFilterComponent
+    public class UserWhitelistComponent : IFilterComponent
     {
         private List<string> usersToInclude;
 

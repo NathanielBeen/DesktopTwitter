@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace FinalProject
 {
-    class UserBlacklistComponent : IFilterComponent
+    public class UserBlacklistComponent : IFilterComponent
     {
         private List<string> usersToExclude;
 

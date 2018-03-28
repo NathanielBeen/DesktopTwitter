@@ -15,7 +15,7 @@ namespace FinalProject
 
         public override List<ITweet> getITweets()
         {
-            return Timeline.GetHomeTimeline(100).ToList();
+            return Timeline.GetHomeTimeline().ToList();
         }
     }
 }

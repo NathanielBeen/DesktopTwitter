@@ -8,11 +8,21 @@ namespace FinalProject
 {
     public class TwitterApplication
     {
-        public CurrentUser CurrentUser { get; set; }
+        public MessageFilter Filter { get; set; }
+        public CurrentUser User { get; set; }
 
-        public TwitterApplication(CurrentUser user)
+        public TwitterApplication(CurrentUser user) { User = user; }
+
+        public List<Message> getHomeTimeline()
         {
-            CurrentUser = user;
+            var getter = new HomeTimelineGetter(Filter);
+            return getter.getMessages();
+        }
+
+        public List<Message> getUserTimeline(User selectedUser)
+        {
+            var getter = new UserTimelineGetter(Filter, selectedUser);
+            return getter.getMessages();
         }
     }
 }

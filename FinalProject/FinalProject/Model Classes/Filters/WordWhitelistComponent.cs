@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace FinalProject
 {
-    class WordWhitelistComponent : IFilterComponent
+    public class WordWhitelistComponent : IFilterComponent
     {
         private List<string> wordsToInclude;
 

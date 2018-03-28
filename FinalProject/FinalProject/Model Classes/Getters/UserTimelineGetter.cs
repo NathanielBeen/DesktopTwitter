@@ -10,18 +10,17 @@ namespace FinalProject
 {
     class UserTimelineGetter : TweetGetter
     {
-        //user to get the tweets from
+        private User user;
 
-        public UserTimelineGetter(MessageFilter filter)
+        public UserTimelineGetter(MessageFilter filter, User u)
             :base(filter)
         {
-            //inputs: user to get tweets from
+            user = u;
         }
 
         public override List<ITweet> getITweets()
         {
-            //replace following with call to Timeline.GetUserTimeline(user_id)
-            return base.getITweets();
+            return Timeline.GetUserTimeline(user.ID).ToList();
         }
     }
 }

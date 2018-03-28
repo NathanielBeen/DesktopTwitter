@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FinalProject.ViewModel_Classes;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Globalization;
@@ -9,11 +10,19 @@ using System.Windows.Data;
 
 namespace FinalProject
 {
-    class MainWindowView : INotifyPropertyChanged
+    public delegate void ClickDelegate(int type, string value);
+
+    public class MainWindowView : INotifyPropertyChanged
     {
+        public const int USER_SELECT = 0;
+
         public const int MAIN_VIEW = 0;
         public const int USER_VIEW = 1;
         public const int DM_VIEW = 2;
+
+        private TwitterApplication application;
+        public MessageCollectionView MessageView { get; }
+        public TweetSenderView SenderView { get; private set; }
 
         private int viewMode;
         public int ViewMode
@@ -24,21 +33,73 @@ namespace FinalProject
                 if (value != viewMode)
                 {
                     viewMode = value;
-                    onPropertyChanged(nameof(ViewMode));
+                    updateViewModels(value);
+                    OnPropertyChanged(nameof(ViewMode));
+                }
+            }
+        }
+
+        private User selectedUser;
+        public User SelectedUser
+        {
+            get { return selectedUser; }
+            set
+            {
+                if (value != selectedUser)
+                {
+                    selectedUser = value;
+                    OnPropertyChanged(nameof(selectedUser));
                 }
             }
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
 
-        public MainWindowView()
+        public MainWindowView(TwitterApplication app)
         {
-            viewMode = MAIN_VIEW;
+            application = app;
+            selectedUser = app.User;
+
+            MessageView = new MessageCollectionView(app, new ClickDelegate(HandleClick));
+            SenderView = new TweetSenderView(app);
+            ViewMode = MAIN_VIEW;
         }
 
-        public void onPropertyChanged(string name)
+        public void OnPropertyChanged(string name)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
+        }
+
+        public void updateViewModels(int newView)
+        {
+            MessageView.ChangeViewMode(newView, selectedUser);
+            switch (newView)
+            {
+                case MAIN_VIEW:
+                    SenderView = new TweetSenderView(application);
+                    break;
+                case USER_VIEW:
+                    SenderView = new TweetSenderView(application, selectedUser.Handle);
+                    break;
+
+            }
+        }
+
+        public void HandleClick(int type, string value)
+        {
+            switch (type)
+            {
+                case USER_SELECT:
+                    ChangeSelectedUser(value);
+                    break;
+            }
+        }
+
+        public void ChangeSelectedUser(string username)
+        {
+            User user = new User(username);
+            SelectedUser = user;
+            ViewMode = USER_VIEW;
         }
     }
 

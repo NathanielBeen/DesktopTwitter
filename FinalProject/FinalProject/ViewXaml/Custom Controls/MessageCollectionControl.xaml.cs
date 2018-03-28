@@ -10,27 +10,19 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
-using Tweetinvi.Models;
 
 namespace FinalProject
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for MessageCollectionControl.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class MessageCollectionControl : UserControl
     {
-        private TwitterApplication app;
-        private MainWindowView view;
-
-        public MainWindow(CurrentUser user)
+        public MessageCollectionControl()
         {
-            app = new TwitterApplication(user);
-            view = new MainWindowView();
             InitializeComponent();
-
-            DataContext = view;
         }
-
     }
 }

@@ -11,7 +11,7 @@
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="2*"/>
         </Grid.ColumnDefinitions>
-        <Label Grid.Column="0" Content="User profile goes here" VerticalAlignment="Center"/>
+        <Label Grid.Column="0" Content="{Binding SelectedUser.Name}" VerticalAlignment="Center"/>
         <Grid Grid.Column="1">
             <Grid.RowDefinitions>
                 <RowDefinition Height="*"/>
@@ -19,8 +19,8 @@
                 <RowDefinition Height="2*"/>
             </Grid.RowDefinitions>
             <Label Grid.Row="0" Content="searchbar goes here" HorizontalAlignment="Center"/>
-            <Label Grid.Row="1" Content="Timeline goes here" HorizontalAlignment="Center" VerticalAlignment="center"/>
-            <Label Grid.Row="2" Content="sending stuff goes here" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <local:MessageCollectionControl Grid.Row="1" DataContext="{Binding MessageView}"/>
+            <local:TweetSenderControl Grid.Row="2" DataContext="{Binding SenderView}"/>
         </Grid>
     </Grid>
 </UserControl>
