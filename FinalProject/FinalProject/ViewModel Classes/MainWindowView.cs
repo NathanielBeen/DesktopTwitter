@@ -1,4 +1,4 @@
-﻿using FinalProject.ViewModel_Classes;
+﻿
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,14 +15,29 @@ namespace FinalProject
     public class MainWindowView : INotifyPropertyChanged
     {
         public const int USER_SELECT = 0;
+        public const int CONVO_SELECT = 1;
 
         public const int MAIN_VIEW = 0;
         public const int USER_VIEW = 1;
-        public const int DM_VIEW = 2;
+        public const int CONVERSATION_VIEW = 2;
+        public const int DM_VIEW = 3;
 
         private TwitterApplication application;
         public MessageCollectionView MessageView { get; }
-        public TweetSenderView SenderView { get; private set; }
+
+        private ISenderView senderView;
+        public ISenderView SenderView
+        {
+            get { return senderView; }
+            set
+            {
+                if (value != senderView)
+                {
+                    senderView = value;
+                    OnPropertyChanged(nameof(SenderView));
+                }
+            }
+        }
 
         private int viewMode;
         public int ViewMode
@@ -33,6 +48,7 @@ namespace FinalProject
                 if (value != viewMode)
                 {
                     viewMode = value;
+                    if (viewMode == MAIN_VIEW || viewMode == CONVERSATION_VIEW) { SelectedUser = application.User; }
                     updateViewModels(value);
                     OnPropertyChanged(nameof(ViewMode));
                 }
@@ -62,7 +78,8 @@ namespace FinalProject
 
             MessageView = new MessageCollectionView(app, new ClickDelegate(HandleClick));
             SenderView = new TweetSenderView(app);
-            ViewMode = MAIN_VIEW;
+            viewMode = MAIN_VIEW;
+            updateViewModels(viewMode);
         }
 
         public void OnPropertyChanged(string name)
@@ -81,6 +98,12 @@ namespace FinalProject
                 case USER_VIEW:
                     SenderView = new TweetSenderView(application, selectedUser.Handle);
                     break;
+                case CONVERSATION_VIEW:
+                    SenderView = null;
+                    break;
+                case DM_VIEW:
+                    SenderView = new DirectMessageSenderView(application, selectedUser.Handle);
+                    break;
 
             }
         }
@@ -91,7 +114,13 @@ namespace FinalProject
             {
                 case USER_SELECT:
                     ChangeSelectedUser(value);
+                    ViewMode = USER_VIEW;
                     break;
+                case CONVO_SELECT:
+                    ChangeSelectedUser(value);
+                    ViewMode = DM_VIEW;
+                    break;
+                    
             }
         }
 
@@ -99,7 +128,6 @@ namespace FinalProject
         {
             User user = new User(username);
             SelectedUser = user;
-            ViewMode = USER_VIEW;
         }
     }
 
@@ -113,6 +141,19 @@ namespace FinalProject
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
         {
             return value.Equals(true) ? parameter : Binding.DoNothing;
+        }
+    }
+
+    class ViewModelConverter : IValueConverter
+    {
+        public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+            return value?.GetType() ?? null;
+        }
+
+        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+            throw new NotImplementedException();
         }
     }
 }

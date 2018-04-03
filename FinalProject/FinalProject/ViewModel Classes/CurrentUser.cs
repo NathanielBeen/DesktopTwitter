@@ -17,7 +17,6 @@ namespace FinalProject
             int retweet = currentTweet.Retweets;
             retweet += 1;
             currentTweet.Retweets = retweet;
-            /*Copy tweet body and then post it to timeline**/
         }
 
         public void like(Tweet currentTweet)

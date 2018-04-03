@@ -6,9 +6,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 
-namespace FinalProject.ViewModel_Classes
+namespace FinalProject
 {
-    public class TweetSenderView : INotifyPropertyChanged
+    public class TweetSenderView : ISenderView
     {
         public const int MAX_LENGTH = 140;
         private TwitterApplication application;
@@ -53,7 +53,7 @@ namespace FinalProject.ViewModel_Classes
         public TweetSenderView(TwitterApplication app, string username = "")
         {
             application = app;
-            Text = "@"+username;
+            Text = (username == "") ? "" : "@"+username;
         }
 
         public void OnPropertyChanged(string name)

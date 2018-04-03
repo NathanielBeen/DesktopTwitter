@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace FinalProject
 {
     /// <summary>
-    /// Interaction logic for MessageSenderControl.xaml
+    /// Interaction logic for ConversationControl.xaml
     /// </summary>
-    public partial class DirectMessageSenderControl : UserControl
+    public partial class ConversationControl : UserControl
     {
-        public DirectMessageSenderControl()
+        public ConversationControl()
         {
             InitializeComponent();
         }

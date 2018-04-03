@@ -40,6 +40,7 @@ namespace FinalProject
         {
             if (message is Tweet) { return new TweetView((Tweet)message, clickDelegate); }
             else if (message is DirectMessage) { return new DirectMessageView((DirectMessage)message, application.User); }
+            else if (message is Conversation) { return new ConversationView((Conversation)message, clickDelegate); }
             return null;
         }
 
@@ -53,6 +54,12 @@ namespace FinalProject
                     break;
                 case MainWindowView.USER_VIEW:
                     messageList = application.getUserTimeline(selectedUser);
+                    break;
+                case MainWindowView.CONVERSATION_VIEW:
+                    messageList = application.getConversations();
+                    break;
+                case MainWindowView.DM_VIEW:
+                    messageList = application.getUserDMs(selectedUser);
                     break;
             }
 

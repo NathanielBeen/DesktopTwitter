@@ -17,8 +17,8 @@
                 <RowDefinition Height="7*"/>
                 <RowDefinition Height="2*"/>
             </Grid.RowDefinitions>
-            <Label Grid.Row="0" Content="Conversations or Messages goes here" HorizontalAlignment="Center" VerticalAlignment="center"/>
-            <Label Grid.Row="1" Content="sending stuff goes here" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <local:MessageCollectionControl Grid.Row="0" DataContext="{Binding MessageView}"/>
+            <local:DirectMessageSenderControl Grid.Row="2" DataContext="{Binding SenderView}"/>
         </Grid>
     </Grid>
 </UserControl>

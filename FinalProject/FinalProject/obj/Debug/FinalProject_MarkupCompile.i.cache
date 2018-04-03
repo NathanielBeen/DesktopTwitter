@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\App.xaml
-10-671287698
+111698552781
 
-511797720009
-103-839778212
-ViewXaml\Custom Controls\DirectMessageControl.xaml;ViewXaml\Custom Controls\TweetSenderControl.xaml;ViewXaml\Custom Pages\DirectMessagePage.xaml;ViewXaml\LoginWindow.xaml;ViewXaml\Custom Pages\MainPage.xaml;ViewXaml\MainWindow.xaml;ViewXaml\Custom Controls\DirectMessageSenderControl.xaml;ViewXaml\Custom Controls\MessageCollectionControl.xaml;ViewXaml\Custom Pages\SelectedUserPage.xaml;ViewXaml\Custom Controls\TweetControl.xaml;
+55888818135
+104709902723
+ViewXaml\Custom Controls\ConversationControl.xaml;ViewXaml\Custom Controls\DirectMessageControl.xaml;ViewXaml\Custom Controls\TweetSenderControl.xaml;ViewXaml\Custom Pages\DirectMessagePage.xaml;ViewXaml\LoginWindow.xaml;ViewXaml\Custom Pages\MainPage.xaml;ViewXaml\MainWindow.xaml;ViewXaml\Custom Controls\DirectMessageSenderControl.xaml;ViewXaml\Custom Controls\MessageCollectionControl.xaml;ViewXaml\Custom Pages\SelectedUserPage.xaml;ViewXaml\Custom Controls\TweetControl.xaml;
 
-False
+True
 

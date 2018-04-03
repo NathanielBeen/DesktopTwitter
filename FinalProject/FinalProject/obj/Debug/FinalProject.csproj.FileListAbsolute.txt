@@ -187,4 +187,6 @@ C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\obj\Debug\Final
 C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\obj\Debug\FinalProject.csproj.CoreCompileInputs.cache
 C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\obj\Debug\FinalProject.exe
 C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\obj\Debug\FinalProject.pdb
+C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\obj\Debug\ViewXaml\Custom Controls\ConversationControl.g.cs
+C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\obj\Debug\ViewXaml\Custom Controls\ConversationControl.baml
 C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\obj\Debug\FinalProject.csprojResolveAssemblyReference.cache

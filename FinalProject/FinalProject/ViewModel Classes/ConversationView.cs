@@ -8,25 +8,13 @@ using System.Windows.Input;
 
 namespace FinalProject
 {
-    public class TweetView : IMessageView
+    class ConversationView : IMessageView
     {
-        private Tweet tweet;
-        public int Retweets
-        {
-            get { return tweet.Retweets; }
-        }
+        private Conversation conversation;
 
-        public int Likes
-        {
-            get { return tweet.Likes; }
-        }
-        public string Text
-        {
-            get { return tweet.Text; }
-        }
         public string Username
         {
-            get { return tweet.Creator.ScreenName; }
+            get { return conversation.Username; }
         }
 
         private ClickDelegate clickDelegate;
@@ -40,15 +28,15 @@ namespace FinalProject
             }
         }
 
-        public TweetView(Tweet t, ClickDelegate del)
+        public ConversationView(Conversation c, ClickDelegate del)
         {
-            tweet = t;
+            conversation = c;
             clickDelegate = del;
         }
 
         public void HandleUserSelection()
         {
-            clickDelegate?.Invoke(MainWindowView.USER_SELECT, Username);
+            clickDelegate?.Invoke(MainWindowView.CONVO_SELECT, Username);
         }
     }
 }

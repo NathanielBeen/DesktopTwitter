@@ -24,5 +24,17 @@ namespace FinalProject
             var getter = new UserTimelineGetter(Filter, selectedUser);
             return getter.getMessages();
         }
+
+        public List<Message> getConversations()
+        {
+            var getter = new ConversationGetter();
+            return getter.getMessages();
+        }
+
+        public List<Message> getUserDMs(User selectedUser)
+        {
+            var getter = new DirectMessageGetter(selectedUser);
+            return getter.getMessages();
+        }
     }
 }

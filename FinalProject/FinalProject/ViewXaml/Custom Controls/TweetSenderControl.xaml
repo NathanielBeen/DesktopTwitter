@@ -6,7 +6,7 @@
              xmlns:local="clr-namespace:FinalProject"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
-    <Grid>
+    <Grid DataContext="{Binding SenderView}">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
@@ -16,7 +16,7 @@
             <RowDefinition Height="4*"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <TextBox Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="1" TextWrapping="Wrap" Text="{Binding Path=Text}"/>
+        <TextBox Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="1" TextWrapping="Wrap" Text="{Binding Path=Text, UpdateSourceTrigger=PropertyChanged}"/>
         <Label Grid.Column="0" Grid.Row="2" Content="{Binding Path=NumChars}"/>
         <Button Grid.Column ="1" Grid.Row="2" Content="Send Tweet" Command="{Binding SendTweetCommand}"/>
     </Grid>

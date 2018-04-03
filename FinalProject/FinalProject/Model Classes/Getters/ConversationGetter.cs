@@ -22,7 +22,8 @@ namespace FinalProject
             var constructedMessages = new List<Message>();
             foreach (long id in allSendingUserIds)
             {
-                //create a conversation object and add to constructedMessages
+               var user = Tweetinvi.User.GetUserFromId(id);
+                constructedMessages.Add(new Conversation(user.ScreenName));
             }
 
             return constructedMessages;

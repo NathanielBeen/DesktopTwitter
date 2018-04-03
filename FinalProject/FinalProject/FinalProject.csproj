@@ -126,6 +126,7 @@
     <Reference Include="System.Security.Cryptography.X509Certificates, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Security.Cryptography.X509Certificates.4.3.0\lib\net461\System.Security.Cryptography.X509Certificates.dll</HintPath>
     </Reference>
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Windows.Interactivity, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Windows.Interactivity.WPF.2.0.20525\lib\net40\System.Windows.Interactivity.dll</HintPath>
     </Reference>
@@ -177,12 +178,18 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="ViewModel Classes\ConversationView.cs" />
     <Compile Include="Model Classes\AppState.cs" />
     <Compile Include="Model Classes\Authentication.cs" />
     <Compile Include="Model Classes\Getters\ConversationGetter.cs" />
     <Compile Include="ViewModel Classes\CurrentUser.cs" />
+    <Compile Include="ViewModel Classes\DirectMessageSenderView.cs" />
+    <Compile Include="ViewModel Classes\ISenderView.cs" />
     <Compile Include="ViewModel Classes\RelayCommand.cs" />
     <Compile Include="ViewModel Classes\TweetSenderView.cs" />
+    <Compile Include="ViewXaml\Custom Controls\ConversationControl.xaml.cs">
+      <DependentUpon>ConversationControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ViewXaml\Custom Controls\DirectMessageControl.xaml.cs">
       <DependentUpon>DirectMessageControl.xaml</DependentUpon>
     </Compile>
@@ -234,6 +241,10 @@
     <Compile Include="Model Classes\Filters\UserWhitelistComponent.cs" />
     <Compile Include="Model Classes\Filters\WordBlackListComponent.cs" />
     <Compile Include="Model Classes\Filters\WordWhitelistComponent.cs" />
+    <Page Include="ViewXaml\Custom Controls\ConversationControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="ViewXaml\Custom Controls\DirectMessageControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

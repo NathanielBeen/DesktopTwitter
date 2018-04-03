@@ -7,14 +7,14 @@ using Tweetinvi.Models;
 
 namespace FinalProject
 {
-    class Conversations : Message
+    class Conversation : Message
     {
-        List<Message> conversation = new List<Message>();
+        public string Username { get; }
 
-        public Conversations(IUser sender, string text, long id, DateTime Time)
+        public Conversation(string username)
             :base()
         {
-
+            Username = username;
         }
     }
 }

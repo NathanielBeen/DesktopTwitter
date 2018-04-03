@@ -24,12 +24,12 @@ namespace FinalProject
         public string Text { get; set; }
         public DateTime Time { get; set; }
 
-        public DirectMessage(IMessage message, IUser sender, IUser receiver)
+        public DirectMessage(IMessage message)
         {
             Text = message.Text;
             Id = message.Id;
-            sender = Sender;
-            receiver = Receiver;
+            Sender = message.Sender;
+            Receiver = message.Recipient;
             Time = message.CreatedAt;
         }
     }

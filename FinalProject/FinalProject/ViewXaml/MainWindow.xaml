@@ -5,19 +5,33 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FinalProject"
         mc:Ignorable="d"
-        Title="MainWindow" Height="300" Width="300">
+        Title="MainWindow" Height="600" Width="600">
     <Window.Resources>
         <Style TargetType="RadioButton" BasedOn="{StaticResource {x:Type ToggleButton}}" />
         <local:IntToBooleanConverter x:Key="Converter"/>
-        <DataTemplate x:Key="MainPage" DataType="{x:Type local:MainWindowView}">
-            <local:MainPage/>
+        <local:ViewModelConverter x:Key="VMConverter"/>
+
+        <DataTemplate x:Key="NoSenderTemplate">
+            <Label Content=""/>
         </DataTemplate>
-        <DataTemplate x:Key="SelectedUserPage" DataType="{x:Type local:MainWindowView}">
-            <local:SelectedUserPage/>
+        <DataTemplate x:Key="TweetSenderTemplate">
+            <local:TweetSenderControl />
         </DataTemplate>
-        <DataTemplate x:Key="DirectMessagePage" DataType="{x:Type local:MainWindowView}">
-            <local:DirectMessagePage/>
+        <DataTemplate x:Key="DMSenderTemplate">
+            <local:DirectMessageSenderControl/>
         </DataTemplate>
+
+        <Style x:Key="senderStyle" TargetType="{x:Type ContentControl}">
+            <Setter Property="ContentTemplate" Value="{StaticResource NoSenderTemplate}"/>
+            <Style.Triggers>
+                <DataTrigger Binding="{Binding Path=SenderView, Converter={StaticResource VMConverter}}" Value="{x:Type local:TweetSenderView}">
+                    <Setter Property="ContentTemplate" Value="{StaticResource TweetSenderTemplate}"/>
+                </DataTrigger>
+                <DataTrigger Binding="{Binding Path=SenderView, Converter={StaticResource VMConverter}}" Value="{x:Type local:DirectMessageSenderView}">
+                    <Setter Property="ContentTemplate" Value="{StaticResource DMSenderTemplate}"/>
+                </DataTrigger>
+            </Style.Triggers>
+        </Style>
     </Window.Resources>
     <Grid>
         <Grid.RowDefinitions>
@@ -35,25 +49,25 @@
             <RadioButton Grid.Column="1" GroupName="navigation" Content="User Page"
                         IsChecked="{Binding Path=ViewMode, Converter={StaticResource Converter}, ConverterParameter={x:Static local:MainWindowView.USER_VIEW}}"/>
             <RadioButton Grid.Column="2" GroupName="navigation" Content="Message Page"
-                        IsChecked="{Binding Path=ViewMode, Converter={StaticResource Converter}, ConverterParameter={x:Static local:MainWindowView.DM_VIEW}}"/>
+                        IsChecked="{Binding Path=ViewMode, Converter={StaticResource Converter}, ConverterParameter={x:Static local:MainWindowView.CONVERSATION_VIEW}}"/>
 
         </Grid>
-        <UserControl Grid.Row="1">
-            <ContentControl Content="{Binding}">
-                <ContentControl.Style>
-                    <Style TargetType="{x:Type ContentControl}">
-                        <Setter Property="ContentTemplate" Value="{StaticResource MainPage}"/>
-                        <Style.Triggers>
-                            <DataTrigger Binding="{Binding ViewMode}" Value="{x:Static local:MainWindowView.USER_VIEW}">
-                                <Setter Property="ContentTemplate" Value="{StaticResource SelectedUserPage}"/>
-                            </DataTrigger>
-                            <DataTrigger Binding="{Binding ViewMode}" Value="{x:Static local:MainWindowView.DM_VIEW}">
-                                <Setter Property="ContentTemplate" Value="{StaticResource DirectMessagePage}"/>
-                            </DataTrigger>
-                        </Style.Triggers>
-                    </Style>
-                </ContentControl.Style>
-            </ContentControl>
-        </UserControl>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="2*"/>
+            </Grid.ColumnDefinitions>
+            <Label Grid.Column="0" Content="{Binding SelectedUser.Name}" VerticalAlignment="Center"/>
+            <Grid Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="6*"/>
+                    <RowDefinition Height="2*"/>
+                </Grid.RowDefinitions>
+                <Label Grid.Row="0" Content="searchbar goes here" HorizontalAlignment="Center"/>
+                <local:MessageCollectionControl Grid.Row="1" DataContext="{Binding MessageView}"/>
+                <ContentControl Grid.Row="2" Content="{Binding}" Style="{StaticResource senderStyle}"/>
+            </Grid>
+        </Grid>
     </Grid>
 </Window>

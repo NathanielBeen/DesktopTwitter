@@ -9,10 +9,11 @@ namespace FinalProject
 {
     class DirectMessageGetter : IMessageGetter
     {
+        private User otherUser;
 
-        public DirectMessageGetter()
+        public DirectMessageGetter(User other)
         {
-            //inputs: user to get the conversation from
+            otherUser = other;
         }
 
         public List<Message> getMessages()
@@ -22,21 +23,23 @@ namespace FinalProject
             var allMessagesRecieved = Tweetinvi.Message.GetLatestMessagesReceived();
             foreach (IMessage message in allMessagesRecieved)
             {
-                // if sender is other user, add to baseMessages
+                if (message.SenderId == otherUser.ID) { baseMessages.Add(message); }
             }
 
             var allMessagesSent = Tweetinvi.Message.GetLatestMessagesSent();
             foreach (IMessage message in allMessagesSent)
             {
-                //if reciever is other user, add to baseMessages
+                if (message.RecipientId == otherUser.ID) { baseMessages.Add(message); }
             }
 
-            //order messages by time sent
+            baseMessages = (from message in baseMessages
+                            orderby message.CreatedAt
+                            select message).ToList();
 
             var constructedMessages = new List<Message>();
             foreach (IMessage message in baseMessages)
             {
-                //convert to directmessage and add to constructedMessages
+                constructedMessages.Add(new DirectMessage(message));
             }
 
             return constructedMessages;
