@@ -43,12 +43,6 @@ C:\Users\tyler\Documents\final-project\FinalProject\FinalProject\obj\Debug\Final
 C:\Users\tyler\Documents\final-project\FinalProject\FinalProject\obj\Debug\FinalProject.exe
 C:\Users\tyler\Documents\final-project\FinalProject\FinalProject\obj\Debug\FinalProject.pdb
 C:\Users\tyler\Documents\Programs\BACS387\final-project\FinalProject\FinalProject\bin\Debug\FinalProject.exe.config
-C:\Users\Scott\source\repos\Final-Project\FinalProject\FinalProject\obj\Debug\DirectMessagePage.g.cs
-C:\Users\Scott\source\repos\Final-Project\FinalProject\FinalProject\obj\Debug\LoginWindow.g.cs
-C:\Users\Scott\source\repos\Final-Project\FinalProject\FinalProject\obj\Debug\MainPage.g.cs
-C:\Users\Scott\source\repos\Final-Project\FinalProject\FinalProject\obj\Debug\MainWindow.g.cs
-C:\Users\Scott\source\repos\Final-Project\FinalProject\FinalProject\obj\Debug\DirectMessageSenderControl.g.cs
-C:\Users\Scott\source\repos\Final-Project\FinalProject\FinalProject\obj\Debug\SelectedUserPage.g.cs
 C:\Users\Scott\source\repos\Final-Project\FinalProject\FinalProject\obj\Debug\App.g.cs
 C:\Users\Scott\source\repos\Final-Project\FinalProject\FinalProject\obj\Debug\GeneratedInternalTypeHelper.g.cs
 C:\Users\Scott\source\repos\Final-Project\FinalProject\FinalProject\obj\Debug\FinalProject_MarkupCompile.cache
@@ -86,12 +80,6 @@ C:\Users\Scott\source\repos\Final-Project\FinalProject\FinalProject\bin\Debug\Tw
 C:\Users\Scott\source\repos\Final-Project\FinalProject\FinalProject\bin\Debug\Newtonsoft.Json.xml
 C:\Users\Scott\source\repos\Final-Project\FinalProject\FinalProject\bin\Debug\Nito.Disposables.xml
 C:\Users\Scott\source\repos\Final-Project\FinalProject\FinalProject\bin\Debug\System.Collections.Immutable.xml
-C:\Users\Scott\source\repos\Final-Project\FinalProject\FinalProject\obj\Debug\DirectMessagePage.baml
-C:\Users\Scott\source\repos\Final-Project\FinalProject\FinalProject\obj\Debug\LoginWindow.baml
-C:\Users\Scott\source\repos\Final-Project\FinalProject\FinalProject\obj\Debug\MainPage.baml
-C:\Users\Scott\source\repos\Final-Project\FinalProject\FinalProject\obj\Debug\MainWindow.baml
-C:\Users\Scott\source\repos\Final-Project\FinalProject\FinalProject\obj\Debug\DirectMessageSenderControl.baml
-C:\Users\Scott\source\repos\Final-Project\FinalProject\FinalProject\obj\Debug\SelectedUserPage.baml
 C:\Users\Scott\source\repos\Final-Project\FinalProject\FinalProject\obj\Debug\FinalProject.g.resources
 C:\Users\Scott\source\repos\Final-Project\FinalProject\FinalProject\obj\Debug\FinalProject.Properties.Resources.resources
 C:\Users\Scott\source\repos\Final-Project\FinalProject\FinalProject\obj\Debug\FinalProject.csproj.GenerateResource.Cache
@@ -106,12 +94,6 @@ C:\Users\Scott\source\repos\Final-Project\FinalProject\FinalProject\bin\Debug\Sy
 C:\Users\Scott\source\repos\Final-Project\FinalProject\FinalProject\bin\Debug\Autofac.xml
 C:\Users\Scott\source\repos\Final-Project\FinalProject\FinalProject\bin\Debug\Nito.AsyncEx.Context.xml
 C:\Users\Scott\source\repos\Final-Project\FinalProject\FinalProject\bin\Debug\Nito.AsyncEx.Tasks.xml
-C:\Users\Scott\source\repos\Final-Project\FinalProject\FinalProject\obj\Debug\DirectMessageControl.g.cs
-C:\Users\Scott\source\repos\Final-Project\FinalProject\FinalProject\obj\Debug\MessageCollectionControl.g.cs
-C:\Users\Scott\source\repos\Final-Project\FinalProject\FinalProject\obj\Debug\TweetControl.g.cs
-C:\Users\Scott\source\repos\Final-Project\FinalProject\FinalProject\obj\Debug\DirectMessageControl.baml
-C:\Users\Scott\source\repos\Final-Project\FinalProject\FinalProject\obj\Debug\TweetControl.baml
-C:\Users\Scott\source\repos\Final-Project\FinalProject\FinalProject\obj\Debug\MessageCollectionControl.baml
 C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\bin\Debug\FinalProject.exe.config
 C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\bin\Debug\FinalProject.exe
 C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\bin\Debug\FinalProject.pdb
@@ -190,3 +172,32 @@ C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\obj\Debug\Final
 C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\obj\Debug\ViewXaml\Custom Controls\ConversationControl.g.cs
 C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\obj\Debug\ViewXaml\Custom Controls\ConversationControl.baml
 C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\obj\Debug\FinalProject.csprojResolveAssemblyReference.cache
+C:\Users\Scott\source\repos\Final-Project\FinalProject\FinalProject\bin\Debug\Microsoft.Expression.Interactions.dll
+C:\Users\Scott\source\repos\Final-Project\FinalProject\FinalProject\bin\Debug\System.Windows.Interactivity.dll
+C:\Users\Scott\source\repos\Final-Project\FinalProject\FinalProject\bin\Debug\Microsoft.Expression.Interactions.xml
+C:\Users\Scott\source\repos\Final-Project\FinalProject\FinalProject\bin\Debug\System.Windows.Interactivity.xml
+C:\Users\Scott\source\repos\Final-Project\FinalProject\FinalProject\obj\Debug\FinalProject.csprojResolveAssemblyReference.cache
+C:\Users\Scott\source\repos\Final-Project\FinalProject\FinalProject\obj\Debug\ViewXaml\Custom Controls\ConversationControl.g.cs
+C:\Users\Scott\source\repos\Final-Project\FinalProject\FinalProject\obj\Debug\ViewXaml\Custom Controls\DirectMessageControl.g.cs
+C:\Users\Scott\source\repos\Final-Project\FinalProject\FinalProject\obj\Debug\ViewXaml\Custom Controls\TweetSenderControl.g.cs
+C:\Users\Scott\source\repos\Final-Project\FinalProject\FinalProject\obj\Debug\ViewXaml\Custom Pages\DirectMessagePage.g.cs
+C:\Users\Scott\source\repos\Final-Project\FinalProject\FinalProject\obj\Debug\ViewXaml\LoginWindow.g.cs
+C:\Users\Scott\source\repos\Final-Project\FinalProject\FinalProject\obj\Debug\ViewXaml\Custom Pages\MainPage.g.cs
+C:\Users\Scott\source\repos\Final-Project\FinalProject\FinalProject\obj\Debug\ViewXaml\MainWindow.g.cs
+C:\Users\Scott\source\repos\Final-Project\FinalProject\FinalProject\obj\Debug\ViewXaml\Custom Controls\DirectMessageSenderControl.g.cs
+C:\Users\Scott\source\repos\Final-Project\FinalProject\FinalProject\obj\Debug\ViewXaml\Custom Controls\MessageCollectionControl.g.cs
+C:\Users\Scott\source\repos\Final-Project\FinalProject\FinalProject\obj\Debug\ViewXaml\Custom Pages\SelectedUserPage.g.cs
+C:\Users\Scott\source\repos\Final-Project\FinalProject\FinalProject\obj\Debug\ViewXaml\Custom Controls\TweetControl.g.cs
+C:\Users\Scott\source\repos\Final-Project\FinalProject\FinalProject\obj\Debug\ViewXaml\Custom Controls\ConversationControl.baml
+C:\Users\Scott\source\repos\Final-Project\FinalProject\FinalProject\obj\Debug\ViewXaml\Custom Controls\DirectMessageControl.baml
+C:\Users\Scott\source\repos\Final-Project\FinalProject\FinalProject\obj\Debug\ViewXaml\Custom Controls\TweetSenderControl.baml
+C:\Users\Scott\source\repos\Final-Project\FinalProject\FinalProject\obj\Debug\ViewXaml\Custom Pages\DirectMessagePage.baml
+C:\Users\Scott\source\repos\Final-Project\FinalProject\FinalProject\obj\Debug\ViewXaml\LoginWindow.baml
+C:\Users\Scott\source\repos\Final-Project\FinalProject\FinalProject\obj\Debug\ViewXaml\Custom Pages\MainPage.baml
+C:\Users\Scott\source\repos\Final-Project\FinalProject\FinalProject\obj\Debug\ViewXaml\MainWindow.baml
+C:\Users\Scott\source\repos\Final-Project\FinalProject\FinalProject\obj\Debug\ViewXaml\Custom Controls\DirectMessageSenderControl.baml
+C:\Users\Scott\source\repos\Final-Project\FinalProject\FinalProject\obj\Debug\ViewXaml\Custom Controls\MessageCollectionControl.baml
+C:\Users\Scott\source\repos\Final-Project\FinalProject\FinalProject\obj\Debug\ViewXaml\Custom Pages\SelectedUserPage.baml
+C:\Users\Scott\source\repos\Final-Project\FinalProject\FinalProject\obj\Debug\ViewXaml\Custom Controls\TweetControl.baml
+C:\Users\Scott\source\repos\Final-Project\FinalProject\FinalProject\obj\Debug\ViewXaml\Custom Controls\SelectedUserControl.g.cs
+C:\Users\Scott\source\repos\Final-Project\FinalProject\FinalProject\obj\Debug\ViewXaml\Custom Controls\SelectedUserControl.baml

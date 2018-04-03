@@ -38,6 +38,16 @@ namespace FinalProject
             return sentMessage.IsMessagePublished;
         }
 
+        public bool followUser(User selected)
+        {
+            IAuthenticatedUser auth = Tweetinvi.User.GetAuthenticatedUser();
+            return auth.FollowUser(selected.Name);
+        }
+        public bool unfollowUser(User selected)
+        {
+            IAuthenticatedUser auth = Tweetinvi.User.GetAuthenticatedUser();
+            return auth.UnFollowUser(selected.Name);
+        }
         public void logout()
         {
 

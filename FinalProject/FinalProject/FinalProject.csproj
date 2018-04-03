@@ -186,12 +186,16 @@
     <Compile Include="ViewModel Classes\DirectMessageSenderView.cs" />
     <Compile Include="ViewModel Classes\ISenderView.cs" />
     <Compile Include="ViewModel Classes\RelayCommand.cs" />
+    <Compile Include="ViewModel Classes\SelectedUserView.cs" />
     <Compile Include="ViewModel Classes\TweetSenderView.cs" />
     <Compile Include="ViewXaml\Custom Controls\ConversationControl.xaml.cs">
       <DependentUpon>ConversationControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewXaml\Custom Controls\DirectMessageControl.xaml.cs">
       <DependentUpon>DirectMessageControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewXaml\Custom Controls\SelectedUserControl.xaml.cs">
+      <DependentUpon>SelectedUserControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewXaml\Custom Controls\TweetSenderControl.xaml.cs">
       <DependentUpon>TweetSenderControl.xaml</DependentUpon>
@@ -246,6 +250,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="ViewXaml\Custom Controls\DirectMessageControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ViewXaml\Custom Controls\SelectedUserControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
