@@ -11,7 +11,7 @@ namespace FinalProject
     {
         public ConversationGetter() { }
 
-        public List<Message> getMessages()
+        public List<Message> GetMessages()
         {
             var allMessagesRecieved = Tweetinvi.Message.GetLatestMessagesReceived();
             var allMessagesSent = Tweetinvi.Message.GetLatestMessagesSent();
@@ -23,7 +23,7 @@ namespace FinalProject
             foreach (long id in allSendingUserIds)
             {
                var user = Tweetinvi.User.GetUserFromId(id);
-                constructedMessages.Add(new Conversation(user.ScreenName));
+                constructedMessages.Add(new Conversation(user));
             }
 
             return constructedMessages;

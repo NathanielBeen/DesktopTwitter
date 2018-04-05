@@ -19,16 +19,11 @@ namespace FinalProject
     public class DirectMessage : Message
     {
         public IUser Receiver { get; set; }
-        public IUser Sender { get; set; }
-        public long Id { get; set; }
-        public string Text { get; set; }
         public DateTime Time { get; set; }
 
         public DirectMessage(IMessage message)
+            :base(message.Text, message.Sender, message.Id)
         {
-            Text = message.Text;
-            Id = message.Id;
-            Sender = message.Sender;
             Receiver = message.Recipient;
             Time = message.CreatedAt;
         }

@@ -16,7 +16,7 @@ namespace FinalProject
             otherUser = other;
         }
 
-        public List<Message> getMessages()
+        public List<Message> GetMessages()
         {
 
             var baseMessages = new List<IMessage>();

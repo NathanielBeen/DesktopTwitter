@@ -8,9 +8,9 @@ namespace FinalProject
 {
     public interface IFilterComponent
     {
-        void addToFilter(string s);
-        void removeFromFilter(string s);
+        void AddToFilter(FilterItem item);
+        void RemoveFromFilter(FilterItem item);
 
-        bool messagePassesFilter(Message message);
+        bool MessagePassesFilter(Message message);
     }
 }

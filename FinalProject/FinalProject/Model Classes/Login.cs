@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FinalProject.Model_Classes;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -16,14 +17,14 @@ namespace FinalProject
             authentication = new Authentication();
         }
 
-        public void redirectToTwitter()
+        public void RedirectToTwitter()
         {
-            authentication.redirectToTwitter();
+            authentication.RedirectToTwitter();
         }
 
-        public CurrentUser attemptLogin(string pin)
+        public CurrentUser AttemptLogin(PIN pin)
         {
-            authentication.recievePin(pin);
+            authentication.RecievePin(pin);
             try
             {
                 IAuthenticatedUser user = Tweetinvi.User.GetAuthenticatedUser();

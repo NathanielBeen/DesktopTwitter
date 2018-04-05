@@ -12,43 +12,43 @@ namespace FinalProject
     {
         public CurrentUser(IAuthenticatedUser user) : base(user.Id, user.Name, user.ScreenName) { }
 
-        public void retweet(Tweet currentTweet)
+        public void Retweet(Tweet currentTweet)
         {
             int retweet = currentTweet.Retweets;
             retweet += 1;
             currentTweet.Retweets = retweet;
         }
 
-        public void like(Tweet currentTweet)
+        public void Like(Tweet currentTweet)
         {
             int like = currentTweet.Likes;
             like += 1;
             currentTweet.Likes = like;
         }
 
-        public bool sendTweet(GuiMessage message)
+        public bool SendTweet(GuiMessage message)
         {
             var sentTweet = Tweetinvi.Tweet.PublishTweet(message.Text);
             return sentTweet?.IsTweetPublished ?? false;
         }
 
-        public bool sendDirectMessage(GuiMessage message)
+        public bool SendDirectMessage(GuiMessage message)
         {
             var sentMessage = Tweetinvi.Message.PublishMessage(message.Text, message.ID);
             return sentMessage.IsMessagePublished;
         }
 
-        public bool followUser(User selected)
+        public bool FollowUser(User selected)
         {
             IAuthenticatedUser auth = Tweetinvi.User.GetAuthenticatedUser();
             return auth.FollowUser(selected.Name);
         }
-        public bool unfollowUser(User selected)
+        public bool UnfollowUser(User selected)
         {
             IAuthenticatedUser auth = Tweetinvi.User.GetAuthenticatedUser();
             return auth.UnFollowUser(selected.Name);
         }
-        public void logout()
+        public void Logout()
         {
 
         }

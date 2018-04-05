@@ -26,7 +26,7 @@ namespace FinalProject
         }
         public string Username
         {
-            get { return tweet.Creator.ScreenName; }
+            get { return tweet.Sender.ScreenName; }
         }
 
         private ClickDelegate clickDelegate;
@@ -48,7 +48,8 @@ namespace FinalProject
 
         public void HandleUserSelection()
         {
-            clickDelegate?.Invoke(MainWindowView.USER_SELECT, Username);
+            var args = new ClickEventArgs(ClickType.UserSelect, Username);
+            clickDelegate?.Invoke(args);
         }
     }
 }

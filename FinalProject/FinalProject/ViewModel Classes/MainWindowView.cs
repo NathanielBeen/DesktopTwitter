@@ -10,18 +10,10 @@ using System.Windows.Data;
 
 namespace FinalProject
 {
-    public delegate void ClickDelegate(int type, string value);
+    public delegate void ClickDelegate(ClickEventArgs args);
 
     public class MainWindowView : INotifyPropertyChanged
     {
-        public const int USER_SELECT = 0;
-        public const int CONVO_SELECT = 1;
-
-        public const int MAIN_VIEW = 0;
-        public const int USER_VIEW = 1;
-        public const int CONVERSATION_VIEW = 2;
-        public const int DM_VIEW = 3;
-
         private TwitterApplication application;
         public MessageCollectionView MessageView { get; }
 
@@ -39,8 +31,8 @@ namespace FinalProject
             }
         }
 
-        private int viewMode;
-        public int ViewMode
+        private ViewMode viewMode;
+        public ViewMode ViewMode
         {
             get { return viewMode; }
             set
@@ -48,8 +40,8 @@ namespace FinalProject
                 if (value != viewMode)
                 {
                     viewMode = value;
-                    if (viewMode == MAIN_VIEW || viewMode == CONVERSATION_VIEW) { SelectedUser = application.User; }
-                    updateViewModels(value);
+                    if (viewMode == ViewMode.MainView || viewMode == ViewMode.ConversationView) { SelectedUser = application.User; }
+                    UpdateViewModels(value);
                     OnPropertyChanged(nameof(ViewMode));
                 }
             }
@@ -78,55 +70,54 @@ namespace FinalProject
 
             MessageView = new MessageCollectionView(app, new ClickDelegate(HandleClick));
             SenderView = new TweetSenderView(app);
-            viewMode = MAIN_VIEW;
-            updateViewModels(viewMode);
+            viewMode = ViewMode.MainView;
+            UpdateViewModels(viewMode);
         }
 
-        public void OnPropertyChanged(string name)
+        protected void OnPropertyChanged(string name)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
         }
 
-        public void updateViewModels(int newView)
+        public void UpdateViewModels(ViewMode newView)
         {
             MessageView.ChangeViewMode(newView, selectedUser);
             switch (newView)
             {
-                case MAIN_VIEW:
+                case ViewMode.MainView:
                     SenderView = new TweetSenderView(application);
                     break;
-                case USER_VIEW:
+                case ViewMode.UserView:
                     SenderView = new TweetSenderView(application, selectedUser.Handle);
                     break;
-                case CONVERSATION_VIEW:
+                case ViewMode.ConversationView:
                     SenderView = null;
                     break;
-                case DM_VIEW:
+                case ViewMode.DMView:
                     SenderView = new DirectMessageSenderView(application, selectedUser.Handle);
                     break;
 
             }
         }
 
-        public void HandleClick(int type, string value)
+        public void HandleClick(ClickEventArgs args)
         {
-            switch (type)
+            switch (args.Type)
             {
-                case USER_SELECT:
-                    ChangeSelectedUser(value);
-                    ViewMode = USER_VIEW;
+                case ClickType.UserSelect:
+                    ChangeSelectedUser(new User(args.Value));
+                    ViewMode = ViewMode.UserView;
                     break;
-                case CONVO_SELECT:
-                    ChangeSelectedUser(value);
-                    ViewMode = DM_VIEW;
+                case ClickType.ConversationSelect:
+                    ChangeSelectedUser(new User(args.Value));
+                    ViewMode = ViewMode.DMView;
                     break;
                     
             }
         }
 
-        public void ChangeSelectedUser(string username)
+        public void ChangeSelectedUser(User user)
         {
-            User user = new User(username);
             SelectedUser = user;
         }
     }

@@ -13,7 +13,7 @@ namespace FinalProject
 
         public HomeTimelineGetter(MessageFilter filter) : base(filter) { }
 
-        public override List<ITweet> getITweets()
+        public override List<ITweet> GetITweets()
         {
             return Timeline.GetHomeTimeline().ToList();
         }

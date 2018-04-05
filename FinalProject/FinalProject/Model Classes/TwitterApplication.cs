@@ -13,28 +13,28 @@ namespace FinalProject
 
         public TwitterApplication(CurrentUser user) { User = user; }
 
-        public List<Message> getHomeTimeline()
+        public List<Message> GetHomeTimeline()
         {
             var getter = new HomeTimelineGetter(Filter);
-            return getter.getMessages();
+            return getter.GetMessages();
         }
 
-        public List<Message> getUserTimeline(User selectedUser)
+        public List<Message> GetUserTimeline(User selectedUser)
         {
             var getter = new UserTimelineGetter(Filter, selectedUser);
-            return getter.getMessages();
+            return getter.GetMessages();
         }
 
-        public List<Message> getConversations()
+        public List<Message> GetConversations()
         {
             var getter = new ConversationGetter();
-            return getter.getMessages();
+            return getter.GetMessages();
         }
 
-        public List<Message> getUserDMs(User selectedUser)
+        public List<Message> GetUserDMs(User selectedUser)
         {
             var getter = new DirectMessageGetter(selectedUser);
-            return getter.getMessages();
+            return getter.GetMessages();
         }
     }
 }

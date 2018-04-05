@@ -8,24 +8,24 @@ namespace FinalProject
 {
     public class UserBlacklistComponent : IFilterComponent
     {
-        private List<string> usersToExclude;
+        private List<FilterItem> usersToExclude;
 
-        public UserBlacklistComponent(List<string> ids)
+        public UserBlacklistComponent(List<FilterItem> ids)
         {
             usersToExclude = ids;
         }
 
         //need to figure out how user ids are going to be passed around
-        public void addToFilter(string id) { usersToExclude.Add(id); }
+        public void AddToFilter(FilterItem id) { usersToExclude.Add(id); }
 
-        public void removeFromFilter(string id)
+        public void RemoveFromFilter(FilterItem id)
         {
             if (usersToExclude.Contains(id)) { usersToExclude.Remove(id); }
         }
 
-        public bool messagePassesFilter(Message message)
+        public bool MessagePassesFilter(Message message)
         {
-            foreach (string id in usersToExclude)
+            foreach (FilterItem id in usersToExclude)
             {
                 //return false if the user authored the message
             }

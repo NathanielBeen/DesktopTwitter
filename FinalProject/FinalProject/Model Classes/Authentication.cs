@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FinalProject.Model_Classes;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
@@ -24,19 +25,19 @@ namespace FinalProject
             AppCredentials = new TwitterCredentials(CONSUMERKEY, CONSUMERSECRET);
         }
 
-        public void redirectToTwitter()
+        public void RedirectToTwitter()
         {
             context = AuthFlow.InitAuthentication(AppCredentials);
             Process.Start(context.AuthorizationURL);
         }
 
-        public void recievePin(string pin)
+        public void RecievePin(PIN pin)
         {
-            var userCredentials = AuthFlow.CreateCredentialsFromVerifierCode(pin, context);
+            var userCredentials = AuthFlow.CreateCredentialsFromVerifierCode(pin.Input, context);
             Auth.SetCredentials(userCredentials);
         }
         
-        public IAuthenticatedUser generateCurrentUser()
+        public IAuthenticatedUser GenerateCurrentUser()
         {
             return Tweetinvi.User.GetAuthenticatedUser();
         }

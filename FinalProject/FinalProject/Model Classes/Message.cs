@@ -10,6 +10,17 @@ namespace FinalProject
 {
     public class Message
     {
+        public string Text { get; set; }
 
+        public IUser Sender { get; set; } 
+
+        public long Id { get; set; }
+
+        public Message(string text, IUser sender, long id)
+        {
+            Text = text;
+            Sender = sender;
+            Id = id;
+        }
     }
 }

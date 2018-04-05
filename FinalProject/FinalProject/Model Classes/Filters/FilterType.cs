@@ -6,8 +6,11 @@ using System.Threading.Tasks;
 
 namespace FinalProject
 {
-    interface IMessageGetter
+    public enum FilterType
     {
-        List<Message> GetMessages();
+        WordWhiteList = 0,
+        WordBlackList = 1,
+        UserWhiteList = 2,
+        UserBlackList = 3
     }
 }

@@ -14,7 +14,7 @@ namespace FinalProject
 
         public string Username
         {
-            get { return conversation.Username; }
+            get { return conversation.Sender.Name; }
         }
 
         private ClickDelegate clickDelegate;
@@ -36,7 +36,8 @@ namespace FinalProject
 
         public void HandleUserSelection()
         {
-            clickDelegate?.Invoke(MainWindowView.CONVO_SELECT, Username);
+            var args = new ClickEventArgs(ClickType.ConversationSelect, Username);
+            clickDelegate?.Invoke(args);
         }
     }
 }

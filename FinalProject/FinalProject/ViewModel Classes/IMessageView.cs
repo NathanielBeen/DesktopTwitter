@@ -8,6 +8,6 @@ namespace FinalProject
 {
     public interface IMessageView
     {
-
+        //kindof just a placeholder now
     }
 }

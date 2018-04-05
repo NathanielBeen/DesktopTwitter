@@ -17,10 +17,10 @@ namespace FinalProject
             //inputs: search object
         }
 
-        public override List<ITweet> getITweets()
+        public override List<ITweet> GetITweets()
         {
             //replace following with a call to the search getSearchedTweets()
-            return base.getITweets();
+            return base.GetITweets();
         }
     }
 }

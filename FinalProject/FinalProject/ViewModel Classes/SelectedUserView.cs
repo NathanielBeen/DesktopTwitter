@@ -25,7 +25,7 @@ namespace FinalProject
         {
             get
             {
-                return followUserCommand ?? (followUserCommand = new RelayCommand(() => handleFolllowButtonClick()));
+                return followUserCommand ?? (followUserCommand = new RelayCommand(() => HandleFolllowButtonClick()));
             }
         }
 
@@ -69,10 +69,12 @@ namespace FinalProject
             Follow = GetFollowStatus();
             CanDM = DmStatus();
         }
-        public void OnPropertyChanged(string name)
+
+        protected void OnPropertyChanged(string name)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
         }
+
         public int GetFollowStatus()
         {
             if (relationship.Following)
@@ -93,15 +95,16 @@ namespace FinalProject
         {
             return relationship.CanSendDirectMessage;
         }
-        public void handleFolllowButtonClick()
+
+        public void HandleFolllowButtonClick()
         {
             if (Follow == FOLLOWING)
             {
-                currentUser.unfollowUser(user);
+                currentUser.UnfollowUser(user);
             }
             else if (Follow == UNFOLLOWING)
             {
-                currentUser.followUser(user);
+                currentUser.FollowUser(user);
             }
         }
 

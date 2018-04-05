@@ -18,7 +18,7 @@ namespace FinalProject
             user = u;
         }
 
-        public override List<ITweet> getITweets()
+        public override List<ITweet> GetITweets()
         {
             return Timeline.GetUserTimeline(user.ID).ToList();
         }

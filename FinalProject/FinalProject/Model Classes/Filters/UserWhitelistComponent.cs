@@ -8,24 +8,24 @@ namespace FinalProject
 {
     public class UserWhitelistComponent : IFilterComponent
     {
-        private List<string> usersToInclude;
+        private List<FilterItem> usersToInclude;
 
-        public UserWhitelistComponent(List<string> ids)
+        public UserWhitelistComponent(List<FilterItem> ids)
         {
             usersToInclude = ids;
         }
 
         //need to figure out how user ids are going to be passed around
-        public void addToFilter(string id) { usersToInclude.Add(id); }
+        public void AddToFilter(FilterItem id) { usersToInclude.Add(id); }
 
-        public void removeFromFilter(string id)
+        public void RemoveFromFilter(FilterItem id)
         {
             if (usersToInclude.Contains(id)) { usersToInclude.Remove(id); }
         }
 
-        public bool messagePassesFilter(Message message)
+        public bool MessagePassesFilter(Message message)
         {
-            foreach (string id in usersToInclude)
+            foreach (FilterItem id in usersToInclude)
             {
                 //return true if the user authored the tweet
             }

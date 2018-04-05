@@ -17,7 +17,7 @@ namespace FinalProject
         private ICommand sendTweetCommand;
         public ICommand SendTweetCommand
         {
-            get { return sendTweetCommand ?? (sendTweetCommand = new RelayCommand(() => sendTweet())); }
+            get { return sendTweetCommand ?? (sendTweetCommand = new RelayCommand(() => SendMessage())); }
         }
 
 
@@ -56,15 +56,15 @@ namespace FinalProject
             Text = (username == "") ? "" : "@"+username;
         }
 
-        public void OnPropertyChanged(string name)
+        protected void OnPropertyChanged(string name)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
         }
 
-        public void sendTweet()
+        public void SendMessage()
         {
             var message = new GuiMessage(Text, 0);
-            bool success = application.User.sendTweet(message);
+            bool success = application.User.SendTweet(message);
 
             if (success) { Text = "Tweet sent!"; }
         }

@@ -9,12 +9,6 @@ namespace FinalProject
 {
     class Conversation : Message
     {
-        public string Username { get; }
-
-        public Conversation(string username)
-            :base()
-        {
-            Username = username;
-        }
+        public Conversation(IUser user) : base("", user, 0) { }
     }
 }

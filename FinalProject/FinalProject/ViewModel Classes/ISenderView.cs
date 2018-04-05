@@ -9,6 +9,7 @@ namespace FinalProject
 {
     public interface ISenderView : INotifyPropertyChanged
     {
-
+        string Text { get; set; }
+        void SendMessage();
     }
 }

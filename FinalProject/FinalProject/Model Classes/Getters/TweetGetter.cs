@@ -17,20 +17,20 @@ namespace FinalProject
             Filter = filter;
         }
 
-        public List<Message> getMessages()
+        public List<Message> GetMessages()
         {
-            List<ITweet> baseTweets = getITweets();
-            List<Message> constructedMessages = convertITweetsToMessages(baseTweets);
-            List<Message> filteredMessages = filterTweets(constructedMessages);
+            List<ITweet> baseTweets = GetITweets();
+            List<Message> constructedMessages = ConvertITweetsToMessages(baseTweets);
+            List<Message> filteredMessages = FilterTweets(constructedMessages);
             return filteredMessages;
         }
 
-        public virtual List<ITweet> getITweets()
+        public virtual List<ITweet> GetITweets()
         {
             return new List<ITweet>();
         }
 
-        public List<Message> convertITweetsToMessages(List<ITweet> baseTweets)
+        public List<Message> ConvertITweetsToMessages(List<ITweet> baseTweets)
         {
             var constructedMessages = new List<Message>();
             foreach (ITweet tweet in baseTweets)
@@ -40,14 +40,14 @@ namespace FinalProject
             return constructedMessages;
         }
 
-        public List<Message> filterTweets(List<Message> constructedMessages)
+        public List<Message> FilterTweets(List<Message> constructedMessages)
         {
             if (Filter == null) { return constructedMessages; }
 
             var filteredMessages = new List<Message>();
             foreach (Message message in constructedMessages)
             {
-                if (Filter.messagePassesFilter(message)) { filteredMessages.Add(message); }
+                if (Filter.MessagePassesFilter(message)) { filteredMessages.Add(message); }
                 //possibly add a default to note a tweet has been blocked
             }
 

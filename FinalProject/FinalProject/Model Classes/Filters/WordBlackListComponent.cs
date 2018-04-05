@@ -8,23 +8,23 @@ namespace FinalProject
 {
     public class WordBlackListComponent : IFilterComponent
     {
-        private List<string> wordsToExclude;
+        private List<FilterItem> wordsToExclude;
 
-        public WordBlackListComponent(List<string> words)
+        public WordBlackListComponent(List<FilterItem> words)
         {
             wordsToExclude = words;
         }
 
-        public void addToFilter(string word) { wordsToExclude.Add(word); }
+        public void AddToFilter(FilterItem word) { wordsToExclude.Add(word); }
 
-        public void removeFromFilter(string word)
+        public void RemoveFromFilter(FilterItem word)
         {
             if (wordsToExclude.Contains(word)) { wordsToExclude.Remove(word); }
         }
 
-        public bool messagePassesFilter(Message message)
+        public bool MessagePassesFilter(Message message)
         {
-            foreach (string word in wordsToExclude)
+            foreach (FilterItem word in wordsToExclude)
             {
                 //return false if tweet contains word
             }

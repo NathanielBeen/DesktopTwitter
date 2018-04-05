@@ -8,11 +8,6 @@ namespace FinalProject
 {
     public class MessageFilter
     {
-        public const int WORD_WHITELIST = 0;
-        public const int WORD_BLACKLIST = 1;
-        public const int USER_WHITELIST = 2;
-        public const int USER_BLACKLIST = 3;
-
         public List<IFilterComponent> Components { get; set; }
 
         public MessageFilter()
@@ -20,28 +15,28 @@ namespace FinalProject
             Components = new List<IFilterComponent>();
         }
 
-        public IFilterComponent buildComponent(int filterType, List<string> toFilter)
+        public IFilterComponent BuildComponent(FilterType filterType, List<FilterItem> toFilter)
         {
             switch (filterType)
             {
-                case WORD_WHITELIST:
+                case FilterType.WordWhiteList:
                     return new WordWhitelistComponent(toFilter);
-                case WORD_BLACKLIST:
+                case FilterType.WordBlackList:
                     return new WordBlackListComponent(toFilter);
-                case USER_WHITELIST:
+                case FilterType.UserWhiteList:
                     return new UserWhitelistComponent(toFilter);
-                case USER_BLACKLIST:
+                case FilterType.UserBlackList:
                     return new UserBlacklistComponent(toFilter);
                 default:
                     return null;
             }
         }
 
-        public bool messagePassesFilter(Message message)
+        public bool MessagePassesFilter(Message message)
         {
             foreach (IFilterComponent comp in Components)
             {
-                if (!comp.messagePassesFilter(message)) { return false; }
+                if (!comp.MessagePassesFilter(message)) { return false; }
             }
 
             return true;

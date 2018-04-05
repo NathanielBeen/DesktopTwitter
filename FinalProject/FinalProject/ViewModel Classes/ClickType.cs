@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace FinalProject
 {
-    interface IMessageGetter
+    public enum ClickType
     {
-        List<Message> GetMessages();
+        UserSelect = 0,
+        ConversationSelect = 1
     }
 }

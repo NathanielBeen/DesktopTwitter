@@ -16,7 +16,7 @@ namespace FinalProject
         private ICommand sendMessageCommand;
         public ICommand SendMessageCommand
         {
-            get { return sendMessageCommand ?? (sendMessageCommand = new RelayCommand(() => sendMessage())); }
+            get { return sendMessageCommand ?? (sendMessageCommand = new RelayCommand(() => SendMessage())); }
         }
 
         private string text;
@@ -54,16 +54,16 @@ namespace FinalProject
             Username = name;
         }
 
-        public void OnPropertyChanged(string name)
+        protected void OnPropertyChanged(string name)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
         }
 
-        public void sendMessage()
+        public void SendMessage()
         {
             var user = Tweetinvi.User.GetUserFromScreenName(username);
             var message = new GuiMessage(Text, user?.Id ?? 0);
-            bool success = application.User.sendDirectMessage(message);
+            bool success = application.User.SendDirectMessage(message);
 
             if (success) { Text = "Message sent!"; }
         }

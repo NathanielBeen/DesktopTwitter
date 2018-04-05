@@ -44,22 +44,22 @@ namespace FinalProject
             return null;
         }
 
-        public void ChangeViewMode(int newMode, User selectedUser)
+        public void ChangeViewMode(ViewMode newMode, User selectedUser)
         {
             var messageList = new List<Message>();
             switch (newMode)
             {
-                case MainWindowView.MAIN_VIEW:
-                    messageList = application.getHomeTimeline();
+                case ViewMode.MainView:
+                    messageList = application.GetHomeTimeline();
                     break;
-                case MainWindowView.USER_VIEW:
-                    messageList = application.getUserTimeline(selectedUser);
+                case ViewMode.UserView:
+                    messageList = application.GetUserTimeline(selectedUser);
                     break;
-                case MainWindowView.CONVERSATION_VIEW:
-                    messageList = application.getConversations();
+                case ViewMode.ConversationView:
+                    messageList = application.GetConversations();
                     break;
-                case MainWindowView.DM_VIEW:
-                    messageList = application.getUserDMs(selectedUser);
+                case ViewMode.DMView:
+                    messageList = application.GetUserDMs(selectedUser);
                     break;
             }
 

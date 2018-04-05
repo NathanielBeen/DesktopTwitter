@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Tweetinvi.Logic;
+using Tweetinvi.Models;
 
 namespace FinalProject
 {
@@ -12,10 +13,12 @@ namespace FinalProject
         public long ID { get; set; }
         public string Name { get; set; }
         public string Handle { get; set; }
+        public IUser TUser { get; }
         //public System.Drawing.Bitmap image { get; set; }
 
         public User(long id, string name, string handle)
         {
+            TUser = Tweetinvi.User.GetUserFromScreenName(name);
             ID = id;
             Name = name;
             Handle = handle;
@@ -23,11 +26,11 @@ namespace FinalProject
 
         public User(string username)
         {
-            var user = Tweetinvi.User.GetUserFromScreenName(username);
+            TUser = Tweetinvi.User.GetUserFromScreenName(username);
 
-            ID = user.Id;
-            Name = user.Name;
-            Handle = user.ScreenName;
+            ID = TUser.Id;
+            Name = TUser.Name;
+            Handle = TUser.ScreenName;
         }
     }
 }

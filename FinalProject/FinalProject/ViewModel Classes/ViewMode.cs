@@ -6,8 +6,11 @@ using System.Threading.Tasks;
 
 namespace FinalProject
 {
-    interface IMessageGetter
+    public enum ViewMode
     {
-        List<Message> GetMessages();
+        MainView = 0,
+        UserView = 1,
+        ConversationView = 2,
+        DMView = 3
     }
 }
