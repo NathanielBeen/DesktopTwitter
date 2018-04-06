@@ -14,7 +14,7 @@ namespace FinalProject
 
         public string Username
         {
-            get { return conversation.Sender.Name; }
+            get { return conversation.Sender.ScreenName; }
         }
 
         private ClickDelegate clickDelegate;

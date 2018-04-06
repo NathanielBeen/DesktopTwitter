@@ -10,5 +10,8 @@
         <Label Content="Enter the PIN provided by Twitter" HorizontalAlignment="Center"/>
         <TextBox Name="pinTxt"/>
         <Button Name="loginBtn" Content="Log in" Click="loginBtn_Click"/>
+        <Label HorizontalAlignment="Center" Content="Credentials for the group:"/>
+        <Label HorizontalAlignment="Center" Content="Username: TylerBeenElmore"/>
+        <Label HorizontalAlignment="Center" Content="Password: Finalproject"/>
     </StackPanel>
 </Window>
