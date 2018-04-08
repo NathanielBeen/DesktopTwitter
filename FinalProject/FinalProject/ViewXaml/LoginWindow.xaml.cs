@@ -48,6 +48,19 @@ namespace FinalProject
             var main = new MainWindow(user);
             main.Show();
             Hide();
+
+            
+
+            /*
+             * MS
+             * When I close the MainWindow the application doesn't close
+             * The reason is you have hidden this window which keeps the thread
+             * going even if the MainWindow gets killed.
+             * 
+             * You can tap into the MainWindows.Closed event to throw control back to this 
+             * window and either show it again so someone else can log in
+             * or you can just close this window. 
+             */
         }
     }
 }
