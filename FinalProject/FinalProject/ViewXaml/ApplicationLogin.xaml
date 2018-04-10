@@ -1,0 +1,24 @@
+﻿<Window x:Class="FinalProject.ApplicationLogin"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FinalProject"
+        mc:Ignorable="d"
+        Title="ApplicationLogin" Height="300" Width="300">
+    <StackPanel>
+        <Label Content ="Username"/>
+        <TextBox Name="textUsername"/>
+        <Label Content="Password"/>
+        <TextBox Name="textPassword"/>
+        <Label Name="confirmPassword" Content="Confirm Password"/>
+        <TextBox Name="textConPassword" />
+        <Button Name="loginButton" Content="Login" Click="loginButton_Click"/>
+        <Label Name="questionLabel" Content="Need an account?"/>
+        <Button Name="createUserButton" Content="Create Account" Click="createUserButton_Click"/>
+        
+
+
+
+    </StackPanel>
+</Window>

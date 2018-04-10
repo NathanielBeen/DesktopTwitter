@@ -6,7 +6,9 @@ using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Data;
+using System.Windows.Input;
 
 namespace FinalProject
 {
@@ -47,6 +49,9 @@ namespace FinalProject
             }
         }
 
+        private Account currentAccount;
+        public string UsernameString { get { return "You are logged in as: " + currentAccount.Username + " using twitter account " + application.User.Handle; } }
+
         private User selectedUser;
         public User SelectedUser
         {
@@ -63,11 +68,14 @@ namespace FinalProject
 
         public event PropertyChangedEventHandler PropertyChanged;
 
-        public MainWindowView(TwitterApplication app)
+        private ICommand logoutCommand;
+        public ICommand LogoutCommand { get { return logoutCommand ?? (logoutCommand = new RelayCommand(() => handleLogout())); } }
+
+        public MainWindowView(TwitterApplication app, Account curAccount)
         {
             application = app;
             selectedUser = app.User;
-
+            currentAccount = curAccount;
             MessageView = new MessageCollectionView(app, new ClickDelegate(HandleClick));
             SenderView = new TweetSenderView(app);
             viewMode = ViewMode.MainView;
@@ -119,6 +127,16 @@ namespace FinalProject
         public void ChangeSelectedUser(User user)
         {
             SelectedUser = user;
+        }
+
+        public void handleLogout()
+        {
+            var window = new ApplicationLogin();
+            foreach (Window w in App.Current.Windows)
+            {
+                if (!w.Equals(window)) { w.Close(); }
+            }
+            window.Show();
         }
     }
 

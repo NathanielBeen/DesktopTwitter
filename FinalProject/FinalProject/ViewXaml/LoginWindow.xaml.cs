@@ -23,10 +23,12 @@ namespace FinalProject
     public partial class LoginWindow : Window
     {
         private Login login;
-        public LoginWindow()
+        public LoginWindow(Login l)
         {
             InitializeComponent();
-            login = new Login();
+            login = l;
+            login.RedirectToTwitter();
+
         }
 
         private void loginBtn_Click(object sender, RoutedEventArgs e)
@@ -45,9 +47,9 @@ namespace FinalProject
 
         private void launchMainWindow(CurrentUser user)
         {
-            var main = new MainWindow(user);
+            var main = new MainWindow(user, login.CurrentAccount);
             main.Show();
-            Hide();
+            Close();
 
             
 

@@ -22,14 +22,13 @@ namespace FinalProject
     {
         private MainWindowView view;
 
-        public MainWindow(CurrentUser user)
+        public MainWindow(CurrentUser user, Account account)
         {
-            view = new MainWindowView(new TwitterApplication(user));
+            view = new MainWindowView(new TwitterApplication(user), account);
             view.SelectedUser = user;
             InitializeComponent();
 
             DataContext = view;
         }
-
     }
 }

@@ -14,4 +14,5 @@
         <Label HorizontalAlignment="Center" Content="Username: TylerBeenElmore"/>
         <Label HorizontalAlignment="Center" Content="Password: Finalproject"/>
     </StackPanel>
+    
 </Window>

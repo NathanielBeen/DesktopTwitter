@@ -7,7 +7,7 @@ using System.IO;
 
 namespace FinalProject
 {
-    class Account
+    public class Account
     {
         public string Username { get; set; }
         public string Password { get; set; }
@@ -18,9 +18,7 @@ namespace FinalProject
         {
             Username = name;
             Password = password;
-            StreamWriter sw = new StreamWriter("Credentials.txt");
-            sw.WriteLine(Username," ",Password);
-            sw.Close();
+           
         }
     }
 }

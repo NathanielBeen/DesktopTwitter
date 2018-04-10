@@ -9,10 +9,13 @@ using System.IO;
 
 namespace FinalProject
 {
-    class Login
+    public class Login
     {
         private Authentication authentication;
-
+        public Account CurrentAccount
+        {
+            get; set; 
+        }
         public Login()
         {
             authentication = new Authentication();
@@ -31,13 +34,18 @@ namespace FinalProject
 
             while(tempLine != null)
             {
-                var credentials = tempLine.Split(" ");
-                tempName = credentials[0];
-                tempPassword = credentials[1];
-
-                if(tempName.Equals(username) && tempPassword.Equals(password))
+                var credentials = tempLine.Split(' ');
+                if (credentials.Count() == 2)
                 {
-                    return true;
+                    tempName = credentials[0];
+                    tempPassword = credentials[1];
+
+                    if (tempName.Equals(username) && tempPassword.Equals(password))
+                    {
+                        Account currentAccount = new Account(username, password);
+                        CurrentAccount = currentAccount;
+                        return true;
+                    }
                 }
 
                 tempLine = sr.ReadLine();
@@ -54,6 +62,21 @@ namespace FinalProject
                 else { return new CurrentUser(user); }
             }
             catch { return null; }
+        }
+        public bool CreateAccount(string username, string password, string conPassword)
+        {
+            if (username == "" || password == "" || conPassword == "") { return false; }
+            if (password == conPassword)
+            {
+                StreamWriter sw = new StreamWriter("Credentials.txt", true);
+                sw.WriteLine(username+ " "+password);
+                sw.Close();
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
     }
 }

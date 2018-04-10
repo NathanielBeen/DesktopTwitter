@@ -78,7 +78,6 @@ C:\Users\Scott\source\repos\Final-Project\FinalProject\FinalProject\bin\Debug\Tw
 C:\Users\Scott\source\repos\Final-Project\FinalProject\FinalProject\bin\Debug\Tweetinvi.Streams.dll
 C:\Users\Scott\source\repos\Final-Project\FinalProject\FinalProject\bin\Debug\Tweetinvi.WebLogic.dll
 C:\Users\Scott\source\repos\Final-Project\FinalProject\FinalProject\bin\Debug\Newtonsoft.Json.xml
-C:\Users\Scott\source\repos\Final-Project\FinalProject\FinalProject\bin\Debug\Nito.Disposables.xml
 C:\Users\Scott\source\repos\Final-Project\FinalProject\FinalProject\bin\Debug\System.Collections.Immutable.xml
 C:\Users\Scott\source\repos\Final-Project\FinalProject\FinalProject\obj\Debug\FinalProject.g.resources
 C:\Users\Scott\source\repos\Final-Project\FinalProject\FinalProject\obj\Debug\FinalProject.Properties.Resources.resources
@@ -92,8 +91,6 @@ C:\Users\Scott\source\repos\Final-Project\FinalProject\FinalProject\bin\Debug\Ni
 C:\Users\Scott\source\repos\Final-Project\FinalProject\FinalProject\bin\Debug\System.Security.Cryptography.Encoding.dll
 C:\Users\Scott\source\repos\Final-Project\FinalProject\FinalProject\bin\Debug\System.Security.Cryptography.Primitives.dll
 C:\Users\Scott\source\repos\Final-Project\FinalProject\FinalProject\bin\Debug\Autofac.xml
-C:\Users\Scott\source\repos\Final-Project\FinalProject\FinalProject\bin\Debug\Nito.AsyncEx.Context.xml
-C:\Users\Scott\source\repos\Final-Project\FinalProject\FinalProject\bin\Debug\Nito.AsyncEx.Tasks.xml
 C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\bin\Debug\FinalProject.exe.config
 C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\bin\Debug\FinalProject.exe
 C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\bin\Debug\FinalProject.pdb
@@ -175,7 +172,6 @@ C:\Users\Scott\source\repos\Final-Project\FinalProject\FinalProject\bin\Debug\Mi
 C:\Users\Scott\source\repos\Final-Project\FinalProject\FinalProject\bin\Debug\System.Windows.Interactivity.dll
 C:\Users\Scott\source\repos\Final-Project\FinalProject\FinalProject\bin\Debug\Microsoft.Expression.Interactions.xml
 C:\Users\Scott\source\repos\Final-Project\FinalProject\FinalProject\bin\Debug\System.Windows.Interactivity.xml
-C:\Users\Scott\source\repos\Final-Project\FinalProject\FinalProject\obj\Debug\FinalProject.csprojResolveAssemblyReference.cache
 C:\Users\Scott\source\repos\Final-Project\FinalProject\FinalProject\obj\Debug\ViewXaml\Custom Controls\ConversationControl.g.cs
 C:\Users\Scott\source\repos\Final-Project\FinalProject\FinalProject\obj\Debug\ViewXaml\Custom Controls\DirectMessageControl.g.cs
 C:\Users\Scott\source\repos\Final-Project\FinalProject\FinalProject\obj\Debug\ViewXaml\Custom Controls\TweetSenderControl.g.cs
@@ -220,3 +216,6 @@ C:\Users\ELMO4982\Documents\final-project\FinalProject\FinalProject\obj\Debug\Ap
 C:\Users\ELMO4982\Documents\final-project\FinalProject\FinalProject\obj\Debug\GeneratedInternalTypeHelper.g.cs
 C:\Users\ELMO4982\Documents\final-project\FinalProject\FinalProject\obj\Debug\FinalProject_MarkupCompile.cache
 C:\Users\ELMO4982\Documents\final-project\FinalProject\FinalProject\obj\Debug\FinalProject_MarkupCompile.lref
+C:\Users\Scott\source\repos\Final-Project\FinalProject\FinalProject\obj\Debug\ViewXaml\ApplicationLogin.g.cs
+C:\Users\Scott\source\repos\Final-Project\FinalProject\FinalProject\obj\Debug\ViewXaml\ApplicationLogin.baml
+C:\Users\Scott\source\repos\Final-Project\FinalProject\FinalProject\obj\Debug\FinalProject.csprojResolveAssemblyReference.cache
