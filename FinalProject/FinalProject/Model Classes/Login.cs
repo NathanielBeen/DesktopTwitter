@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Tweetinvi.Models;
+using System.IO;
 
 namespace FinalProject
 {
@@ -21,7 +22,28 @@ namespace FinalProject
         {
             authentication.RedirectToTwitter();
         }
+        public bool CheckCredentials(string username, string password)
+        {
+            string tempName, tempPassword;
+            String tempLine;
+            StreamReader sr = new StreamReader("Credentials.txt");
+            tempLine = sr.ReadLine();
 
+            while(tempLine != null)
+            {
+                var credentials = tempLine.Split(" ");
+                tempName = credentials[0];
+                tempPassword = credentials[1];
+
+                if(tempName.Equals(username) && tempPassword.Equals(password))
+                {
+                    return true;
+                }
+
+                tempLine = sr.ReadLine();
+            }
+            return false;
+        }
         public CurrentUser AttemptLogin(PIN pin)
         {
             authentication.RecievePin(pin);

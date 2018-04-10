@@ -27,12 +27,12 @@ namespace FinalProject
         {
             InitializeComponent();
             login = new Login();
-            login.RedirectToTwitter();
         }
 
         private void loginBtn_Click(object sender, RoutedEventArgs e)
         {
             CurrentUser user = login.AttemptLogin(new PIN(pinTxt.Text));
+
             if (user == null) { NotifyInvalidLogin(); }
             else { launchMainWindow(user); }
         }
