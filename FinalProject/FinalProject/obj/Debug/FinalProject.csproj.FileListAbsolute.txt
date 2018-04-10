@@ -203,3 +203,20 @@ C:\Users\Scott\source\repos\Final-Project\FinalProject\FinalProject\obj\Debug\Vi
 C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\obj\Debug\ViewXaml\Custom Controls\SelectedUserControl.g.cs
 C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\obj\Debug\ViewXaml\Custom Controls\SelectedUserControl.baml
 C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\obj\Debug\FinalProject.csprojResolveAssemblyReference.cache
+C:\Users\ELMO4982\Documents\final-project\FinalProject\FinalProject\obj\Debug\FinalProject.csprojResolveAssemblyReference.cache
+C:\Users\ELMO4982\Documents\final-project\FinalProject\FinalProject\obj\Debug\ViewXaml\Custom Controls\ConversationControl.g.cs
+C:\Users\ELMO4982\Documents\final-project\FinalProject\FinalProject\obj\Debug\ViewXaml\Custom Controls\DirectMessageControl.g.cs
+C:\Users\ELMO4982\Documents\final-project\FinalProject\FinalProject\obj\Debug\ViewXaml\Custom Controls\SelectedUserControl.g.cs
+C:\Users\ELMO4982\Documents\final-project\FinalProject\FinalProject\obj\Debug\ViewXaml\Custom Controls\TweetSenderControl.g.cs
+C:\Users\ELMO4982\Documents\final-project\FinalProject\FinalProject\obj\Debug\ViewXaml\Custom Pages\DirectMessagePage.g.cs
+C:\Users\ELMO4982\Documents\final-project\FinalProject\FinalProject\obj\Debug\ViewXaml\LoginWindow.g.cs
+C:\Users\ELMO4982\Documents\final-project\FinalProject\FinalProject\obj\Debug\ViewXaml\Custom Pages\MainPage.g.cs
+C:\Users\ELMO4982\Documents\final-project\FinalProject\FinalProject\obj\Debug\ViewXaml\MainWindow.g.cs
+C:\Users\ELMO4982\Documents\final-project\FinalProject\FinalProject\obj\Debug\ViewXaml\Custom Controls\DirectMessageSenderControl.g.cs
+C:\Users\ELMO4982\Documents\final-project\FinalProject\FinalProject\obj\Debug\ViewXaml\Custom Controls\MessageCollectionControl.g.cs
+C:\Users\ELMO4982\Documents\final-project\FinalProject\FinalProject\obj\Debug\ViewXaml\Custom Pages\SelectedUserPage.g.cs
+C:\Users\ELMO4982\Documents\final-project\FinalProject\FinalProject\obj\Debug\ViewXaml\Custom Controls\TweetControl.g.cs
+C:\Users\ELMO4982\Documents\final-project\FinalProject\FinalProject\obj\Debug\App.g.cs
+C:\Users\ELMO4982\Documents\final-project\FinalProject\FinalProject\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\ELMO4982\Documents\final-project\FinalProject\FinalProject\obj\Debug\FinalProject_MarkupCompile.cache
+C:\Users\ELMO4982\Documents\final-project\FinalProject\FinalProject\obj\Debug\FinalProject_MarkupCompile.lref

@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\obj\Debug\
+C:\Users\ELMO4982\Documents\final-project\FinalProject\FinalProject\obj\Debug\
 FinalProject
 none
 false
 DEBUG;TRACE
-C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\App.xaml
+C:\Users\ELMO4982\Documents\final-project\FinalProject\FinalProject\App.xaml
 12533299068
 
-61420744678
-104709902723
+61-395317107
+92-800836498
 ViewXaml\Custom Controls\ConversationControl.xaml;ViewXaml\Custom Controls\DirectMessageControl.xaml;ViewXaml\Custom Controls\SelectedUserControl.xaml;ViewXaml\Custom Controls\TweetSenderControl.xaml;ViewXaml\Custom Pages\DirectMessagePage.xaml;ViewXaml\LoginWindow.xaml;ViewXaml\Custom Pages\MainPage.xaml;ViewXaml\MainWindow.xaml;ViewXaml\Custom Controls\DirectMessageSenderControl.xaml;ViewXaml\Custom Controls\MessageCollectionControl.xaml;ViewXaml\Custom Pages\SelectedUserPage.xaml;ViewXaml\Custom Controls\TweetControl.xaml;
 
-False
+True
 
