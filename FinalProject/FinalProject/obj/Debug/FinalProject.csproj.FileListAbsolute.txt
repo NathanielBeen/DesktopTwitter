@@ -131,9 +131,6 @@ C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\bin\Debug\Tweet
 C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\bin\Debug\Autofac.xml
 C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\bin\Debug\Microsoft.Expression.Interactions.xml
 C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\bin\Debug\Newtonsoft.Json.xml
-C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\bin\Debug\Nito.AsyncEx.Context.xml
-C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\bin\Debug\Nito.AsyncEx.Tasks.xml
-C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\bin\Debug\Nito.Disposables.xml
 C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\bin\Debug\System.Collections.Immutable.xml
 C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\bin\Debug\System.Windows.Interactivity.xml
 C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\obj\Debug\ViewXaml\Custom Controls\DirectMessageControl.g.cs
@@ -198,7 +195,6 @@ C:\Users\Scott\source\repos\Final-Project\FinalProject\FinalProject\obj\Debug\Vi
 C:\Users\Scott\source\repos\Final-Project\FinalProject\FinalProject\obj\Debug\ViewXaml\Custom Controls\SelectedUserControl.baml
 C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\obj\Debug\ViewXaml\Custom Controls\SelectedUserControl.g.cs
 C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\obj\Debug\ViewXaml\Custom Controls\SelectedUserControl.baml
-C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\obj\Debug\FinalProject.csprojResolveAssemblyReference.cache
 C:\Users\ELMO4982\Documents\final-project\FinalProject\FinalProject\obj\Debug\FinalProject.csprojResolveAssemblyReference.cache
 C:\Users\ELMO4982\Documents\final-project\FinalProject\FinalProject\obj\Debug\ViewXaml\Custom Controls\ConversationControl.g.cs
 C:\Users\ELMO4982\Documents\final-project\FinalProject\FinalProject\obj\Debug\ViewXaml\Custom Controls\DirectMessageControl.g.cs
@@ -219,3 +215,8 @@ C:\Users\ELMO4982\Documents\final-project\FinalProject\FinalProject\obj\Debug\Fi
 C:\Users\Scott\source\repos\Final-Project\FinalProject\FinalProject\obj\Debug\ViewXaml\ApplicationLogin.g.cs
 C:\Users\Scott\source\repos\Final-Project\FinalProject\FinalProject\obj\Debug\ViewXaml\ApplicationLogin.baml
 C:\Users\Scott\source\repos\Final-Project\FinalProject\FinalProject\obj\Debug\FinalProject.csprojResolveAssemblyReference.cache
+C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\obj\Debug\ViewXaml\ApplicationLogin.g.cs
+C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\obj\Debug\ViewXaml\ApplicationLogin.baml
+C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\obj\Debug\ViewXaml\Custom Controls\OwnUserControl.g.cs
+C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\obj\Debug\ViewXaml\Custom Controls\OwnUserControl.baml
+C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\obj\Debug\FinalProject.csprojResolveAssemblyReference.cache

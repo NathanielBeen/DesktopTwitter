@@ -29,7 +29,7 @@ namespace FinalProject
         {
             string tempName, tempPassword;
             String tempLine;
-            StreamReader sr = new StreamReader("Credentials.txt");
+            StreamReader sr = new StreamReader("../../Credentials.txt");
             tempLine = sr.ReadLine();
 
             while(tempLine != null)
@@ -68,7 +68,7 @@ namespace FinalProject
             if (username == "" || password == "" || conPassword == "") { return false; }
             if (password == conPassword)
             {
-                StreamWriter sw = new StreamWriter("Credentials.txt", true);
+                StreamWriter sw = new StreamWriter("../../Credentials.txt", true);
                 sw.WriteLine(username+ " "+password);
                 sw.Close();
                 return true;

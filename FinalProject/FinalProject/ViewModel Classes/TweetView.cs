@@ -20,17 +20,28 @@ namespace FinalProject
         {
             get { return tweet.Likes; }
         }
+
         public string Text
         {
             get { return tweet.Text; }
         }
+
         public string Username
         {
             get { return tweet.Sender.ScreenName; }
         }
 
-        private ClickDelegate clickDelegate;
+        public bool CurrentLiked
+        {
+            get { return tweet.UserLiked; }
+        }
 
+        public bool CurrentRetweeted
+        {
+            get { return tweet.UserRetweeted; }
+        }
+
+        private ClickDelegate userClickDelegate;
         private ICommand selectUserCommand;
         public ICommand SelectUserCommand
         {
@@ -40,16 +51,53 @@ namespace FinalProject
             }
         }
 
-        public TweetView(Tweet t, ClickDelegate del)
+        private TweetDelegate tweetDelegate;
+        private ICommand likeTweetCommand;
+        public ICommand LikeTweetCommand
+        {
+            get
+            {
+                return likeTweetCommand ?? (likeTweetCommand = new RelayCommand(() => HandleTweetLiked()));
+            }
+        }
+
+        private ICommand retweetTweetCommand;
+        public ICommand RetweetTweetCommand
+        {
+            get
+            {
+                return retweetTweetCommand ?? (retweetTweetCommand = new RelayCommand(() => HandleTweetRetweet()));
+            }
+        }
+
+        public TweetView(Tweet t, ClickDelegate userDel, TweetDelegate tweetDel)
         {
             tweet = t;
-            clickDelegate = del;
+            userClickDelegate = userDel;
+            tweetDelegate = tweetDel;
+        }
+
+        public TweetView CreateUpdatedView()
+        {
+            return new TweetView(tweet.getUpdatedMessage(), userClickDelegate, tweetDelegate);
         }
 
         public void HandleUserSelection()
         {
             var args = new ClickEventArgs(ClickType.UserSelect, Username);
-            clickDelegate?.Invoke(args);
+            userClickDelegate?.Invoke(args);
+        }
+
+        public void HandleTweetLiked()
+        {
+            var args = new TweetEventArgs(ClickType.TweetLike, this, tweet);
+            tweetDelegate?.Invoke(args);
+        }
+
+        public void HandleTweetRetweet()
+        {
+            var args = new TweetEventArgs(ClickType.TweetRetweet, this, tweet);
+            tweetDelegate?.Invoke(args);
         }
     }
 }

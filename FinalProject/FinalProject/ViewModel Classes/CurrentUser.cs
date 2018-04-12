@@ -12,20 +12,6 @@ namespace FinalProject
     {
         public CurrentUser(IAuthenticatedUser user) : base(user.Id, user.Name, user.ScreenName) { }
 
-        public void Retweet(Tweet currentTweet)
-        {
-            int retweet = currentTweet.Retweets;
-            retweet += 1;
-            currentTweet.Retweets = retweet;
-        }
-
-        public void Like(Tweet currentTweet)
-        {
-            int like = currentTweet.Likes;
-            like += 1;
-            currentTweet.Likes = like;
-        }
-
         public bool SendTweet(GuiMessage message)
         {
             var sentTweet = Tweetinvi.Tweet.PublishTweet(message.Text);
@@ -41,16 +27,26 @@ namespace FinalProject
         public bool FollowUser(User selected)
         {
             IAuthenticatedUser auth = Tweetinvi.User.GetAuthenticatedUser();
-            return auth.FollowUser(selected.Name);
+            return auth.FollowUser(selected.Handle);
         }
         public bool UnfollowUser(User selected)
         {
             IAuthenticatedUser auth = Tweetinvi.User.GetAuthenticatedUser();
-            return auth.UnFollowUser(selected.Name);
+            return auth.UnFollowUser(selected.Handle);
         }
-        public void Logout()
+        
+        public bool LikeTweet(Tweet tweet)
         {
+            var baseTweet = Tweetinvi.Tweet.GetTweet(tweet.Id);
+            if (baseTweet.Favorited) { return Tweetinvi.Tweet.UnFavoriteTweet(baseTweet); }
+            else { return Tweetinvi.Tweet.FavoriteTweet(baseTweet); }
+        }
 
+        public bool RetweetTweet(Tweet tweet)
+        {
+            var baseTweet = Tweetinvi.Tweet.GetTweet(tweet.Id);
+            if (baseTweet.Retweeted) { return Tweetinvi.Tweet.UnRetweet(baseTweet); }
+            else { return Tweetinvi.Tweet.PublishRetweet(baseTweet).IsTweetPublished; }
         }
     }
 }

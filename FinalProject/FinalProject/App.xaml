@@ -3,7 +3,4 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:FinalProject"
              StartupUri="ViewXaml/ApplicationLogin.xaml">
-    <Application.Resources>
-         
-    </Application.Resources>
 </Application>

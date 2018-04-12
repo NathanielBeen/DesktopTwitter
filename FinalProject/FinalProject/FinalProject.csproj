@@ -176,12 +176,17 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="ViewXaml\Custom Controls\OwnUserControl.xaml.cs">
+      <DependentUpon>OwnUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModel Classes\IUserView.cs" />
     <Compile Include="Model Classes\Account.cs" />
     <Compile Include="Model Classes\Filters\FilterItem.cs" />
     <Compile Include="Model Classes\Filters\FilterType.cs" />
     <Compile Include="Model Classes\PIN.cs" />
     <Compile Include="ViewModel Classes\ClickEventArgs.cs" />
     <Compile Include="ViewModel Classes\ClickType.cs" />
+    <Compile Include="ViewModel Classes\OwnUserView.cs" />
     <Compile Include="ViewModel Classes\ViewMode.cs" />
     <Compile Include="ViewModel Classes\ConversationView.cs" />
     <Compile Include="Model Classes\Authentication.cs" />
@@ -251,6 +256,10 @@
     <Compile Include="Model Classes\Filters\UserWhitelistComponent.cs" />
     <Compile Include="Model Classes\Filters\WordBlackListComponent.cs" />
     <Compile Include="Model Classes\Filters\WordWhitelistComponent.cs" />
+    <Page Include="ViewXaml\Custom Controls\OwnUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="ViewXaml\ApplicationLogin.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

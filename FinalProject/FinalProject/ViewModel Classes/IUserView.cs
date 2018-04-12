@@ -6,11 +6,8 @@ using System.Threading.Tasks;
 
 namespace FinalProject
 {
-    public enum ClickType
+    public interface IUserView
     {
-        UserSelect = 0,
-        ConversationSelect = 1,
-        TweetLike = 2,
-        TweetRetweet = 3
+        //put stuff here once more is written
     }
 }

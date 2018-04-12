@@ -1,7 +1,9 @@
 ﻿
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Collections.Specialized;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,7 +24,7 @@ namespace FinalProject
             application = app;
             clickDelegate = click;
         }
-
+    
         public void SetNewMessages(List<Message> modelMessages)
         {
             var messages = new List<IMessageView>();
@@ -38,7 +40,7 @@ namespace FinalProject
 
         public IMessageView BuildMessage(Message message)
         {
-            if (message is Tweet) { return new TweetView((Tweet)message, clickDelegate); }
+            if (message is Tweet) { return new TweetView((Tweet)message, clickDelegate, HandleTweetEvent); }
             else if (message is DirectMessage) { return new DirectMessageView((DirectMessage)message, application.User); }
             else if (message is Conversation) { return new ConversationView((Conversation)message, clickDelegate); }
             return null;
@@ -64,6 +66,33 @@ namespace FinalProject
             }
 
             SetNewMessages(messageList);
+        }
+
+        public void HandleTweetEvent(TweetEventArgs args)
+        {
+            switch (args.Type)
+            {
+                case ClickType.TweetLike:
+                    application.User.LikeTweet(args.Tweet);
+                    break;
+                case ClickType.TweetRetweet:
+                    application.User.RetweetTweet(args.Tweet);
+                    break;
+                default:
+                    return;
+            }
+            UpdateMessage(args.View);
+        }
+
+        public void UpdateMessage(IMessageView to_update)
+        {
+            if (Messages.Contains(to_update))
+            {
+                int pos = Messages.IndexOf(to_update);
+                Messages.Remove(to_update);
+                to_update = (to_update as TweetView)?.CreateUpdatedView() ?? to_update;
+                Messages.Insert(pos, to_update);
+            }
         }
     }
 }

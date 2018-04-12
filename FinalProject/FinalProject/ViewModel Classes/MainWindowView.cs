@@ -14,6 +14,8 @@ namespace FinalProject
 {
     public delegate void ClickDelegate(ClickEventArgs args);
 
+    public delegate void TweetDelegate(TweetEventArgs args);
+
     public class MainWindowView : INotifyPropertyChanged
     {
         private TwitterApplication application;
@@ -29,6 +31,20 @@ namespace FinalProject
                 {
                     senderView = value;
                     OnPropertyChanged(nameof(SenderView));
+                }
+            }
+        }
+
+        private IUserView userView;
+        public IUserView UserView
+        {
+            get { return userView; }
+            set
+            {
+                if (value != userView)
+                {
+                    userView = value;
+                    OnPropertyChanged(nameof(UserView));
                 }
             }
         }
@@ -50,7 +66,7 @@ namespace FinalProject
         }
 
         private Account currentAccount;
-        public string UsernameString { get { return "You are logged in as: " + currentAccount.Username + " using twitter account " + application.User.Handle; } }
+        public string UsernameString { get { return "You are logged in as: " + currentAccount.Username + " using twitter account: " + application.User.Handle; } }
 
         private User selectedUser;
         public User SelectedUser
@@ -78,6 +94,7 @@ namespace FinalProject
             currentAccount = curAccount;
             MessageView = new MessageCollectionView(app, new ClickDelegate(HandleClick));
             SenderView = new TweetSenderView(app);
+            UserView = new OwnUserView(selectedUser);
             viewMode = ViewMode.MainView;
             UpdateViewModels(viewMode);
         }
@@ -90,6 +107,7 @@ namespace FinalProject
         public void UpdateViewModels(ViewMode newView)
         {
             MessageView.ChangeViewMode(newView, selectedUser);
+            updateUserView();
             switch (newView)
             {
                 case ViewMode.MainView:
@@ -106,6 +124,15 @@ namespace FinalProject
                     break;
 
             }
+        }
+
+        public void updateUserView()
+        {
+            if (selectedUser.Equals(application.User))
+            {
+                UserView = new OwnUserView(selectedUser);
+            }
+            else { UserView = new SelectedUserView(new ClickDelegate(HandleClick), application.User, selectedUser); }
         }
 
         public void HandleClick(ClickEventArgs args)

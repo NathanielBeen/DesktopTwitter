@@ -4,20 +4,22 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Input;
 using Tweetinvi;
 using Tweetinvi.Models;
 
 namespace FinalProject
 {
-    class SelectedUserView : INotifyPropertyChanged
+    class SelectedUserView : INotifyPropertyChanged, IUserView
     {
         public const int FOLLOWING = 0;
         public const int UNFOLLOWING = 1;
         public const int FOLLOWINGREQUEST = 2;
+
         private User user;
         private CurrentUser currentUser;
-        private IRelationshipDetails relationship;
+
         public event PropertyChangedEventHandler PropertyChanged;
 
         private ICommand followUserCommand;
@@ -26,6 +28,16 @@ namespace FinalProject
             get
             {
                 return followUserCommand ?? (followUserCommand = new RelayCommand(() => HandleFolllowButtonClick()));
+            }
+        }
+
+        private ClickDelegate clickDelegate;
+        private ICommand messageUserCommand;
+        public ICommand MessageUserCommand
+        {
+            get
+            {
+                return messageUserCommand ?? (messageUserCommand = new RelayCommand(() => HandleMessageButtonClick()));
             }
         }
 
@@ -48,8 +60,8 @@ namespace FinalProject
             }
         }
 
-        private bool canDM;
-        public bool CanDM
+        private Visibility canDM;
+        public Visibility CanDM
         {
             get{return canDM;}
             set
@@ -61,11 +73,11 @@ namespace FinalProject
                 }
             }
         }
-        public SelectedUserView(CurrentUser cur, User sel)
+        public SelectedUserView(ClickDelegate click, CurrentUser cur, User sel)
         {
+            clickDelegate = click;
             user = sel;
             currentUser = cur;
-            relationship = Friendship.GetRelationshipDetailsBetween(currentUser.Name, user.Name);
             Follow = GetFollowStatus();
             CanDM = DmStatus();
         }
@@ -77,6 +89,7 @@ namespace FinalProject
 
         public int GetFollowStatus()
         {
+            var relationship = Friendship.GetRelationshipDetailsBetween(currentUser.Handle, user.Handle);
             if (relationship.Following)
             {
                 return FOLLOWING;
@@ -91,9 +104,10 @@ namespace FinalProject
             }
 
         }
-        public bool DmStatus()
+        public Visibility DmStatus()
         {
-            return relationship.CanSendDirectMessage;
+            var relationship = Friendship.GetRelationshipDetailsBetween(currentUser.Handle, user.Handle);
+            return (relationship.CanSendDirectMessage) ? Visibility.Visible : Visibility.Collapsed;
         }
 
         public void HandleFolllowButtonClick()
@@ -106,7 +120,16 @@ namespace FinalProject
             {
                 currentUser.FollowUser(user);
             }
+            Follow = GetFollowStatus();
         }
 
+        public void HandleMessageButtonClick()
+        {
+            var relationship = Friendship.GetRelationshipDetailsBetween(currentUser.Handle, user.Handle);
+            if (!relationship.CanSendDirectMessage) { return; }
+
+            var args = new ClickEventArgs(ClickType.ConversationSelect, user.Handle);
+            clickDelegate?.Invoke(args);
+        }
     }
 }

@@ -11,7 +11,7 @@
         <local:IntToBooleanConverter x:Key="Converter"/>
         <local:ViewModelConverter x:Key="VMConverter"/>
 
-        <DataTemplate x:Key="NoSenderTemplate">
+        <DataTemplate x:Key="EmptyTemplate">
             <Label Content=""/>
         </DataTemplate>
         <DataTemplate x:Key="TweetSenderTemplate">
@@ -20,15 +20,33 @@
         <DataTemplate x:Key="DMSenderTemplate">
             <local:DirectMessageSenderControl/>
         </DataTemplate>
+        <DataTemplate x:Key="ThisUserSelected">
+            <local:OwnUserControl/>
+        </DataTemplate>
+        <DataTemplate x:Key="OtherUserSelected">
+            <local:SelectedUserControl/>
+        </DataTemplate>
 
         <Style x:Key="senderStyle" TargetType="{x:Type ContentControl}">
-            <Setter Property="ContentTemplate" Value="{StaticResource NoSenderTemplate}"/>
+            <Setter Property="ContentTemplate" Value="{StaticResource EmptyTemplate}"/>
             <Style.Triggers>
                 <DataTrigger Binding="{Binding Path=SenderView, Converter={StaticResource VMConverter}}" Value="{x:Type local:TweetSenderView}">
                     <Setter Property="ContentTemplate" Value="{StaticResource TweetSenderTemplate}"/>
                 </DataTrigger>
                 <DataTrigger Binding="{Binding Path=SenderView, Converter={StaticResource VMConverter}}" Value="{x:Type local:DirectMessageSenderView}">
                     <Setter Property="ContentTemplate" Value="{StaticResource DMSenderTemplate}"/>
+                </DataTrigger>
+            </Style.Triggers>
+        </Style>
+
+        <Style x:Key="userStyle" TargetType="{x:Type ContentControl}">
+            <Setter Property="ContentTemplate" Value="{StaticResource EmptyTemplate}"/>
+            <Style.Triggers>
+                <DataTrigger Binding="{Binding Path= UserView, Converter={StaticResource VMConverter}}" Value="{x:Type local:SelectedUserView}">
+                    <Setter Property="ContentTemplate" Value="{StaticResource OtherUserSelected}"/>
+                </DataTrigger>
+                <DataTrigger Binding="{Binding Path=UserView, Converter={StaticResource VMConverter}}" Value="{x:Type local:OwnUserView}">
+                    <Setter Property="ContentTemplate" Value="{StaticResource ThisUserSelected}"/>
                 </DataTrigger>
             </Style.Triggers>
         </Style>
@@ -67,7 +85,7 @@
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="2*"/>
             </Grid.ColumnDefinitions>
-            <Label Grid.Column="0" Content="{Binding SelectedUser.Name}" VerticalAlignment="Center"/>
+            <ContentControl Grid.Column="0" Content="{Binding}" Style="{StaticResource userStyle}"/>
             <Grid Grid.Column="1">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*"/>
