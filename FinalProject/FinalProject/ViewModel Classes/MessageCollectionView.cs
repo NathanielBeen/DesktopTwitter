@@ -4,9 +4,11 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Collections.Specialized;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 
 namespace FinalProject
 {
@@ -15,6 +17,8 @@ namespace FinalProject
         public ObservableCollection<IMessageView> Messages { get; }
         private TwitterApplication application;
         private ClickDelegate clickDelegate;
+        private ICommand filecommand;
+        public ICommand FileCommand { get { return filecommand ?? (filecommand = new RelayCommand(() => WriteToFile())); }}
 
         public MessageCollectionView(TwitterApplication app, ClickDelegate click)
         {
@@ -93,6 +97,15 @@ namespace FinalProject
                 to_update = (to_update as TweetView)?.CreateUpdatedView() ?? to_update;
                 Messages.Insert(pos, to_update);
             }
+        }
+        public void WriteToFile()
+        {
+            StreamWriter sr = new StreamWriter("../../MessageList.txt");
+            foreach (IMessageView view in Messages)
+            {
+                sr.WriteLine(view.GetMessageString(), true);
+            }
+            sr.Close();
         }
     }
 }

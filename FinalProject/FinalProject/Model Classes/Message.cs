@@ -22,5 +22,11 @@ namespace FinalProject
             Sender = sender;
             Id = id;
         }
+        public string MessageString()
+        {
+            string name = Sender.Name;
+            string message = "User Name:" + name +" Message: " + Text;
+            return message;
+        }
     }
 }

@@ -8,7 +8,6 @@ namespace FinalProject
 {
     public interface IMessageView
     {
-
         /*
          * MS 4/8
          * Not sure you need this... however if you decided to use
@@ -28,5 +27,6 @@ namespace FinalProject
          * But again... this is only if you decide you want to use an 
          * interface here. 
          */
+        string GetMessageString();
     }
 }

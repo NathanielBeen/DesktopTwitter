@@ -4,16 +4,16 @@
 winexe
 C#
 .cs
-C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\obj\Debug\
+C:\Users\tyler\Documents\Programs\BACS387\final-project\FinalProject\FinalProject\obj\Debug\
 FinalProject
 none
 false
 DEBUG;TRACE
-C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\App.xaml
+C:\Users\tyler\Documents\Programs\BACS387\final-project\FinalProject\FinalProject\App.xaml
 14-1805230886
 
-66-851322943
-104-78656106
+661900962175
+105-554553130
 ViewXaml\Custom Controls\OwnUserControl.xaml;ViewXaml\ApplicationLogin.xaml;ViewXaml\Custom Controls\ConversationControl.xaml;ViewXaml\Custom Controls\DirectMessageControl.xaml;ViewXaml\Custom Controls\SelectedUserControl.xaml;ViewXaml\Custom Controls\TweetSenderControl.xaml;ViewXaml\Custom Pages\DirectMessagePage.xaml;ViewXaml\LoginWindow.xaml;ViewXaml\Custom Pages\MainPage.xaml;ViewXaml\MainWindow.xaml;ViewXaml\Custom Controls\DirectMessageSenderControl.xaml;ViewXaml\Custom Controls\MessageCollectionControl.xaml;ViewXaml\Custom Pages\SelectedUserPage.xaml;ViewXaml\Custom Controls\TweetControl.xaml;
 
 True

@@ -99,5 +99,9 @@ namespace FinalProject
             var args = new TweetEventArgs(ClickType.TweetRetweet, this, tweet);
             tweetDelegate?.Invoke(args);
         }
+        public string GetMessageString()
+        {
+            return tweet.MessageString();
+        }
     }
 }

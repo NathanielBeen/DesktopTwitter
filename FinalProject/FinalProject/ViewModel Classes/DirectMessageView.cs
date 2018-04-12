@@ -36,6 +36,9 @@ namespace FinalProject
             message = dm;
             user = u;
         }
+        public string GetMessageString()
+        {
+            return message.MessageString();
+        }
     }
-
 }
