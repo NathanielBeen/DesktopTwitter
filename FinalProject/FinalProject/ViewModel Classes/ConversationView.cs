@@ -27,7 +27,10 @@ namespace FinalProject
                 return selectUserCommand ?? (selectUserCommand = new RelayCommand(() => HandleUserSelection()));
             }
         }
-
+        public string GetMessageString()
+        {
+            return conversation.MessageString();
+        }
         public ConversationView(Conversation c, ClickDelegate del)
         {
             conversation = c;

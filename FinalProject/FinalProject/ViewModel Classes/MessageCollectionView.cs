@@ -8,6 +8,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Input;
 
 namespace FinalProject
@@ -106,6 +107,7 @@ namespace FinalProject
                 sr.WriteLine(view.GetMessageString(), true);
             }
             sr.Close();
+            MessageBox.Show("The Messages have succesfully been written to 'MessageList.txt'.");
         }
     }
 }
