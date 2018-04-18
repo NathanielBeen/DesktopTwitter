@@ -18,8 +18,11 @@ namespace FinalProject
         public ObservableCollection<IMessageView> Messages { get; }
         private TwitterApplication application;
         private ClickDelegate clickDelegate;
-        private ICommand filecommand;
-        public ICommand FileCommand { get { return filecommand ?? (filecommand = new RelayCommand(() => WriteToFile())); }}
+        private ICommand writeCommand;
+        public ICommand WriteCommand { get { return writeCommand ?? (writeCommand = new RelayCommand(() => WriteToFile())); }}
+
+        private ICommand readCommand;
+        public ICommand ReadCommand { get { return readCommand ?? (readCommand = new RelayCommand(() => ReadFromFile())); } }
 
         public MessageCollectionView(TwitterApplication app, ClickDelegate click)
         {
@@ -48,6 +51,7 @@ namespace FinalProject
             if (message is Tweet) { return new TweetView((Tweet)message, clickDelegate, HandleTweetEvent); }
             else if (message is DirectMessage) { return new DirectMessageView((DirectMessage)message, application.User); }
             else if (message is Conversation) { return new ConversationView((Conversation)message, clickDelegate); }
+            else if (message is LogMessage) { return new LogMessageView((LogMessage)message); }
             return null;
         }
 
@@ -99,6 +103,7 @@ namespace FinalProject
                 Messages.Insert(pos, to_update);
             }
         }
+
         public void WriteToFile()
         {
             StreamWriter sr = new StreamWriter("../../MessageList.txt");
@@ -108,6 +113,28 @@ namespace FinalProject
             }
             sr.Close();
             MessageBox.Show("The Messages have succesfully been written to 'MessageList.txt'.");
+        }
+
+        public void ReadFromFile()
+        {
+            List<Message> messages = GetFileMessages();
+            SetNewMessages(messages);
+        }
+
+        public List<Message> GetFileMessages()
+        {
+            var list = new List<Message>();
+            StreamReader sr = new StreamReader("../../MessageList.txt");
+
+            string line = sr.ReadLine();
+            while (line != null)
+            {
+                LogMessage message = LogMessage.readFromLine(line);
+                if (message != null) { list.Add(message); }
+                line = sr.ReadLine();
+            }
+            sr.Close();
+            return list;
         }
     }
 }

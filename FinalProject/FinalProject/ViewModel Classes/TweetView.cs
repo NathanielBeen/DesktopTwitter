@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using System.Windows.Media;
 
 namespace FinalProject
 {
@@ -30,6 +31,8 @@ namespace FinalProject
         {
             get { return tweet.Sender.ScreenName; }
         }
+
+        public ImageBrush ProfilePic { get { return new ImageBrush(tweet.ProfilePic); } }
 
         public bool CurrentLiked
         {

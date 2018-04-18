@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Media;
 
 namespace FinalProject
 {
@@ -14,6 +15,7 @@ namespace FinalProject
         {
             get { return currentUser.Handle; }
         }
+        public ImageBrush ProfilePic { get { return new ImageBrush(currentUser.ProfilePic); } }
 
         public OwnUserView(User current)
         {

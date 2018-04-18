@@ -6,6 +6,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
 using Tweetinvi;
 using Tweetinvi.Models;
 
@@ -25,26 +27,19 @@ namespace FinalProject
         private ICommand followUserCommand;
         public ICommand FollowUserCommand
         {
-            get
-            {
-                return followUserCommand ?? (followUserCommand = new RelayCommand(() => HandleFolllowButtonClick()));
-            }
+            get{return followUserCommand ?? (followUserCommand = new RelayCommand(() => HandleFolllowButtonClick()));}
         }
 
         private ClickDelegate clickDelegate;
         private ICommand messageUserCommand;
         public ICommand MessageUserCommand
         {
-            get
-            {
-                return messageUserCommand ?? (messageUserCommand = new RelayCommand(() => HandleMessageButtonClick()));
-            }
+          get{return messageUserCommand ?? (messageUserCommand = new RelayCommand(() => HandleMessageButtonClick()));}
         }
 
-        public string Username
-        {
-            get { return user.Handle;}
-        }
+        public ImageBrush ProfilePic { get { return new ImageBrush(user.ProfilePic); } }
+
+        public string Username{get { return user.Handle;}}
 
         private int follow;
         public int Follow
@@ -52,14 +47,14 @@ namespace FinalProject
             get{return follow;}
             set
             {
-                if(value != follow)
+             if(value != follow)
                 {
                     follow = value;
                     OnPropertyChanged(nameof(Follow));
                 }
             }
         }
-
+        
         private Visibility canDM;
         public Visibility CanDM
         {
