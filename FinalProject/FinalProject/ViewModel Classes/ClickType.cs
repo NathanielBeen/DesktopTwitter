@@ -11,6 +11,9 @@ namespace FinalProject
         UserSelect = 0,
         ConversationSelect = 1,
         TweetLike = 2,
-        TweetRetweet = 3
+        TweetRetweet = 3,
+        UserSearch = 4,
+        TweetSearch = 5,
+        ExitSearch = 6
     }
 }

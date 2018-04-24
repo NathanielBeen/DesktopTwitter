@@ -11,6 +11,7 @@ namespace FinalProject
         MainView = 0,
         UserView = 1,
         ConversationView = 2,
-        DMView = 3
+        DMView = 3,
+        SearchView = 4
     }
 }

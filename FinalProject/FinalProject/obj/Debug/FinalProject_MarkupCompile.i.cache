@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\tyler\Documents\Programs\BACS387\final-project\FinalProject\FinalProject\obj\Debug\
+C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\obj\Debug\
 FinalProject
 none
 false
 DEBUG;TRACE
-C:\Users\tyler\Documents\Programs\BACS387\final-project\FinalProject\FinalProject\App.xaml
-151831240634
+C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\App.xaml
+16-565368571
 
-69-1020071740
-105-554553130
-LogMessageControl.xaml;ViewXaml\Custom Controls\OwnUserControl.xaml;ViewXaml\ApplicationLogin.xaml;ViewXaml\Custom Controls\ConversationControl.xaml;ViewXaml\Custom Controls\DirectMessageControl.xaml;ViewXaml\Custom Controls\SelectedUserControl.xaml;ViewXaml\Custom Controls\TweetSenderControl.xaml;ViewXaml\Custom Pages\DirectMessagePage.xaml;ViewXaml\LoginWindow.xaml;ViewXaml\Custom Pages\MainPage.xaml;ViewXaml\MainWindow.xaml;ViewXaml\Custom Controls\DirectMessageSenderControl.xaml;ViewXaml\Custom Controls\MessageCollectionControl.xaml;ViewXaml\Custom Pages\SelectedUserPage.xaml;ViewXaml\Custom Controls\TweetControl.xaml;
+722099665776
+104-78656106
+LogMessageControl.xaml;SearchControl.xaml;ViewXaml\Custom Controls\OwnUserControl.xaml;ViewXaml\ApplicationLogin.xaml;ViewXaml\Custom Controls\ConversationControl.xaml;ViewXaml\Custom Controls\DirectMessageControl.xaml;ViewXaml\Custom Controls\SelectedUserControl.xaml;ViewXaml\Custom Controls\TweetSenderControl.xaml;ViewXaml\Custom Pages\DirectMessagePage.xaml;ViewXaml\LoginWindow.xaml;ViewXaml\Custom Pages\MainPage.xaml;ViewXaml\MainWindow.xaml;ViewXaml\Custom Controls\DirectMessageSenderControl.xaml;ViewXaml\Custom Controls\MessageCollectionControl.xaml;ViewXaml\Custom Pages\SelectedUserPage.xaml;ViewXaml\Custom Controls\TweetControl.xaml;
 
 False
 

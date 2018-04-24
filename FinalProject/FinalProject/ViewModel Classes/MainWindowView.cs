@@ -58,7 +58,7 @@ namespace FinalProject
                 if (value != viewMode)
                 {
                     viewMode = value;
-                    if (viewMode == ViewMode.MainView || viewMode == ViewMode.ConversationView) { SelectedUser = application.User; }
+                    if (viewMode == ViewMode.MainView || viewMode == ViewMode.ConversationView || viewMode == ViewMode.SearchView) { SelectedUser = application.User; }
                     UpdateViewModels(value);
                     OnPropertyChanged(nameof(ViewMode));
                 }
@@ -81,6 +81,8 @@ namespace FinalProject
                 }
             }
         }
+
+        private Search currentSearch;
 
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -106,7 +108,7 @@ namespace FinalProject
 
         public void UpdateViewModels(ViewMode newView)
         {
-            MessageView.ChangeViewMode(newView, selectedUser);
+            MessageView.ChangeViewMode(newView, selectedUser, currentSearch);
             updateUserView();
             switch (newView)
             {
@@ -121,6 +123,9 @@ namespace FinalProject
                     break;
                 case ViewMode.DMView:
                     SenderView = new DirectMessageSenderView(application, selectedUser.Handle);
+                    break;
+                case ViewMode.SearchView:
+                    SenderView = new TweetSenderView(application);
                     break;
 
             }
@@ -147,7 +152,17 @@ namespace FinalProject
                     ChangeSelectedUser(new User(args.Value));
                     ViewMode = ViewMode.DMView;
                     break;
-                    
+                case ClickType.UserSearch:
+                    currentSearch = new Search(args.Value, false);
+                    ViewMode = ViewMode.SearchView;
+                    break;
+                case ClickType.TweetSearch:
+                    currentSearch = new Search(args.Value, true);
+                    ViewMode = ViewMode.SearchView;
+                    break;
+                case ClickType.ExitSearch:
+                    ViewMode = ViewMode.MainView;
+                    break;
             }
         }
 
@@ -191,5 +206,27 @@ namespace FinalProject
         {
             throw new NotImplementedException();
         }
+    }
+
+    public class BoolInverterConverter : IValueConverter
+    {
+        public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+            if (value is bool)
+            {
+                return !(bool)value;
+            }
+            return value;
+        }
+
+        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
+        {
+            if (value is bool)
+            {
+                return !(bool)value;
+            }
+            return value;
+        }
+
     }
 }

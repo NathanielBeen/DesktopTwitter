@@ -9,18 +9,17 @@ namespace FinalProject
 {
     class TweetSearchGetter : TweetGetter
     {
-        //reference to search object
+        private Search search;
 
-        public TweetSearchGetter(MessageFilter filter)
+        public TweetSearchGetter(MessageFilter filter, Search s)
             : base(filter)
         {
-            //inputs: search object
+            search = s;
         }
 
         public override List<ITweet> GetITweets()
         {
-            //replace following with a call to the search getSearchedTweets()
-            return base.GetITweets();
+            return Tweetinvi.Search.SearchTweets(search.Searched).ToList();
         }
     }
 }

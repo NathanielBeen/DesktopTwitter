@@ -36,5 +36,19 @@ namespace FinalProject
             var getter = new DirectMessageGetter(selectedUser);
             return getter.GetMessages();
         }
+
+        public List<Message> GetSearch(Search search)
+        {
+            if (search.TweetSearch)
+            {
+                var getter = new TweetSearchGetter(null, search);
+                return getter.GetMessages();
+            }
+            else
+            {
+                var getter = new TweetSearchGetter(null, search);
+                return getter.GetMessages();
+            }
+        }
     }
 }

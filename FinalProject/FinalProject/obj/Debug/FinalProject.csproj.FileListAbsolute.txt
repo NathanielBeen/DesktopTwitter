@@ -219,7 +219,6 @@ C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\obj\Debug\ViewX
 C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\obj\Debug\ViewXaml\ApplicationLogin.baml
 C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\obj\Debug\ViewXaml\Custom Controls\OwnUserControl.g.cs
 C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\obj\Debug\ViewXaml\Custom Controls\OwnUserControl.baml
-C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\obj\Debug\FinalProject.csprojResolveAssemblyReference.cache
 C:\Users\tyler\Documents\Programs\BACS387\final-project\FinalProject\FinalProject\bin\Debug\FinalProject.exe
 C:\Users\tyler\Documents\Programs\BACS387\final-project\FinalProject\FinalProject\bin\Debug\FinalProject.pdb
 C:\Users\tyler\Documents\Programs\BACS387\final-project\FinalProject\FinalProject\bin\Debug\Autofac.dll
@@ -301,3 +300,5 @@ C:\Users\tyler\Documents\Programs\BACS387\final-project\FinalProject\FinalProjec
 C:\Users\tyler\Documents\Programs\BACS387\final-project\FinalProject\FinalProject\obj\Debug\FinalProject.csprojResolveAssemblyReference.cache
 C:\Users\tyler\Documents\Programs\BACS387\final-project\FinalProject\FinalProject\obj\Debug\LogMessageControl.g.cs
 C:\Users\tyler\Documents\Programs\BACS387\final-project\FinalProject\FinalProject\obj\Debug\LogMessageControl.baml
+C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\obj\Debug\LogMessageControl.g.cs
+C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\obj\Debug\LogMessageControl.baml

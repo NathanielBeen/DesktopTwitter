@@ -181,6 +181,11 @@
       <DependentUpon>LogMessageControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="LogMessageView.cs" />
+    <Compile Include="Search.cs" />
+    <Compile Include="SearchControl.xaml.cs">
+      <DependentUpon>SearchControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SearchView.cs" />
     <Compile Include="ViewXaml\Custom Controls\OwnUserControl.xaml.cs">
       <DependentUpon>OwnUserControl.xaml</DependentUpon>
     </Compile>
@@ -262,6 +267,10 @@
     <Compile Include="Model Classes\Filters\WordBlackListComponent.cs" />
     <Compile Include="Model Classes\Filters\WordWhitelistComponent.cs" />
     <Page Include="LogMessageControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SearchControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

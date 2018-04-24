@@ -55,7 +55,7 @@ namespace FinalProject
             return null;
         }
 
-        public void ChangeViewMode(ViewMode newMode, User selectedUser)
+        public void ChangeViewMode(ViewMode newMode, User selectedUser, Search search)
         {
             var messageList = new List<Message>();
             switch (newMode)
@@ -71,6 +71,9 @@ namespace FinalProject
                     break;
                 case ViewMode.DMView:
                     messageList = application.GetUserDMs(selectedUser);
+                    break;
+                case ViewMode.SearchView:
+                    messageList = application.GetSearch(search);
                     break;
             }
 
