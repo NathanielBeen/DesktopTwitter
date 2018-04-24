@@ -46,7 +46,7 @@ namespace FinalProject
             }
             else
             {
-                var getter = new TweetSearchGetter(null, search);
+                var getter = new UserSearchGetter(search);
                 return getter.GetMessages();
             }
         }

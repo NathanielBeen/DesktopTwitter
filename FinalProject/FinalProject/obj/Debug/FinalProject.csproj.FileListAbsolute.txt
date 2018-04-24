@@ -302,3 +302,11 @@ C:\Users\tyler\Documents\Programs\BACS387\final-project\FinalProject\FinalProjec
 C:\Users\tyler\Documents\Programs\BACS387\final-project\FinalProject\FinalProject\obj\Debug\LogMessageControl.baml
 C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\obj\Debug\LogMessageControl.g.cs
 C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\obj\Debug\LogMessageControl.baml
+C:\Users\Scott\source\repos\Final-Project\FinalProject\FinalProject\obj\Debug\LogMessageControl.g.cs
+C:\Users\Scott\source\repos\Final-Project\FinalProject\FinalProject\obj\Debug\SearchControl.g.cs
+C:\Users\Scott\source\repos\Final-Project\FinalProject\FinalProject\obj\Debug\ViewXaml\Custom Controls\OwnUserControl.g.cs
+C:\Users\Scott\source\repos\Final-Project\FinalProject\FinalProject\obj\Debug\LogMessageControl.baml
+C:\Users\Scott\source\repos\Final-Project\FinalProject\FinalProject\obj\Debug\SearchControl.baml
+C:\Users\Scott\source\repos\Final-Project\FinalProject\FinalProject\obj\Debug\ViewXaml\Custom Controls\OwnUserControl.baml
+C:\Users\Scott\source\repos\Final-Project\FinalProject\FinalProject\obj\Debug\UserMessageControl.g.cs
+C:\Users\Scott\source\repos\Final-Project\FinalProject\FinalProject\obj\Debug\UserMessageControl.baml

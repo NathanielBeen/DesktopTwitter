@@ -19,6 +19,9 @@
         <DataTemplate DataType="{x:Type local:LogMessageView}">
             <local:LogMessageControl/>
         </DataTemplate>
+        <DataTemplate DataType="{x:Type local:UserMessageView}">
+            <local:UserMessageControl/>
+        </DataTemplate>
     </UserControl.Resources>
     <Grid>
         <Grid.RowDefinitions>

@@ -49,19 +49,17 @@ namespace FinalProject
             }
         }
 
+        public SearchView SearchView { get; }
         private ViewMode viewMode;
         public ViewMode ViewMode
         {
             get { return viewMode; }
             set
             {
-                if (value != viewMode)
-                {
-                    viewMode = value;
-                    if (viewMode == ViewMode.MainView || viewMode == ViewMode.ConversationView || viewMode == ViewMode.SearchView) { SelectedUser = application.User; }
-                    UpdateViewModels(value);
-                    OnPropertyChanged(nameof(ViewMode));
-                }
+                viewMode = value;
+                if (viewMode == ViewMode.MainView || viewMode == ViewMode.ConversationView || viewMode == ViewMode.SearchView) { SelectedUser = application.User; }
+                UpdateViewModels(value);
+                OnPropertyChanged(nameof(ViewMode));
             }
         }
 
@@ -97,6 +95,7 @@ namespace FinalProject
             MessageView = new MessageCollectionView(app, new ClickDelegate(HandleClick));
             SenderView = new TweetSenderView(app);
             UserView = new OwnUserView(selectedUser);
+            SearchView = new SearchView(new ClickDelegate(HandleClick));
             viewMode = ViewMode.MainView;
             UpdateViewModels(viewMode);
         }
@@ -109,6 +108,7 @@ namespace FinalProject
         public void UpdateViewModels(ViewMode newView)
         {
             MessageView.ChangeViewMode(newView, selectedUser, currentSearch);
+            SearchView.ChangeViewMode(newView);
             updateUserView();
             switch (newView)
             {

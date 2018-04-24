@@ -92,7 +92,7 @@
                     <RowDefinition Height="6*"/>
                     <RowDefinition Height="2*"/>
                 </Grid.RowDefinitions>
-                <Label Grid.Row="0" Content="searchbar goes here" HorizontalAlignment="Center"/>
+                <local:SearchControl Grid.Row="0" DataContext="{Binding SearchView}"/>
                 <local:MessageCollectionControl Grid.Row="1" DataContext="{Binding MessageView}"/>
                 <ContentControl Grid.Row="2" Content="{Binding}" Style="{StaticResource senderStyle}"/>
             </Grid>

@@ -9,14 +9,7 @@
              Visibility="{Binding Visibility}">
     <Grid>
         <Grid.Resources>
-            <Style x:Key="buttonStyle" TargetType="{x:Type Button}">
-                <Setter Property="Content" Value="Search"/>
-                <Style.Triggers>
-                    <DataTrigger Binding="{Binding inSearch}" Value="True">
-                        <Setter Property="Content" Value="Exit Search"/>
-                    </DataTrigger>
-                </Style.Triggers>
-            </Style>
+            <local:BoolInverterConverter x:Key="Converter"/>
         </Grid.Resources>
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
@@ -27,9 +20,10 @@
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
-        <TextBox Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Text="{Binding Text}"/>
-        <Button Grid.Row="0" Grid.Column="2" Command="{Binding SearchButtonCommand}" Style="{StaticResource buttonStyle}"/>
+        <TextBox Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Text="{Binding Text, UpdateSourceTrigger=PropertyChanged}"/>
+        <Button Grid.Row="0" Grid.Column="2" Content="Search" Command="{Binding SearchButtonCommand}" />
         <RadioButton Grid.Row="1" Grid.Column="0" Content="Tweet Search" IsChecked="{Binding SearchType}"/>
-        <RadioButton Grid.Row="1" Grid.Column="1" Content="User Search" IsChecked="{Binding SearchType, Converter={StaticResource BoolInverterConverter}}"/>
+        <RadioButton Grid.Row="1" Grid.Column="1" Content="User Search" IsChecked="{Binding SearchType, Converter={StaticResource Converter}}"/>
+        <Button Grid.Row="1" Grid.Column="2" Content="Exit Search" Command="{Binding ExitSearchCommand}" Visibility="{Binding ExitVisibility}"/>
     </Grid>
 </UserControl>

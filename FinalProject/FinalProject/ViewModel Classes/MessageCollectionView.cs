@@ -52,6 +52,7 @@ namespace FinalProject
             else if (message is DirectMessage) { return new DirectMessageView((DirectMessage)message, application.User); }
             else if (message is Conversation) { return new ConversationView((Conversation)message, clickDelegate); }
             else if (message is LogMessage) { return new LogMessageView((LogMessage)message); }
+            else if (message is UserMessage) { return new UserMessageView((UserMessage)message, clickDelegate); }
             return null;
         }
 

@@ -186,6 +186,12 @@
       <DependentUpon>SearchControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="SearchView.cs" />
+    <Compile Include="UserMessage.cs" />
+    <Compile Include="UserMessageControl.xaml.cs">
+      <DependentUpon>UserMessageControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserMessageView.cs" />
+    <Compile Include="UserSearchGetter.cs" />
     <Compile Include="ViewXaml\Custom Controls\OwnUserControl.xaml.cs">
       <DependentUpon>OwnUserControl.xaml</DependentUpon>
     </Compile>
@@ -271,6 +277,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="SearchControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserMessageControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

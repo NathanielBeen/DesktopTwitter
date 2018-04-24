@@ -9,7 +9,7 @@ using System.Windows.Input;
 
 namespace FinalProject
 {
-    class SearchView : INotifyPropertyChanged
+    public class SearchView : INotifyPropertyChanged
     {
         private Visibility visibility;
         public Visibility Visibility
@@ -25,16 +25,16 @@ namespace FinalProject
             }
         }
 
-        private bool inSearch;
-        public bool InSearch
+        private Visibility exitVisibility;
+        public Visibility ExitVisibility
         {
-            get { return inSearch; }
+            get { return exitVisibility; }
             set
             {
-                if (inSearch != value)
+                if (exitVisibility != value)
                 {
-                    inSearch = value;
-                    OnPropertyChanged(nameof(inSearch));
+                    exitVisibility = value;
+                    OnPropertyChanged(nameof(ExitVisibility));
                 }
             }
         }
@@ -68,7 +68,10 @@ namespace FinalProject
         }
 
         private ICommand searchButtonCommand;
-        public ICommand SearchButtonCommand { get { return searchButtonCommand ?? (searchButtonCommand = new RelayCommand(() => HandleSearchButtonClick())); } }
+        public ICommand SearchButtonCommand { get { return searchButtonCommand ?? (searchButtonCommand = new RelayCommand(() => Search())); } }
+
+        private ICommand exitSearchCommand;
+        public ICommand ExitSearchCommand { get { return exitSearchCommand ?? (exitSearchCommand = new RelayCommand(() => ExitSearch())); } }
 
         private ClickDelegate clickDelegate;
 
@@ -78,31 +81,38 @@ namespace FinalProject
         {
             clickDelegate = del;
             Visibility = Visibility.Visible;
-            InSearch = false;
+            ExitVisibility = Visibility.Hidden;
         }
 
-        public void HandleSearchButtonClick()
-        {
-            if (inSearch) { ExitSearch(); }
-            else { Search(); }
-        }
-
+        
         public void Search()
         {
-            inSearch = true;
+            ExitVisibility = Visibility.Visible;
             ClickType type = (searchType) ? ClickType.TweetSearch : ClickType.UserSearch;
-            clickDelegate?.Invoke(new ClickEventArgs(type, text));
+            clickDelegate?.Invoke(new ClickEventArgs(type, Text));
         }
 
         public void ExitSearch()
         {
-            inSearch = false;
+            ExitVisibility = Visibility.Hidden;
             clickDelegate?.Invoke(new ClickEventArgs(ClickType.ExitSearch, ""));
         }
 
         private void OnPropertyChanged(string name)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
+        }
+
+        public void ChangeViewMode(ViewMode mode)
+        {
+            if (mode == ViewMode.MainView || mode == ViewMode.SearchView)
+            {
+                Visibility = Visibility.Visible;
+            }
+            else
+            {
+                Visibility = Visibility.Hidden;
+            }
         }
     }
 }
