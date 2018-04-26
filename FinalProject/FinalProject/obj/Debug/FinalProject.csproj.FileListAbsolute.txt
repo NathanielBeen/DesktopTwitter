@@ -310,3 +310,10 @@ C:\Users\Scott\source\repos\Final-Project\FinalProject\FinalProject\obj\Debug\Se
 C:\Users\Scott\source\repos\Final-Project\FinalProject\FinalProject\obj\Debug\ViewXaml\Custom Controls\OwnUserControl.baml
 C:\Users\Scott\source\repos\Final-Project\FinalProject\FinalProject\obj\Debug\UserMessageControl.g.cs
 C:\Users\Scott\source\repos\Final-Project\FinalProject\FinalProject\obj\Debug\UserMessageControl.baml
+C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\obj\Debug\SearchControl.g.cs
+C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\obj\Debug\UserMessageControl.g.cs
+C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\obj\Debug\SearchControl.baml
+C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\obj\Debug\UserMessageControl.baml
+C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\obj\Debug\FinalProject.csprojResolveAssemblyReference.cache
+C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\obj\Debug\FilterMenu.g.cs
+C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\obj\Debug\FilterMenu.baml

@@ -8,33 +8,48 @@ namespace FinalProject
 {
     public class MessageFilter
     {
-        public List<IFilterComponent> Components { get; set; }
+        public Dictionary<FilterType, IFilterComponent> FilterComponents { get; }
 
         public MessageFilter()
         {
-            Components = new List<IFilterComponent>();
+            FilterComponents = new Dictionary<FilterType, IFilterComponent>();
         }
 
-        public IFilterComponent BuildComponent(FilterType filterType, List<FilterItem> toFilter)
+        public void BuildOrUpdateComponent(FilterType filterType, List<string> stringsToFilter)
         {
+            if (!stringsToFilter.Any()) { return; }
+            List<FilterItem> toFilter = BuildFilterItems(stringsToFilter);
+            IFilterComponent component;
             switch (filterType)
             {
                 case FilterType.WordWhiteList:
-                    return new WordWhitelistComponent(toFilter);
+                    component = new WordWhitelistComponent(toFilter);
+                    break;
                 case FilterType.WordBlackList:
-                    return new WordBlackListComponent(toFilter);
+                    component = new WordBlackListComponent(toFilter);
+                    break;
                 case FilterType.UserWhiteList:
-                    return new UserWhitelistComponent(toFilter);
+                    component = new UserWhitelistComponent(toFilter);
+                    break;
                 case FilterType.UserBlackList:
-                    return new UserBlacklistComponent(toFilter);
+                    component = new UserBlacklistComponent(toFilter);
+                    break;
                 default:
-                    return null;
+                    return;
             }
+            FilterComponents[filterType] = component;
+        }
+
+        public List<FilterItem> BuildFilterItems(List<string> items)
+        {
+            var filterItems = new List<FilterItem>();
+            foreach (string item in items) { filterItems.Add(new FilterItem(item)); }
+            return filterItems;
         }
 
         public bool MessagePassesFilter(Message message)
         {
-            foreach (IFilterComponent comp in Components)
+            foreach (IFilterComponent comp in FilterComponents.Values)
             {
                 if (!comp.MessagePassesFilter(message)) { return false; }
             }

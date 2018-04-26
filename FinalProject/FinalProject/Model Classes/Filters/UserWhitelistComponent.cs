@@ -10,26 +10,27 @@ namespace FinalProject
     {
         private List<FilterItem> usersToInclude;
 
-        public UserWhitelistComponent(List<FilterItem> ids)
+        public UserWhitelistComponent(List<FilterItem> users)
         {
-            usersToInclude = ids;
+            usersToInclude = users;
         }
 
-        //need to figure out how user ids are going to be passed around
-        public void AddToFilter(FilterItem id) { usersToInclude.Add(id); }
+        public void AddToFilter(FilterItem user) { usersToInclude.Add(user); }
 
-        public void RemoveFromFilter(FilterItem id)
+        public void RemoveFromFilter(FilterItem user)
         {
-            if (usersToInclude.Contains(id)) { usersToInclude.Remove(id); }
+            if (usersToInclude.Contains(user)) { usersToInclude.Remove(user); }
         }
 
         public bool MessagePassesFilter(Message message)
         {
-            foreach (FilterItem id in usersToInclude)
+            foreach (FilterItem user in usersToInclude)
             {
-                //return true if the user authored the tweet
+                if (message.Sender.ScreenName == user.Content) { return true; }
             }
             return false;
         }
+
+        public List<string> getItems() { return (from item in usersToInclude select item.Content).ToList(); }
     }
 }

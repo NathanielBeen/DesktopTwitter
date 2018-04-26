@@ -50,6 +50,8 @@ namespace FinalProject
         }
 
         public SearchView SearchView { get; }
+        public FilterMenuView FilterView { get; }
+
         private ViewMode viewMode;
         public ViewMode ViewMode
         {
@@ -96,6 +98,7 @@ namespace FinalProject
             SenderView = new TweetSenderView(app);
             UserView = new OwnUserView(selectedUser);
             SearchView = new SearchView(new ClickDelegate(HandleClick));
+            FilterView = new FilterMenuView(app);
             viewMode = ViewMode.MainView;
             UpdateViewModels(viewMode);
         }

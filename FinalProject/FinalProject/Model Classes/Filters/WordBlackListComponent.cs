@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace FinalProject
@@ -26,9 +27,11 @@ namespace FinalProject
         {
             foreach (FilterItem word in wordsToExclude)
             {
-                //return false if tweet contains word
+                if (Regex.IsMatch(message.Text, "\b" + word + "\b")) { return false; }
             }
             return true;
         }
+
+        public List<string> getItems() { return (from item in wordsToExclude select item.Content).ToList(); }
     }
 }

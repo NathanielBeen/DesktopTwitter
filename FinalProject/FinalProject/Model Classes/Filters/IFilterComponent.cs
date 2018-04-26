@@ -12,5 +12,6 @@ namespace FinalProject
         void RemoveFromFilter(FilterItem item);
 
         bool MessagePassesFilter(Message message);
+        List<string> getItems();
     }
 }

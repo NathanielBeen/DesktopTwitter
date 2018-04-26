@@ -10,26 +10,28 @@ namespace FinalProject
     {
         private List<FilterItem> usersToExclude;
 
-        public UserBlacklistComponent(List<FilterItem> ids)
+        public UserBlacklistComponent(List<FilterItem> users)
         {
-            usersToExclude = ids;
+            usersToExclude = users;
         }
 
         //need to figure out how user ids are going to be passed around
-        public void AddToFilter(FilterItem id) { usersToExclude.Add(id); }
+        public void AddToFilter(FilterItem user) { usersToExclude.Add(user); }
 
-        public void RemoveFromFilter(FilterItem id)
+        public void RemoveFromFilter(FilterItem user)
         {
-            if (usersToExclude.Contains(id)) { usersToExclude.Remove(id); }
+            if (usersToExclude.Contains(user)) { usersToExclude.Remove(user); }
         }
 
         public bool MessagePassesFilter(Message message)
         {
-            foreach (FilterItem id in usersToExclude)
+            foreach (FilterItem user in usersToExclude)
             {
-                //return false if the user authored the message
+                if (message.Sender.ScreenName == user.Content) { return false; }
             }
             return true;
         }
+
+        public List<string> getItems() { return (from item in usersToExclude select item.Content).ToList(); }
     }
 }

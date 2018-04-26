@@ -84,6 +84,7 @@
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="Auto"/>
             </Grid.ColumnDefinitions>
             <ContentControl Grid.Column="0" Content="{Binding}" Style="{StaticResource userStyle}"/>
             <Grid Grid.Column="1">
@@ -96,6 +97,7 @@
                 <local:MessageCollectionControl Grid.Row="1" DataContext="{Binding MessageView}"/>
                 <ContentControl Grid.Row="2" Content="{Binding}" Style="{StaticResource senderStyle}"/>
             </Grid>
+            <Label Grid.Column="2" Visibility="Collapsed"/>
         </Grid>
     </Grid>
 </Window>

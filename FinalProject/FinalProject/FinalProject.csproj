@@ -176,6 +176,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="FilterMenu.xaml.cs">
+      <DependentUpon>FilterMenu.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FilterMenuView.cs" />
     <Compile Include="LogMessage.cs" />
     <Compile Include="LogMessageControl.xaml.cs">
       <DependentUpon>LogMessageControl.xaml</DependentUpon>
@@ -272,6 +276,10 @@
     <Compile Include="Model Classes\Filters\UserWhitelistComponent.cs" />
     <Compile Include="Model Classes\Filters\WordBlackListComponent.cs" />
     <Compile Include="Model Classes\Filters\WordWhitelistComponent.cs" />
+    <Page Include="FilterMenu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="LogMessageControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
