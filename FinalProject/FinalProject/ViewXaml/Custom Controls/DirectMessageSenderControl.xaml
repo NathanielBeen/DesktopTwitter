@@ -18,6 +18,6 @@
         </Grid.RowDefinitions>
         <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Content="{Binding Username}"/>
         <TextBox Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" TextWrapping="Wrap" Text="{Binding Path=Text, UpdateSourceTrigger=PropertyChanged}"/>
-        <Button Grid.Row="2" Grid.Column="1" Content="Send Message" Command="{Binding SendMessageCommand}"/>
+        <Button Grid.Row="2" Grid.Column="1" Content="Send Message" Command="{Binding SendMessageCommand}" Margin="5,5"/>
     </Grid>
 </UserControl>

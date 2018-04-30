@@ -8,25 +8,25 @@
              d:DesignHeight="300" d:DesignWidth="300">
     <UserControl.Resources>
         <DataTemplate DataType="{x:Type local:TweetView}">
-            <local:TweetControl />
+            <local:TweetControl Margin="3"/>
         </DataTemplate>
         <DataTemplate DataType="{x:Type local:DirectMessageView}">
-            <local:DirectMessageControl/>
+            <local:DirectMessageControl Margin="3"/>
         </DataTemplate>
         <DataTemplate DataType="{x:Type local:ConversationView}">
-            <local:ConversationControl/>
+            <local:ConversationControl Margin="3"/>
         </DataTemplate>
         <DataTemplate DataType="{x:Type local:LogMessageView}">
-            <local:LogMessageControl/>
+            <local:LogMessageControl Margin="3"/>
         </DataTemplate>
         <DataTemplate DataType="{x:Type local:UserMessageView}">
-            <local:UserMessageControl/>
+            <local:UserMessageControl Margin="3"/>
         </DataTemplate>
     </UserControl.Resources>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
-            <RowDefinition Height="9*"/>
+            <RowDefinition Height="12*"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
@@ -35,7 +35,8 @@
         </Grid.ColumnDefinitions>
             
         <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Content="Heres a label if we need it" HorizontalAlignment="Center"/>
-        <ListBox Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" ItemsSource="{Binding Path=Messages}" HorizontalContentAlignment="Stretch"/>
+        <ListBox Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Background="LightGray"
+                 ItemsSource="{Binding Path=Messages}" HorizontalContentAlignment="Stretch"/>
         <Button Grid.Row="2" Grid.Column="0" Content="Write To File" Command="{Binding Path=WriteCommand}"/>
         <Button Grid.Row="2" Grid.Column="1" Content="Read From File" Command="{Binding Path=ReadCommand}"/>
     </Grid>

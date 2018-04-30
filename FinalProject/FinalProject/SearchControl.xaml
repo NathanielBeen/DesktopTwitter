@@ -20,10 +20,10 @@
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
-        <TextBox Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Text="{Binding Text, UpdateSourceTrigger=PropertyChanged}"/>
-        <Button Grid.Row="0" Grid.Column="2" Content="Search" Command="{Binding SearchButtonCommand}" />
-        <RadioButton Grid.Row="1" Grid.Column="0" Content="Tweet Search" IsChecked="{Binding SearchType}"/>
-        <RadioButton Grid.Row="1" Grid.Column="1" Content="User Search" IsChecked="{Binding SearchType, Converter={StaticResource Converter}}"/>
-        <Button Grid.Row="1" Grid.Column="2" Content="Exit Search" Command="{Binding ExitSearchCommand}" Visibility="{Binding ExitVisibility}"/>
+        <TextBox Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Text="{Binding Text, UpdateSourceTrigger=PropertyChanged}" Margin="3,5,3,3"/>
+        <Button Grid.Row="0" Grid.Column="2" Content="Search" Command="{Binding SearchButtonCommand}" Margin="3,5,3,3"/>
+        <RadioButton Grid.Row="1" Grid.Column="0" Content="Tweet Search" IsChecked="{Binding SearchType}" VerticalAlignment="Center"/>
+        <RadioButton Grid.Row="1" Grid.Column="1" Content="User Search" IsChecked="{Binding SearchType, Converter={StaticResource Converter}}" VerticalAlignment="Center"/>
+        <Button Grid.Row="1" Grid.Column="2" Content="Exit Search" Command="{Binding ExitSearchCommand}" Visibility="{Binding ExitVisibility}" Margin="3"/>
     </Grid>
 </UserControl>

@@ -22,14 +22,17 @@
     </UserControl.Resources>
     <Grid>
         <Grid.RowDefinitions >
-            <RowDefinition Height=" *"/>
-            <RowDefinition Height=" *"/>
-            <RowDefinition Height=" *"/>
-            <RowDefinition Height=" *"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="3*"/>
         </Grid.RowDefinitions>
-        <Label Grid.Row="0" Background="{Binding ProfilePic}"/>
-        <Label Grid.Row="1" Content="{Binding Username}"/>
-        <Button Grid.Row="2" Style="{StaticResource followStyle}" Command="{Binding FollowUserCommand}"/>
-        <Button Grid.Row=" 3" Content=" Message" Visibility="{Binding CanDM}" Command="{Binding MessageUserCommand}"/> 
+        <Border Grid.Row="0" BorderThickness="1" BorderBrush="Blue" Background="LightSlateGray" CornerRadius="10,10,10,10" Height="160" Width="160" Margin="5,5">
+            <Label Background="{Binding ProfilePic}" Margin="5,5"/>
+        </Border>
+        <Label Grid.Row="1" Content="{Binding Username}" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <Button Grid.Row="2" Style="{StaticResource followStyle}" Command="{Binding FollowUserCommand}" Margin="5,10"/>
+        <Button Grid.Row=" 3" Content=" Message" Visibility="{Binding CanDM}" Command="{Binding MessageUserCommand}" Margin="5, 10"/> 
     </Grid>
 </UserControl>

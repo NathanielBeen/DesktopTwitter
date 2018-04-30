@@ -111,7 +111,7 @@ namespace FinalProject
             }
             else
             {
-                Visibility = Visibility.Hidden;
+                Visibility = Visibility.Collapsed;
             }
         }
     }

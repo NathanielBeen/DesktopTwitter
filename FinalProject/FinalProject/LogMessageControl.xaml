@@ -6,8 +6,10 @@
              xmlns:local="clr-namespace:FinalProject"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
-    <StackPanel>
-        <Label Content="{Binding Username}"/>
-        <Label Content="{Binding Text}"/>
-    </StackPanel>
+    <Border BorderThickness="2" BorderBrush="Blue" Background="LightBlue" CornerRadius="10,10,10,10">
+        <StackPanel>
+            <Label Content="{Binding Username}" Margin="5" VerticalAlignment="Center"/>
+            <Label Content="{Binding Text}" Margin="5" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        </StackPanel>
+    </Border>
 </UserControl>

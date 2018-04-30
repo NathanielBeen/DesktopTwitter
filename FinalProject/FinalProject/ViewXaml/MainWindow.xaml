@@ -5,9 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FinalProject"
         mc:Ignorable="d"
-        Title="MainWindow" Height="600" Width="600">
+        Title="MainWindow" Height="600" Width="710">
     <Window.Resources>
-        <Style TargetType="RadioButton" BasedOn="{StaticResource {x:Type ToggleButton}}" />
+        <Style x:Key="ToggleStyle" TargetType="RadioButton" BasedOn="{StaticResource {x:Type ToggleButton}}" />
         <local:IntToBooleanConverter x:Key="Converter"/>
         <local:ViewModelConverter x:Key="VMConverter"/>
 
@@ -55,15 +55,15 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
-            <RowDefinition Height="8*"/>
+            <RowDefinition Height="16*"/>
         </Grid.RowDefinitions>
         <Grid Grid.Row="0">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="5*"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-            <Label Grid.Column="0" Content="{Binding UsernameString}"/>
-            <Button Grid.Column="1" Content="Logout" Command="{Binding LogoutCommand}"/>
+            <Label Grid.Column="0" Content="{Binding UsernameString}" Margin="5, 0, 5, 3"/>
+            <Button Grid.Column="1" Content="Logout" Command="{Binding LogoutCommand}" Margin="5"/>
         </Grid>
         <Grid Grid.Row="1">
             
@@ -73,25 +73,25 @@
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
             <RadioButton Grid.Column="0" GroupName="navigation" Content="Main Page"
-                         IsChecked="{Binding Path=ViewMode, Converter={StaticResource Converter}, ConverterParameter={x:Static local:ViewMode.MainView}}"/>
+                         Style="{StaticResource ToggleStyle}" IsChecked="{Binding Path=ViewMode, Converter={StaticResource Converter}, ConverterParameter={x:Static local:ViewMode.MainView}}"/>
             <RadioButton Grid.Column="1" GroupName="navigation" Content="User Page"
-                        IsChecked="{Binding Path=ViewMode, Converter={StaticResource Converter}, ConverterParameter={x:Static local:ViewMode.UserView}}"/>
+                        Style="{StaticResource ToggleStyle}" IsChecked="{Binding Path=ViewMode, Converter={StaticResource Converter}, ConverterParameter={x:Static local:ViewMode.UserView}}"/>
             <RadioButton Grid.Column="2" GroupName="navigation" Content="Message Page"
-                        IsChecked="{Binding Path=ViewMode, Converter={StaticResource Converter}, ConverterParameter={x:Static local:ViewMode.ConversationView}}"/>
+                        Style="{StaticResource ToggleStyle}" IsChecked="{Binding Path=ViewMode, Converter={StaticResource Converter}, ConverterParameter={x:Static local:ViewMode.ConversationView}}"/>
 
         </Grid>
         <Grid Grid.Row="2">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="3*"/>
                 <ColumnDefinition Width="Auto"/>
             </Grid.ColumnDefinitions>
             <ContentControl Grid.Column="0" Content="{Binding}" Style="{StaticResource userStyle}"/>
             <Grid Grid.Column="1">
                 <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="4*"/>
                     <RowDefinition Height="*"/>
-                    <RowDefinition Height="6*"/>
-                    <RowDefinition Height="2*"/>
                 </Grid.RowDefinitions>
                 <local:SearchControl Grid.Row="0" DataContext="{Binding SearchView}"/>
                 <local:MessageCollectionControl Grid.Row="1" DataContext="{Binding MessageView}"/>

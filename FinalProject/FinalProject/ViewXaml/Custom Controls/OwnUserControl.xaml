@@ -8,10 +8,13 @@
              d:DesignHeight="300" d:DesignWidth="300">
     <Grid DataContext="{Binding UserView}">
         <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
+            <RowDefinition Height="4*"/>
         </Grid.RowDefinitions>
-        <Label Grid.Row="0" Background="{Binding ProfilePic}"/>
+        <Border Grid.Row="0" BorderThickness="1" BorderBrush="Blue" Background="LightBlue" CornerRadius="10,10,10,10"  Height="160" Width="160" Margin="5,5">
+            <Label Background="{Binding ProfilePic}" Margin="5,5"/>
+        </Border>
         <Label Grid.Row ="1" Content="{Binding Username}"/>
     </Grid>
 </UserControl>

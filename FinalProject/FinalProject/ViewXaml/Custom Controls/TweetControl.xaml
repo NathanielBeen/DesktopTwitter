@@ -6,8 +6,7 @@
              xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
              xmlns:local="clr-namespace:FinalProject"
              mc:Ignorable="d" 
-             d:DesignHeight="300" d:DesignWidth="300"
-             MaxWidth="300">
+             d:DesignHeight="300" d:DesignWidth="300">
     <UserControl.Resources>
         <Style x:Key="likeStyle" TargetType="{x:Type Button}">
             <Setter Property="Content" Value="Like"/>
@@ -26,24 +25,30 @@
             </Style.Triggers>
         </Style>
     </UserControl.Resources>
-    <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="3*"/>
-            <RowDefinition Height="*"/>
-        </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
-        </Grid.ColumnDefinitions>
-        <Label Grid.Column="0" Grid.Row="0" Background="{Binding ProfilePic}"/>
-        <Button Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="0" HorizontalAlignment="Center" Background="LightGray" Content="{Binding Path=Username}" Command="{Binding SelectUserCommand}"/>
-        <TextBlock Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="4" Text="{Binding Path=Text}" TextWrapping="Wrap"/>
-        <Button Grid.Column="0" Grid.Row="2" Style="{StaticResource likeStyle}" Command="{Binding LikeTweetCommand}"/>
-        <Label Grid.Column="1" Grid.Row="2" HorizontalAlignment="Center" Content="{Binding Path=Likes}"/>
-        <Button Grid.Column="2" Grid.Row="2" Style="{StaticResource retweetStyle}" Command="{Binding RetweetTweetCommand}"/>
-        <Label Grid.Column="3" Grid.Row="2" HorizontalAlignment="Center" Content="{Binding Path=Retweets}"/>
-    </Grid>
+    <Border BorderThickness="2" BorderBrush="Blue" Background="LightBlue" CornerRadius="10,10,10,10">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/> 
+                <RowDefinition Height="8*"/>
+                <RowDefinition Height="2*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Border Grid.Column="0" Grid.Row="0" Grid.RowSpan="3" BorderThickness="1" BorderBrush="Blue" Background="LightSlateGray" CornerRadius="10,10,10,10" Margin="5,5" Width="110" Height="110">
+                <Label Background="{Binding ProfilePic}" Margin="5,5"/>
+            </Border>
+            <Button Grid.Column="2" Grid.ColumnSpan="2" Grid.Row="0" HorizontalAlignment="Center" Background="LightGray" Margin="5,10"
+                    Content="{Binding Path=Username}" Command="{Binding SelectUserCommand}"/>
+            <TextBlock Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="4" Text="{Binding Path=Text}" TextWrapping="Wrap" Width="300"/>
+            <Button Grid.Column="1" Grid.Row="2" Style="{StaticResource likeStyle}" Command="{Binding LikeTweetCommand}" Margin="0,5"/>
+            <Label Grid.Column="2" Grid.Row="2" HorizontalAlignment="Center" Content="{Binding Path=Likes}"/>
+            <Button Grid.Column="3" Grid.Row="2" Style="{StaticResource retweetStyle}" Command="{Binding RetweetTweetCommand}" Margin="0,5"/>
+            <Label Grid.Column="4" Grid.Row="2" HorizontalAlignment="Center" Content="{Binding Path=Retweets}"/>
+        </Grid>
+    </Border>
 </UserControl>
