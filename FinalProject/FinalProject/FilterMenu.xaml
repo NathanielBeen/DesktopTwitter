@@ -27,13 +27,13 @@
             </Grid.ColumnDefinitions>
             <TextBlock Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Text="Applied Message Filters. Please enter words or usernames as comma seperated values" TextWrapping="Wrap" HorizontalAlignment="Center"/>
             <Label Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Content="Blocked Users (reference by their handle)"/>
-            <TextBox Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto" Text="{Binding UserBlackList}"/>
+            <TextBox Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto" Text="{Binding UserBlacklist, UpdateSourceTrigger=PropertyChanged}"/>
             <TextBlock Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" Text="Whitelisted Users (only tweets by these users will show - leave empty to only remove blocked users)" TextWrapping="Wrap"/>
-            <TextBox Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto" Text="{Binding UserWhiteList}"/>
+            <TextBox Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto" Text="{Binding UserWhitelist, UpdateSourceTrigger=PropertyChanged}"/>
             <Label Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2" Content="Blocked words"/>
-            <TextBox Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="2" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto" Text="{Binding WordBlackList}"/>
+            <TextBox Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="2" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto" Text="{Binding WordBlacklist, UpdateSourceTrigger=PropertyChanged}"/>
             <TextBlock Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="2" Text="Whitelisted Words (only tewwets containing one of these words will show - leave empty to see all tweets" TextWrapping="Wrap"/>
-            <TextBox Grid.Row="8" Grid.Column="0" Grid.ColumnSpan="2" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto" Text="{Binding WordWhiteList}"/>
+            <TextBox Grid.Row="8" Grid.Column="0" Grid.ColumnSpan="2" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto" Text="{Binding WordWhitelist, UpdateSourceTrigger=PropertyChanged}"/>
             <Button Grid.Row="9" Grid.Column="0" Content="Reset/Exit" Command="{Binding ResetCommand}"/>
             <Button Grid.Row="9" Grid.Column="1" Content="Submit Changes" Command="{Binding SubmitChangesCommand}"/>
         </Grid>

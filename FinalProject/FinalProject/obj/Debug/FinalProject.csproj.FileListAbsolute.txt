@@ -316,3 +316,4 @@ C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\obj\Debug\Searc
 C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\obj\Debug\UserMessageControl.baml
 C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\obj\Debug\FilterMenu.g.cs
 C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\obj\Debug\FilterMenu.baml
+C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\obj\Debug\FinalProject.csprojResolveAssemblyReference.cache

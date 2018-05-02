@@ -34,7 +34,7 @@
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
             
-        <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Content="Heres a label if we need it" HorizontalAlignment="Center"/>
+        <Button Grid.Row="0" Grid.Column="1" Content="Open Filter" Command="{Binding Path=FilterCommand}"/>
         <ListBox Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Background="LightGray"
                  ItemsSource="{Binding Path=Messages}" HorizontalContentAlignment="Stretch"/>
         <Button Grid.Row="2" Grid.Column="0" Content="Write To File" Command="{Binding Path=WriteCommand}"/>

@@ -98,7 +98,7 @@ namespace FinalProject
             SenderView = new TweetSenderView(app);
             UserView = new OwnUserView(selectedUser);
             SearchView = new SearchView(new ClickDelegate(HandleClick));
-            FilterView = new FilterMenuView(app);
+            FilterView = new FilterMenuView(app, new ClickDelegate(HandleClick));
             viewMode = ViewMode.MainView;
             UpdateViewModels(viewMode);
         }
@@ -166,6 +166,14 @@ namespace FinalProject
                 case ClickType.ExitSearch:
                     ViewMode = ViewMode.MainView;
                     break;
+                case ClickType.OpenFilter:
+                    FilterView.Visibility = Visibility.Visible;
+                    break;
+                case ClickType.SubmitFilter:
+                    FilterView.Visibility = Visibility.Collapsed;
+                    MessageView.ChangeViewMode(ViewMode, selectedUser, currentSearch);
+                    break;
+
             }
         }
 

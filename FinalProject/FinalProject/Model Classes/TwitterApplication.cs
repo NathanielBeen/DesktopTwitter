@@ -11,7 +11,11 @@ namespace FinalProject
         public MessageFilter Filter { get; set; }
         public CurrentUser User { get; set; }
 
-        public TwitterApplication(CurrentUser user) { User = user; }
+        public TwitterApplication(CurrentUser user)
+        {
+            Filter = new MessageFilter();
+            User = user;
+        }
 
         public List<Message> GetHomeTimeline()
         {
@@ -41,7 +45,7 @@ namespace FinalProject
         {
             if (search.TweetSearch)
             {
-                var getter = new TweetSearchGetter(null, search);
+                var getter = new TweetSearchGetter(Filter, search);
                 return getter.GetMessages();
             }
             else

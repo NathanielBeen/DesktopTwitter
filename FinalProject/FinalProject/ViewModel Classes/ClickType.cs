@@ -14,6 +14,8 @@ namespace FinalProject
         TweetRetweet = 3,
         UserSearch = 4,
         TweetSearch = 5,
-        ExitSearch = 6
+        ExitSearch = 6,
+        OpenFilter = 7,
+        SubmitFilter = 8
     }
 }

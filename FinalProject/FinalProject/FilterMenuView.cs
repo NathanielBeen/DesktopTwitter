@@ -12,6 +12,7 @@ namespace FinalProject
     public class FilterMenuView : INotifyPropertyChanged
     {
         private TwitterApplication application;
+        private ClickDelegate clickDelegate;
 
         private string userWhitelist;
         public string UserWhitelist
@@ -92,9 +93,11 @@ namespace FinalProject
 
         public event PropertyChangedEventHandler PropertyChanged;
 
-        public FilterMenuView(TwitterApplication app)
+        public FilterMenuView(TwitterApplication app, ClickDelegate del)
         {
             application = app;
+            clickDelegate = del;
+
             UserWhitelist = String.Empty;
             UserBlacklist = String.Empty;
             WordBlacklist = String.Empty;
@@ -114,6 +117,7 @@ namespace FinalProject
             filter.BuildOrUpdateComponent(FilterType.UserWhiteList, ConvertTextToWordList(UserWhitelist));
             filter.BuildOrUpdateComponent(FilterType.WordBlackList, ConvertTextToWordList(WordBlacklist));
             filter.BuildOrUpdateComponent(FilterType.WordWhiteList, ConvertTextToWordList(WordWhitelist));
+            clickDelegate?.Invoke(new ClickEventArgs(ClickType.SubmitFilter, ""));
         }
 
         public void ResetFields()
@@ -149,7 +153,10 @@ namespace FinalProject
             var trimmed = new List<string>();
             var untrimmed = text.Split(',');
 
-            foreach (string word in untrimmed) { trimmed.Add(word.Trim()); }
+            foreach (string word in untrimmed)
+            {
+                if (word.Length > 0) { trimmed.Add(word.Trim()); }
+            }
             return trimmed;
         }
 

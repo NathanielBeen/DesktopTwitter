@@ -18,6 +18,10 @@ namespace FinalProject
         public ObservableCollection<IMessageView> Messages { get; }
         private TwitterApplication application;
         private ClickDelegate clickDelegate;
+
+        private ICommand filterCommand;
+        public ICommand FilterCommand { get { return filterCommand ?? (filterCommand = new RelayCommand(() => openFilterMenu())); } }
+
         private ICommand writeCommand;
         public ICommand WriteCommand { get { return writeCommand ?? (writeCommand = new RelayCommand(() => WriteToFile())); }}
 
@@ -106,6 +110,11 @@ namespace FinalProject
                 to_update = (to_update as TweetView)?.CreateUpdatedView() ?? to_update;
                 Messages.Insert(pos, to_update);
             }
+        }
+
+        public void openFilterMenu()
+        {
+            clickDelegate?.Invoke(new ClickEventArgs(ClickType.OpenFilter, ""));
         }
 
         public void WriteToFile()
