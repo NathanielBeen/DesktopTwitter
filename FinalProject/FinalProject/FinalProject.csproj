@@ -176,26 +176,26 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="FilterMenu.xaml.cs">
+    <Compile Include="ViewXaml\Custom Controls\FilterMenu.xaml.cs">
       <DependentUpon>FilterMenu.xaml</DependentUpon>
     </Compile>
-    <Compile Include="FilterMenuView.cs" />
-    <Compile Include="LogMessage.cs" />
-    <Compile Include="LogMessageControl.xaml.cs">
+    <Compile Include="ViewModel Classes\FilterMenuView.cs" />
+    <Compile Include="Model Classes\LogMessage.cs" />
+    <Compile Include="ViewXaml\Custom Controls\LogMessageControl.xaml.cs">
       <DependentUpon>LogMessageControl.xaml</DependentUpon>
     </Compile>
-    <Compile Include="LogMessageView.cs" />
-    <Compile Include="Search.cs" />
-    <Compile Include="SearchControl.xaml.cs">
+    <Compile Include="ViewModel Classes\LogMessageView.cs" />
+    <Compile Include="Model Classes\Search.cs" />
+    <Compile Include="ViewXaml\Custom Controls\SearchControl.xaml.cs">
       <DependentUpon>SearchControl.xaml</DependentUpon>
     </Compile>
-    <Compile Include="SearchView.cs" />
-    <Compile Include="UserMessage.cs" />
-    <Compile Include="UserMessageControl.xaml.cs">
+    <Compile Include="ViewModel Classes\SearchView.cs" />
+    <Compile Include="Model Classes\UserMessage.cs" />
+    <Compile Include="ViewXaml\Custom Controls\UserMessageControl.xaml.cs">
       <DependentUpon>UserMessageControl.xaml</DependentUpon>
     </Compile>
-    <Compile Include="UserMessageView.cs" />
-    <Compile Include="UserSearchGetter.cs" />
+    <Compile Include="ViewModel Classes\UserMessageView.cs" />
+    <Compile Include="Model Classes\Getters\UserSearchGetter.cs" />
     <Compile Include="ViewXaml\Custom Controls\OwnUserControl.xaml.cs">
       <DependentUpon>OwnUserControl.xaml</DependentUpon>
     </Compile>
@@ -276,19 +276,19 @@
     <Compile Include="Model Classes\Filters\UserWhitelistComponent.cs" />
     <Compile Include="Model Classes\Filters\WordBlackListComponent.cs" />
     <Compile Include="Model Classes\Filters\WordWhitelistComponent.cs" />
-    <Page Include="FilterMenu.xaml">
+    <Page Include="ViewXaml\Custom Controls\FilterMenu.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="LogMessageControl.xaml">
+    <Page Include="ViewXaml\Custom Controls\LogMessageControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="SearchControl.xaml">
+    <Page Include="ViewXaml\Custom Controls\SearchControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="UserMessageControl.xaml">
+    <Page Include="ViewXaml\Custom Controls\UserMessageControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

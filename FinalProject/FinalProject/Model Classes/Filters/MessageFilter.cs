@@ -17,7 +17,11 @@ namespace FinalProject
 
         public void BuildOrUpdateComponent(FilterType filterType, List<string> stringsToFilter)
         {
-            if (!stringsToFilter.Any()) { return; }
+            if (!stringsToFilter.Any())
+            {
+                if (FilterComponents.ContainsKey(filterType)) { FilterComponents.Remove(filterType); }
+            }
+
             List<FilterItem> toFilter = BuildFilterItems(stringsToFilter);
             IFilterComponent component;
             switch (filterType)

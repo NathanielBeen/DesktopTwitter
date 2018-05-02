@@ -17,13 +17,11 @@ namespace FinalProject
 
         public void AddToFilter(FilterItem user) { usersToInclude.Add(user); }
 
-        public void RemoveFromFilter(FilterItem user)
-        {
-            if (usersToInclude.Contains(user)) { usersToInclude.Remove(user); }
-        }
+        public void ClearFilter() { usersToInclude.Clear(); }
 
         public bool MessagePassesFilter(Message message)
         {
+            if (!usersToInclude.Any()) { return true; }
             foreach (FilterItem user in usersToInclude)
             {
                 if (message.Sender.ScreenName == user.Content) { return true; }

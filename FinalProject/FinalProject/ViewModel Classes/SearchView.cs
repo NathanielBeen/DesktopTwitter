@@ -82,6 +82,7 @@ namespace FinalProject
             clickDelegate = del;
             Visibility = Visibility.Visible;
             ExitVisibility = Visibility.Hidden;
+            Text = String.Empty;
         }
 
         

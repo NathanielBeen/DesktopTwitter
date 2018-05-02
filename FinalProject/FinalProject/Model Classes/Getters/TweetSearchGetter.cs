@@ -19,7 +19,7 @@ namespace FinalProject
 
         public override List<ITweet> GetITweets()
         {
-            return Tweetinvi.Search.SearchTweets(search.Searched).ToList();
+            return (search.Searched == String.Empty) ? new List<ITweet>() : Tweetinvi.Search.SearchTweets(search.Searched).ToList();
         }
     }
 }

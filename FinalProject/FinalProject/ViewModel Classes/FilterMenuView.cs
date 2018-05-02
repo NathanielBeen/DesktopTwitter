@@ -57,7 +57,7 @@ namespace FinalProject
         }
 
         private string wordBlacklist;
-        private string WordBlacklist
+        public string WordBlacklist
         {
             get { return wordBlacklist; }
             set
@@ -89,7 +89,7 @@ namespace FinalProject
         public ICommand SubmitChangesCommand { get { return submitChangesCommand ?? (submitChangesCommand = new RelayCommand(() => SubmitChanges())); } }
 
         private ICommand resetCommand;
-        public ICommand ResetCommand { get { return resetCommand ?? (resetCommand = new RelayCommand(() => ResetFields())); } }
+        public ICommand ResetCommand { get { return resetCommand ?? (resetCommand = new RelayCommand(() => CloseAndReset())); } }
 
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -120,9 +120,19 @@ namespace FinalProject
             clickDelegate?.Invoke(new ClickEventArgs(ClickType.SubmitFilter, ""));
         }
 
+        public void CloseAndReset()
+        {
+            ResetFields();
+            Visibility = Visibility.Collapsed;
+        }
+
         public void ResetFields()
         {
             MessageFilter filter = application.Filter;
+            UserWhitelist = String.Empty;
+            UserBlacklist = String.Empty;
+            WordBlacklist = String.Empty;
+            WordWhitelist = String.Empty;
             foreach (var entry in filter.FilterComponents) { resetFieldToFilter(entry.Key, entry.Value); }
         }
 
