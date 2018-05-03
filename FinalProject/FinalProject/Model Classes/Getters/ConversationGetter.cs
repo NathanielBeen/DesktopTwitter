@@ -17,7 +17,7 @@ namespace FinalProject
             var allMessagesSent = Tweetinvi.Message.GetLatestMessagesSent();
             var allSendingUserIds = (from message in allMessagesRecieved.Union(allMessagesSent)
                                      orderby message.CreatedAt descending
-                                     select message.RecipientId).Distinct();
+                                     select message.SenderId).Distinct();
 
             var constructedMessages = new List<Message>();
             foreach (long id in allSendingUserIds)

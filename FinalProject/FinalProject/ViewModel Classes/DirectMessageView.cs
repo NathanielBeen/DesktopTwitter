@@ -23,7 +23,7 @@ namespace FinalProject
 
         public string Username
         {
-            get { return (Sent) ? message.Receiver.ScreenName : message.Sender.ScreenName; }
+            get { return (message.Sender.ScreenName); }
         }
 
         public bool Sent
