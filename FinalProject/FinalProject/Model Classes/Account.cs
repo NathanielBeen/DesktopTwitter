@@ -12,8 +12,6 @@ namespace FinalProject
         public string Username { get; set; }
         public string Password { get; set; }
 
-        
-
         public Account(string name, string password)
         {
             Username = name;

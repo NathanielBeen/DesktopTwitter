@@ -35,7 +35,8 @@ namespace FinalProject
             Handle = TUser.ScreenName;
             ProfilePic = GetProfilePic(TUser.ProfileImageUrl400x400);
         }
-        public BitmapImage GetProfilePic(string location)
+
+        protected BitmapImage GetProfilePic(string location)
         {
             BitmapImage image = new BitmapImage();
             image.BeginInit();

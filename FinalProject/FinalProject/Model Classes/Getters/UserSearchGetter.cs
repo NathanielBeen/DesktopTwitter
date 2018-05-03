@@ -19,7 +19,7 @@ namespace FinalProject
         public List<Message> GetMessages()
         {
             List<Message> userMessages = new List<Message>();
-            List<IUser> users = Tweetinvi.Search.SearchUsers(search.Searched).ToList();
+            List<IUser> users = (search.Searched == String.Empty) ? new List<IUser>() : Tweetinvi.Search.SearchUsers(search.Searched).ToList();
             foreach (IUser user in users)
             {
                 userMessages.Add(new UserMessage(user));

@@ -6,15 +6,18 @@ using System.Threading.Tasks;
 
 namespace FinalProject
 {
-    public class ClickEventArgs
+
+    public class TweetEventArgs
     {
         public ClickType Type { get; set; }
-        public string Value { get; set; }
+        public TweetView View { get; set; }
+        public Tweet Tweet { get; set; }
 
-        public ClickEventArgs(ClickType type, string value)
+        public TweetEventArgs(ClickType type, TweetView view, Tweet tweet)
         {
             Type = type;
-            Value = value;
+            View = view;
+            Tweet = tweet;
         }
     }
 }

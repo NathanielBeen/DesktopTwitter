@@ -57,7 +57,7 @@ namespace FinalProject
         }
 
         private string wordBlacklist;
-        private string WordBlacklist
+        public string WordBlacklist
         {
             get { return wordBlacklist; }
             set
@@ -89,7 +89,7 @@ namespace FinalProject
         public ICommand SubmitChangesCommand { get { return submitChangesCommand ?? (submitChangesCommand = new RelayCommand(() => SubmitChanges())); } }
 
         private ICommand resetCommand;
-        public ICommand ResetCommand { get { return resetCommand ?? (resetCommand = new RelayCommand(() => ResetFields())); } }
+        public ICommand ResetCommand { get { return resetCommand ?? (resetCommand = new RelayCommand(() => CloseAndReset())); } }
 
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -113,22 +113,32 @@ namespace FinalProject
         public void SubmitChanges()
         {
             MessageFilter filter = application.Filter;
-            filter.BuildOrUpdateComponent(FilterType.UserBlackList, ConvertTextToWordList(UserBlacklist));
-            filter.BuildOrUpdateComponent(FilterType.UserWhiteList, ConvertTextToWordList(UserWhitelist));
-            filter.BuildOrUpdateComponent(FilterType.WordBlackList, ConvertTextToWordList(WordBlacklist));
-            filter.BuildOrUpdateComponent(FilterType.WordWhiteList, ConvertTextToWordList(WordWhitelist));
+            filter.BuildOrUpdateComponent(FilterType.UserBlackList, ConvertTextToWordList(new StringInput(UserBlacklist)));
+            filter.BuildOrUpdateComponent(FilterType.UserWhiteList, ConvertTextToWordList(new StringInput(UserWhitelist)));
+            filter.BuildOrUpdateComponent(FilterType.WordBlackList, ConvertTextToWordList(new StringInput(WordBlacklist)));
+            filter.BuildOrUpdateComponent(FilterType.WordWhiteList, ConvertTextToWordList(new StringInput(WordWhitelist)));
             clickDelegate?.Invoke(new ClickEventArgs(ClickType.SubmitFilter, ""));
+        }
+
+        public void CloseAndReset()
+        {
+            ResetFields();
+            Visibility = Visibility.Collapsed;
         }
 
         public void ResetFields()
         {
             MessageFilter filter = application.Filter;
-            foreach (var entry in filter.FilterComponents) { resetFieldToFilter(entry.Key, entry.Value); }
+            UserWhitelist = String.Empty;
+            UserBlacklist = String.Empty;
+            WordBlacklist = String.Empty;
+            WordWhitelist = String.Empty;
+            foreach (var entry in filter.FilterComponents) { ResetFieldToFilter(entry.Key, entry.Value); }
         }
 
-        public void resetFieldToFilter(FilterType type, IFilterComponent component)
+        public void ResetFieldToFilter(FilterType type, IFilterComponent component)
         {
-            string text = (component == null) ? String.Empty : ConvertWordListToText(component.getItems());
+            string text = (component == null) ? String.Empty : ConvertWordListToText(component.GetItems());
             switch (type)
             {
                 case FilterType.UserBlackList:
@@ -148,21 +158,22 @@ namespace FinalProject
             }
         }
 
-        public List<string> ConvertTextToWordList(string text)
+        public List<FilterItem> ConvertTextToWordList(StringInput text)
         {
-            var trimmed = new List<string>();
-            var untrimmed = text.Split(',');
+            var trimmed = new List<FilterItem>();
+            var untrimmed = text.Input.Split(',');
 
             foreach (string word in untrimmed)
             {
-                if (word.Length > 0) { trimmed.Add(word.Trim()); }
+                if (word.Length > 0) { trimmed.Add(new FilterItem(word.Trim())); }
             }
             return trimmed;
         }
 
-        public string ConvertWordListToText(List<string> wordList)
+        public string ConvertWordListToText(List<FilterItem> wordList)
         {
-            return string.Join(",", wordList);
+            
+            return string.Join(",", wordList.Select(s => s.Content).ToList());
         }
     }
 }

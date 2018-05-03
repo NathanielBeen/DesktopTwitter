@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\App.xaml
-18-922827315
+1585384020
 
-78505562441
+791969127586
 104-78656106
-FilterMenu.xaml;LogMessageControl.xaml;SearchControl.xaml;UserMessageControl.xaml;ViewXaml\Custom Controls\OwnUserControl.xaml;ViewXaml\ApplicationLogin.xaml;ViewXaml\Custom Controls\ConversationControl.xaml;ViewXaml\Custom Controls\DirectMessageControl.xaml;ViewXaml\Custom Controls\SelectedUserControl.xaml;ViewXaml\Custom Controls\TweetSenderControl.xaml;ViewXaml\Custom Pages\DirectMessagePage.xaml;ViewXaml\LoginWindow.xaml;ViewXaml\Custom Pages\MainPage.xaml;ViewXaml\MainWindow.xaml;ViewXaml\Custom Controls\DirectMessageSenderControl.xaml;ViewXaml\Custom Controls\MessageCollectionControl.xaml;ViewXaml\Custom Pages\SelectedUserPage.xaml;ViewXaml\Custom Controls\TweetControl.xaml;
+ViewXaml\Custom Controls\FilterMenu.xaml;ViewXaml\Custom Controls\LogMessageControl.xaml;ViewXaml\Custom Controls\SearchControl.xaml;ViewXaml\Custom Controls\UserMessageControl.xaml;ViewXaml\Custom Controls\OwnUserControl.xaml;ViewXaml\ApplicationLogin.xaml;ViewXaml\Custom Controls\ConversationControl.xaml;ViewXaml\Custom Controls\DirectMessageControl.xaml;ViewXaml\Custom Controls\SelectedUserControl.xaml;ViewXaml\Custom Controls\TweetSenderControl.xaml;ViewXaml\LoginWindow.xaml;ViewXaml\MainWindow.xaml;ViewXaml\Custom Controls\DirectMessageSenderControl.xaml;ViewXaml\Custom Controls\MessageCollectionControl.xaml;ViewXaml\Custom Controls\TweetControl.xaml;
 
-False
+True
 

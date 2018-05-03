@@ -1,4 +1,4 @@
-﻿using FinalProject.Model_Classes;
+﻿
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,6 +16,7 @@ namespace FinalProject
         {
             get; set; 
         }
+
         public Login()
         {
             authentication = new Authentication();
@@ -25,7 +26,8 @@ namespace FinalProject
         {
             authentication.RedirectToTwitter();
         }
-        public bool CheckCredentials(string username, string password)
+
+        public bool CheckCredentials(Account account)
         {
             string tempName, tempPassword;
             String tempLine;
@@ -40,10 +42,9 @@ namespace FinalProject
                     tempName = credentials[0];
                     tempPassword = credentials[1];
 
-                    if (tempName.Equals(username) && tempPassword.Equals(password))
+                    if (tempName.Equals(account.Username) && tempPassword.Equals(account.Password))
                     {
-                        Account currentAccount = new Account(username, password);
-                        CurrentAccount = currentAccount;
+                        CurrentAccount = account;
                         return true;
                     }
                 }
@@ -52,7 +53,8 @@ namespace FinalProject
             }
             return false;
         }
-        public CurrentUser AttemptLogin(PIN pin)
+
+        public CurrentUser AttemptLogin(StringInput pin)
         {
             authentication.RecievePin(pin);
             try
@@ -63,20 +65,15 @@ namespace FinalProject
             }
             catch { return null; }
         }
-        public bool CreateAccount(string username, string password, string conPassword)
+
+        public bool CreateAccount(Account account)
         {
-            if (username == "" || password == "" || conPassword == "") { return false; }
-            if (password == conPassword)
-            {
-                StreamWriter sw = new StreamWriter("../../Credentials.txt", true);
-                sw.WriteLine(username+ " "+password);
-                sw.Close();
-                return true;
-            }
-            else
-            {
-                return false;
-            }
+            if (account.Username == "" || account.Password == "") { return false; }
+
+            StreamWriter sw = new StreamWriter("../../Credentials.txt", true);
+            sw.WriteLine(account.Username+ " "+account.Password);
+            sw.Close();
+            return true;
         }
     }
 }

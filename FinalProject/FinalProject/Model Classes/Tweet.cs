@@ -8,16 +8,6 @@ using Tweetinvi.Models;
 
 namespace FinalProject
 {
-    /*
-     * Id - ITweet.ID
-     * Text - ITweet.Text
-     * User - ITweet.CreatedBy
-     * possibly username, id?
-     * Favorites - ITweet.FavoriteCount
-     * Retweets - ITweet.RetweetCount
-     * Mentions - ITweet.UserMentions
-     * (for reply class) ITweet.RetweetedTweet
-     */
     public class Tweet : Message
     {
         public int Likes { get; set; }
@@ -36,7 +26,7 @@ namespace FinalProject
             Time = tweet.CreatedAt;
         }
 
-        public Tweet getUpdatedMessage()
+        public Tweet GetUpdatedMessage()
         {
             return new Tweet(Tweetinvi.Tweet.GetTweet(Id));
         }

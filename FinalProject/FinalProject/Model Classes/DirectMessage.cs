@@ -8,14 +8,6 @@ using Tweetinvi.Models;
 
 namespace FinalProject
 {
-    /*
-     * ID - IMessage.ID
-     * Text - IMessage.Text
-     * Time - IMessage.CreatedAt
-     * Reciever - IMessage.Recipient
-     * Sender - IMessage.Sender
-     */
-
     public class DirectMessage : Message
     {
         public IUser Receiver { get; set; }

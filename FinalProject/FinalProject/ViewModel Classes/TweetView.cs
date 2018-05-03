@@ -82,7 +82,7 @@ namespace FinalProject
 
         public TweetView CreateUpdatedView()
         {
-            return new TweetView(tweet.getUpdatedMessage(), userClickDelegate, tweetDelegate);
+            return new TweetView(tweet.GetUpdatedMessage(), userClickDelegate, tweetDelegate);
         }
 
         public void HandleUserSelection()

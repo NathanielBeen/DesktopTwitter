@@ -18,20 +18,18 @@ namespace FinalProject
 
         public void AddToFilter(FilterItem word) { wordsToExclude.Add(word); }
 
-        public void RemoveFromFilter(FilterItem word)
-        {
-            if (wordsToExclude.Contains(word)) { wordsToExclude.Remove(word); }
-        }
+        public void ClearFilter() { wordsToExclude.Clear(); }
 
         public bool MessagePassesFilter(Message message)
         {
+            if (!wordsToExclude.Any()) { return true; }
             foreach (FilterItem word in wordsToExclude)
             {
-                if (Regex.IsMatch(message.Text, "\b" + word + "\b")) { return false; }
+                if (Regex.IsMatch(message.Text, string.Format(@"\b{0}\b", Regex.Escape(word.Content)))) { return false; }
             }
             return true;
         }
 
-        public List<string> getItems() { return (from item in wordsToExclude select item.Content).ToList(); }
+        public List<FilterItem> GetItems() { return wordsToExclude; }
     }
 }

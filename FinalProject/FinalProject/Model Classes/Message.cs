@@ -34,7 +34,7 @@ namespace FinalProject
             return message;
         }
 
-        public BitmapImage GetProfilePic(string location)
+        protected BitmapImage GetProfilePic(string location)
         {
             BitmapImage image = new BitmapImage();
             image.BeginInit();

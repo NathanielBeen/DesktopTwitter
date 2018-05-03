@@ -1,4 +1,4 @@
-﻿using FinalProject.Model_Classes;
+﻿
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -31,12 +31,12 @@ namespace FinalProject
 
         }
 
-        private void loginBtn_Click(object sender, RoutedEventArgs e)
+        private void LoginBtn_Click(object sender, RoutedEventArgs e)
         {
-            CurrentUser user = login.AttemptLogin(new PIN(pinTxt.Text));
+            CurrentUser user = login.AttemptLogin(new StringInput(pinTxt.Text));
 
             if (user == null) { NotifyInvalidLogin(); }
-            else { launchMainWindow(user); }
+            else { LaunchMainWindow(user); }
         }
 
         private void NotifyInvalidLogin()
@@ -45,7 +45,7 @@ namespace FinalProject
             login.RedirectToTwitter();
         }
 
-        private void launchMainWindow(CurrentUser user)
+        private void LaunchMainWindow(CurrentUser user)
         {
             var main = new MainWindow(user, login.CurrentAccount);
             main.Show();

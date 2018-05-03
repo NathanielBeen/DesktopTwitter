@@ -27,10 +27,7 @@ namespace FinalProject
                 return selectUserCommand ?? (selectUserCommand = new RelayCommand(() => HandleUserSelection()));
             }
         }
-        public string GetMessageString()
-        {
-            return conversation.MessageString();
-        }
+
         public ConversationView(Conversation c, ClickDelegate del)
         {
             conversation = c;
@@ -41,6 +38,11 @@ namespace FinalProject
         {
             var args = new ClickEventArgs(ClickType.ConversationSelect, Username);
             clickDelegate?.Invoke(args);
+        }
+
+        public string GetMessageString()
+        {
+            return conversation.MessageString();
         }
     }
 }

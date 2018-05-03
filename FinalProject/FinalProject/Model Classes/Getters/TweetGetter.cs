@@ -30,19 +30,6 @@ namespace FinalProject
             return new List<ITweet>();
         }
 
-        /*
-         * MS
-         * Nice use of the Facade pattern. 
-         * 
-         * One common way of utilizing the Facade pattern would be to never
-         * actually have a List<ITweet> but rather to automatically encapapsulate
-         * the ITweet inside the Tweet (or Message) as soon as it is retrieved. 
-         * 
-         * That way you isolate the side effects of having the ITweet interface exposed
-         * in your application. 
-         *  
-         */
-
         public List<Message> ConvertITweetsToMessages(List<ITweet> baseTweets)
         {
             var constructedMessages = new List<Message>();
@@ -61,7 +48,6 @@ namespace FinalProject
             foreach (Message message in constructedMessages)
             {
                 if (Filter.MessagePassesFilter(message)) { filteredMessages.Add(message); }
-                //possibly add a default to note a tweet has been blocked
             }
 
             return filteredMessages;

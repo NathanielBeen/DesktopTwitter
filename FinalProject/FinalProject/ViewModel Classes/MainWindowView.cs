@@ -13,7 +13,6 @@ using System.Windows.Input;
 namespace FinalProject
 {
     public delegate void ClickDelegate(ClickEventArgs args);
-
     public delegate void TweetDelegate(TweetEventArgs args);
 
     public class MainWindowView : INotifyPropertyChanged
@@ -87,7 +86,7 @@ namespace FinalProject
         public event PropertyChangedEventHandler PropertyChanged;
 
         private ICommand logoutCommand;
-        public ICommand LogoutCommand { get { return logoutCommand ?? (logoutCommand = new RelayCommand(() => handleLogout())); } }
+        public ICommand LogoutCommand { get { return logoutCommand ?? (logoutCommand = new RelayCommand(() => HandleLogout())); } }
 
         public MainWindowView(TwitterApplication app, Account curAccount)
         {
@@ -112,7 +111,7 @@ namespace FinalProject
         {
             MessageView.ChangeViewMode(newView, selectedUser, currentSearch);
             SearchView.ChangeViewMode(newView);
-            updateUserView();
+            UpdateUserView();
             switch (newView)
             {
                 case ViewMode.MainView:
@@ -134,7 +133,7 @@ namespace FinalProject
             }
         }
 
-        public void updateUserView()
+        public void UpdateUserView()
         {
             if (selectedUser.Equals(application.User))
             {
@@ -182,7 +181,7 @@ namespace FinalProject
             SelectedUser = user;
         }
 
-        public void handleLogout()
+        public void HandleLogout()
         {
             var window = new ApplicationLogin();
             foreach (Window w in App.Current.Windows)
@@ -191,53 +190,5 @@ namespace FinalProject
             }
             window.Show();
         }
-    }
-
-    public class IntToBooleanConverter : IValueConverter
-    {
-        public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
-        {
-            return value.Equals(parameter);
-        }
-
-        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
-        {
-            return value.Equals(true) ? parameter : Binding.DoNothing;
-        }
-    }
-
-    class ViewModelConverter : IValueConverter
-    {
-        public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
-        {
-            return value?.GetType() ?? null;
-        }
-
-        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
-        {
-            throw new NotImplementedException();
-        }
-    }
-
-    public class BoolInverterConverter : IValueConverter
-    {
-        public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
-        {
-            if (value is bool)
-            {
-                return !(bool)value;
-            }
-            return value;
-        }
-
-        public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
-        {
-            if (value is bool)
-            {
-                return !(bool)value;
-            }
-            return value;
-        }
-
     }
 }

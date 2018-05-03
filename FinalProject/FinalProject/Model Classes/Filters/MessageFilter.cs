@@ -15,36 +15,32 @@ namespace FinalProject
             FilterComponents = new Dictionary<FilterType, IFilterComponent>();
         }
 
-        public void BuildOrUpdateComponent(FilterType filterType, List<string> stringsToFilter)
+        public void BuildOrUpdateComponent(FilterType filterType, List<FilterItem> itemsToFilter)
         {
-            if (!stringsToFilter.Any()) { return; }
-            List<FilterItem> toFilter = BuildFilterItems(stringsToFilter);
+            if (!itemsToFilter.Any())
+            {
+                if (FilterComponents.ContainsKey(filterType)) { FilterComponents.Remove(filterType); }
+            }
+
             IFilterComponent component;
             switch (filterType)
             {
                 case FilterType.WordWhiteList:
-                    component = new WordWhitelistComponent(toFilter);
+                    component = new WordWhitelistComponent(itemsToFilter);
                     break;
                 case FilterType.WordBlackList:
-                    component = new WordBlackListComponent(toFilter);
+                    component = new WordBlackListComponent(itemsToFilter);
                     break;
                 case FilterType.UserWhiteList:
-                    component = new UserWhitelistComponent(toFilter);
+                    component = new UserWhitelistComponent(itemsToFilter);
                     break;
                 case FilterType.UserBlackList:
-                    component = new UserBlacklistComponent(toFilter);
+                    component = new UserBlacklistComponent(itemsToFilter);
                     break;
                 default:
                     return;
             }
             FilterComponents[filterType] = component;
-        }
-
-        public List<FilterItem> BuildFilterItems(List<string> items)
-        {
-            var filterItems = new List<FilterItem>();
-            foreach (string item in items) { filterItems.Add(new FilterItem(item)); }
-            return filterItems;
         }
 
         public bool MessagePassesFilter(Message message)

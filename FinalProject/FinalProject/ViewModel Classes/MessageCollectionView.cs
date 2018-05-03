@@ -20,7 +20,7 @@ namespace FinalProject
         private ClickDelegate clickDelegate;
 
         private ICommand filterCommand;
-        public ICommand FilterCommand { get { return filterCommand ?? (filterCommand = new RelayCommand(() => openFilterMenu())); } }
+        public ICommand FilterCommand { get { return filterCommand ?? (filterCommand = new RelayCommand(() => OpenFilterMenu())); } }
 
         private ICommand writeCommand;
         public ICommand WriteCommand { get { return writeCommand ?? (writeCommand = new RelayCommand(() => WriteToFile())); }}
@@ -112,7 +112,7 @@ namespace FinalProject
             }
         }
 
-        public void openFilterMenu()
+        public void OpenFilterMenu()
         {
             clickDelegate?.Invoke(new ClickEventArgs(ClickType.OpenFilter, ""));
         }
@@ -142,7 +142,7 @@ namespace FinalProject
             string line = sr.ReadLine();
             while (line != null)
             {
-                LogMessage message = LogMessage.readFromLine(line);
+                LogMessage message = LogMessage.ReadFromLine(new StringInput(line));
                 if (message != null) { list.Add(message); }
                 line = sr.ReadLine();
             }

@@ -18,13 +18,11 @@ namespace FinalProject
         //need to figure out how user ids are going to be passed around
         public void AddToFilter(FilterItem user) { usersToExclude.Add(user); }
 
-        public void RemoveFromFilter(FilterItem user)
-        {
-            if (usersToExclude.Contains(user)) { usersToExclude.Remove(user); }
-        }
+        public void ClearFilter() { usersToExclude.Clear(); }
 
         public bool MessagePassesFilter(Message message)
         {
+            if (!usersToExclude.Any()) { return true; }
             foreach (FilterItem user in usersToExclude)
             {
                 if (message.Sender.ScreenName == user.Content) { return false; }
@@ -32,6 +30,6 @@ namespace FinalProject
             return true;
         }
 
-        public List<string> getItems() { return (from item in usersToExclude select item.Content).ToList(); }
+        public List<FilterItem> GetItems() { return usersToExclude; }
     }
 }

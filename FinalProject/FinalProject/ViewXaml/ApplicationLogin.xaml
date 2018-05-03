@@ -13,9 +13,9 @@
         <TextBox Name="textPassword"/>
         <Label Name="confirmPassword" Content="Confirm Password"/>
         <TextBox Name="textConPassword" />
-        <Button Name="loginButton" Content="Login" Click="loginButton_Click"/>
+        <Button Name="loginButton" Content="Login" Click="LoginButton_Click"/>
         <Label Name="questionLabel" Content="Need an account?"/>
-        <Button Name="createUserButton" Content="Create Account" Click="createUserButton_Click"/>
+        <Button Name="createUserButton" Content="Create Account" Click="CreateUserButton_Click"/>
         
 
 

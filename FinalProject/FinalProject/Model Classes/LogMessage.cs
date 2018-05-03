@@ -15,11 +15,11 @@ namespace FinalProject
 
         }
 
-        public static LogMessage readFromLine(string line)
+        public static LogMessage ReadFromLine(StringInput line)
         {
             string text = "";
             IUser user = null;
-            string[] parts = line.Split(new string[] { ",.," }, StringSplitOptions.RemoveEmptyEntries);
+            string[] parts = line.Input.Split(new string[] { ",.," }, StringSplitOptions.RemoveEmptyEntries);
             if (parts.Count() == 2)
             {
                 string[] name_parts = parts[0].Split(new string[] { ",:," }, StringSplitOptions.RemoveEmptyEntries);

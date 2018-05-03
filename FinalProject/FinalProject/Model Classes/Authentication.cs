@@ -1,4 +1,4 @@
-﻿using FinalProject.Model_Classes;
+﻿
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -31,7 +31,7 @@ namespace FinalProject
             Process.Start(context.AuthorizationURL);
         }
 
-        public void RecievePin(PIN pin)
+        public void RecievePin(StringInput pin)
         {
             var userCredentials = AuthFlow.CreateCredentialsFromVerifierCode(pin.Input, context);
             Auth.SetCredentials(userCredentials);

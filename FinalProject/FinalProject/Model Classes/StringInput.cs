@@ -4,13 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FinalProject.Model_Classes
+namespace FinalProject
 {
-    public class PIN
+    public class StringInput
     {
         public string Input { get; set; }
 
-        public PIN(string input)
+        public StringInput(string input)
         {
             Input = input;
         }

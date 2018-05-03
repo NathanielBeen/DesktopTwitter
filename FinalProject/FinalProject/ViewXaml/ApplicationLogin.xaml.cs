@@ -32,10 +32,10 @@ namespace FinalProject
             textConPassword.Visibility = Visibility.Collapsed;
         }
 
-        private void loginButton_Click(object sender, RoutedEventArgs e)
+        private void LoginButton_Click(object sender, RoutedEventArgs e)
         {
-           
-           if (login.CheckCredentials(textUsername.Text, textPassword.Text))
+            Account test = new Account(textUsername.Text, textPassword.Text);
+           if (login.CheckCredentials(test))
             {
                 LoginWindow window = new LoginWindow(login);
                 window.Show();
@@ -47,7 +47,7 @@ namespace FinalProject
             }
         }
 
-        private void createUserButton_Click(object sender, RoutedEventArgs e)
+        private void CreateUserButton_Click(object sender, RoutedEventArgs e)
         {
             if(viewMode == LOGIN)
             {
@@ -60,7 +60,8 @@ namespace FinalProject
 
             else
             {
-                if(login.CreateAccount(textUsername.Text, textPassword.Text, textConPassword.Text))
+                Account test = new Account(textUsername.Text, textPassword.Text);
+                if(textPassword.Text == textConPassword.Text && login.CreateAccount(test))
                 {
                     confirmPassword.Visibility = Visibility.Collapsed;
                     textConPassword.Visibility = Visibility.Collapsed;

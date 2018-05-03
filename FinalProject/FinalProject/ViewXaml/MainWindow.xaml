@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FinalProject"
         mc:Ignorable="d"
-        Title="MainWindow" Height="600" Width="Auto">
+        ResizeMode="NoResize"
+        Title="MainWindow" SizeToContent="WidthAndHeight">
     <Window.Resources>
         <Style x:Key="ToggleStyle" TargetType="RadioButton" BasedOn="{StaticResource {x:Type ToggleButton}}" />
         <local:IntToBooleanConverter x:Key="Converter"/>
@@ -52,56 +53,61 @@
         </Style>
     </Window.Resources>
     <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="16*"/>
-        </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="710"/>
             <ColumnDefinition Width="Auto"/>
         </Grid.ColumnDefinitions>
-        <local:FilterMenu Grid.Row="0" Grid.RowSpan="3" Grid.Column="2" Visibility="{Binding FilterView.Visibility}" DataContext="{Binding FilterView}"/>
-        <Grid Grid.Row="0">
+        <Grid Grid.Column="0" Height="600">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="16*"/>
+            </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="5*"/>
-                <ColumnDefinition Width="*"/>
-            </Grid.ColumnDefinitions>
-            <Label Grid.Column="0" Content="{Binding UsernameString}" Margin="5, 0, 5, 3"/>
-            <Button Grid.Column="1" Content="Logout" Command="{Binding LogoutCommand}" Margin="5"/>
-        </Grid>
-        <Grid Grid.Row="1">
-            
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
-            </Grid.ColumnDefinitions>
-            <RadioButton Grid.Column="0" GroupName="navigation" Content="Main Page"
-                         Style="{StaticResource ToggleStyle}" IsChecked="{Binding Path=ViewMode, Converter={StaticResource Converter}, ConverterParameter={x:Static local:ViewMode.MainView}}"/>
-            <RadioButton Grid.Column="1" GroupName="navigation" Content="User Page"
-                        Style="{StaticResource ToggleStyle}" IsChecked="{Binding Path=ViewMode, Converter={StaticResource Converter}, ConverterParameter={x:Static local:ViewMode.UserView}}"/>
-            <RadioButton Grid.Column="2" GroupName="navigation" Content="Message Page"
-                        Style="{StaticResource ToggleStyle}" IsChecked="{Binding Path=ViewMode, Converter={StaticResource Converter}, ConverterParameter={x:Static local:ViewMode.ConversationView}}"/>
-
-        </Grid>
-        <Grid Grid.Row="2">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="3*"/>
+                <ColumnDefinition Width="710"/>
                 <ColumnDefinition Width="Auto"/>
             </Grid.ColumnDefinitions>
-            <ContentControl Grid.Column="0" Content="{Binding}" Style="{StaticResource userStyle}"/>
-            <Grid Grid.Column="1">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="4*"/>
-                    <RowDefinition Height="*"/>
-                </Grid.RowDefinitions>
-                <local:SearchControl Grid.Row="0" DataContext="{Binding SearchView}"/>
-                <local:MessageCollectionControl Grid.Row="1" DataContext="{Binding MessageView}"/>
-                <ContentControl Grid.Row="2" Content="{Binding}" Style="{StaticResource senderStyle}"/>
+            <Grid Grid.Row="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="5*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Label Grid.Column="0" Content="{Binding UsernameString}" Margin="5, 0, 5, 3"/>
+                <Button Grid.Column="1" Content="Logout" Command="{Binding LogoutCommand}" Margin="5"/>
+            </Grid>
+            <Grid Grid.Row="1">
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <RadioButton Grid.Column="0" GroupName="navigation" Content="Main Page"
+                         Style="{StaticResource ToggleStyle}" IsChecked="{Binding Path=ViewMode, Converter={StaticResource Converter}, ConverterParameter={x:Static local:ViewMode.MainView}}"/>
+                <RadioButton Grid.Column="1" GroupName="navigation" Content="User Page"
+                        Style="{StaticResource ToggleStyle}" IsChecked="{Binding Path=ViewMode, Converter={StaticResource Converter}, ConverterParameter={x:Static local:ViewMode.UserView}}"/>
+                <RadioButton Grid.Column="2" GroupName="navigation" Content="Message Page"
+                        Style="{StaticResource ToggleStyle}" IsChecked="{Binding Path=ViewMode, Converter={StaticResource Converter}, ConverterParameter={x:Static local:ViewMode.ConversationView}}"/>
+
+            </Grid>
+            <Grid Grid.Row="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="3*"/>
+                </Grid.ColumnDefinitions>
+                <ContentControl Grid.Column="0" Content="{Binding}" Style="{StaticResource userStyle}"/>
+                <Grid Grid.Column="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="4*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <local:SearchControl Grid.Row="0" DataContext="{Binding SearchView}"/>
+                    <local:MessageCollectionControl Grid.Row="1" DataContext="{Binding MessageView}"/>
+                    <ContentControl Grid.Row="2" Content="{Binding}" Style="{StaticResource senderStyle}"/>
+                </Grid>
             </Grid>
         </Grid>
+        <local:FilterMenu Grid.Column="1" DataContext="{Binding FilterView}" Visibility="{Binding Visibility}"/>
     </Grid>
 </Window>
