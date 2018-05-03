@@ -311,5 +311,4 @@ C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\obj\Debug\ViewX
 C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\obj\Debug\ViewXaml\Custom Controls\LogMessageControl.baml
 C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\obj\Debug\ViewXaml\Custom Controls\SearchControl.baml
 C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\obj\Debug\ViewXaml\Custom Controls\UserMessageControl.baml
-C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\bin\Debug\FinalProject.exe.CodeAnalysisLog.xml
-C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\bin\Debug\FinalProject.exe.lastcodeanalysissucceeded
+C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\obj\Debug\FinalProject.csprojResolveAssemblyReference.cache
