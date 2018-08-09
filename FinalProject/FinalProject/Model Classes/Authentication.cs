@@ -25,10 +25,10 @@ namespace FinalProject
             AppCredentials = new TwitterCredentials(CONSUMERKEY, CONSUMERSECRET);
         }
 
-        public void RedirectToTwitter()
+        public string RedirectToTwitter()
         {
             context = AuthFlow.InitAuthentication(AppCredentials);
-            Process.Start(context.AuthorizationURL);
+            return context.AuthorizationURL;
         }
 
         public void RecievePin(StringInput pin)

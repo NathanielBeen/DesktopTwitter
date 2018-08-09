@@ -119,13 +119,11 @@ namespace FinalProject
 
         public void WriteToFile()
         {
-            StreamWriter sr = new StreamWriter("../../MessageList.txt");
             foreach (IMessageView view in Messages)
             {
-                sr.WriteLine(view.GetMessageString(), true);
+                ApplicationData.writeToStoredFile("MessageLog.txt", view.GetMessageString());
             }
-            sr.Close();
-            MessageBox.Show("The Messages have succesfully been written to 'MessageList.txt'.");
+            MessageBox.Show("The Messages have succesfully been written to 'MessageLog.txt'.");
         }
 
         public void ReadFromFile()
@@ -137,7 +135,7 @@ namespace FinalProject
         public List<Message> GetFileMessages()
         {
             var list = new List<Message>();
-            StreamReader sr = new StreamReader("../../MessageList.txt");
+            StringReader sr = new StringReader(ApplicationData.readFromStoredFile("MessageLog.txt"));
 
             string line = sr.ReadLine();
             while (line != null)

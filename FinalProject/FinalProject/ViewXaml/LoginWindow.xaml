@@ -10,9 +10,7 @@
         <Label Content="Enter the PIN provided by Twitter" HorizontalAlignment="Center"/>
         <TextBox Name="pinTxt"/>
         <Button Name="loginBtn" Content="Log in" Click="LoginBtn_Click"/>
-        <Label HorizontalAlignment="Center" Content="Credentials for the group:"/>
-        <Label HorizontalAlignment="Center" Content="Username: TylerBeenElmore"/>
-        <Label HorizontalAlignment="Center" Content="Password: Finalproject"/>
+        <WebBrowser Name="browser" Height="300"/>
     </StackPanel>
     
 </Window>

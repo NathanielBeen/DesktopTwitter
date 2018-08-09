@@ -43,76 +43,6 @@ C:\Users\tyler\Documents\final-project\FinalProject\FinalProject\obj\Debug\Final
 C:\Users\tyler\Documents\final-project\FinalProject\FinalProject\obj\Debug\FinalProject.exe
 C:\Users\tyler\Documents\final-project\FinalProject\FinalProject\obj\Debug\FinalProject.pdb
 C:\Users\tyler\Documents\Programs\BACS387\final-project\FinalProject\FinalProject\bin\Debug\FinalProject.exe.config
-C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\bin\Debug\FinalProject.exe.config
-C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\bin\Debug\FinalProject.exe
-C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\bin\Debug\FinalProject.pdb
-C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\bin\Debug\Autofac.dll
-C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\bin\Debug\Microsoft.Expression.Interactions.dll
-C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\bin\Debug\Microsoft.Win32.Primitives.dll
-C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\bin\Debug\Newtonsoft.Json.dll
-C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\bin\Debug\Nito.AsyncEx.Context.dll
-C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\bin\Debug\Nito.AsyncEx.Tasks.dll
-C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\bin\Debug\Nito.Disposables.dll
-C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\bin\Debug\System.AppContext.dll
-C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\bin\Debug\System.Collections.Immutable.dll
-C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\bin\Debug\System.Console.dll
-C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\bin\Debug\System.Globalization.Calendars.dll
-C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\bin\Debug\System.IO.Compression.dll
-C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\bin\Debug\System.IO.Compression.ZipFile.dll
-C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\bin\Debug\System.IO.FileSystem.dll
-C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\bin\Debug\System.IO.FileSystem.Primitives.dll
-C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\bin\Debug\System.Net.Http.dll
-C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\bin\Debug\System.Net.Sockets.dll
-C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\bin\Debug\System.Reflection.TypeExtensions.dll
-C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\bin\Debug\System.Runtime.InteropServices.RuntimeInformation.dll
-C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\bin\Debug\System.Security.Cryptography.Algorithms.dll
-C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\bin\Debug\System.Security.Cryptography.Encoding.dll
-C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\bin\Debug\System.Security.Cryptography.Primitives.dll
-C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\bin\Debug\System.Security.Cryptography.X509Certificates.dll
-C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\bin\Debug\System.Windows.Interactivity.dll
-C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\bin\Debug\System.Xml.ReaderWriter.dll
-C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\bin\Debug\Tweetinvi.Controllers.dll
-C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\bin\Debug\Tweetinvi.Core.dll
-C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\bin\Debug\Tweetinvi.Credentials.dll
-C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\bin\Debug\Tweetinvi.dll
-C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\bin\Debug\Tweetinvi.Factories.dll
-C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\bin\Debug\Tweetinvi.Logic.dll
-C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\bin\Debug\Tweetinvi.Security.dll
-C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\bin\Debug\Tweetinvi.Streams.dll
-C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\bin\Debug\Tweetinvi.WebLogic.dll
-C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\bin\Debug\Autofac.xml
-C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\bin\Debug\Microsoft.Expression.Interactions.xml
-C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\bin\Debug\Newtonsoft.Json.xml
-C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\bin\Debug\System.Collections.Immutable.xml
-C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\bin\Debug\System.Windows.Interactivity.xml
-C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\obj\Debug\ViewXaml\Custom Controls\DirectMessageControl.g.cs
-C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\obj\Debug\ViewXaml\Custom Controls\TweetSenderControl.g.cs
-C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\obj\Debug\ViewXaml\LoginWindow.g.cs
-C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\obj\Debug\ViewXaml\MainWindow.g.cs
-C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\obj\Debug\ViewXaml\Custom Controls\DirectMessageSenderControl.g.cs
-C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\obj\Debug\ViewXaml\Custom Controls\MessageCollectionControl.g.cs
-C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\obj\Debug\ViewXaml\Custom Controls\TweetControl.g.cs
-C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\obj\Debug\App.g.cs
-C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\obj\Debug\GeneratedInternalTypeHelper.g.cs
-C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\obj\Debug\FinalProject_MarkupCompile.cache
-C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\obj\Debug\FinalProject_MarkupCompile.lref
-C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\obj\Debug\ViewXaml\Custom Controls\DirectMessageControl.baml
-C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\obj\Debug\ViewXaml\Custom Controls\TweetSenderControl.baml
-C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\obj\Debug\ViewXaml\LoginWindow.baml
-C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\obj\Debug\ViewXaml\MainWindow.baml
-C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\obj\Debug\ViewXaml\Custom Controls\DirectMessageSenderControl.baml
-C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\obj\Debug\ViewXaml\Custom Controls\MessageCollectionControl.baml
-C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\obj\Debug\ViewXaml\Custom Controls\TweetControl.baml
-C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\obj\Debug\FinalProject.g.resources
-C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\obj\Debug\FinalProject.Properties.Resources.resources
-C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\obj\Debug\FinalProject.csproj.GenerateResource.Cache
-C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\obj\Debug\FinalProject.csproj.CoreCompileInputs.cache
-C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\obj\Debug\FinalProject.exe
-C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\obj\Debug\FinalProject.pdb
-C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\obj\Debug\ViewXaml\Custom Controls\ConversationControl.g.cs
-C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\obj\Debug\ViewXaml\Custom Controls\ConversationControl.baml
-C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\obj\Debug\ViewXaml\Custom Controls\SelectedUserControl.g.cs
-C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\obj\Debug\ViewXaml\Custom Controls\SelectedUserControl.baml
 C:\Users\ELMO4982\Documents\final-project\FinalProject\FinalProject\obj\Debug\FinalProject.csprojResolveAssemblyReference.cache
 C:\Users\ELMO4982\Documents\final-project\FinalProject\FinalProject\obj\Debug\ViewXaml\Custom Controls\ConversationControl.g.cs
 C:\Users\ELMO4982\Documents\final-project\FinalProject\FinalProject\obj\Debug\ViewXaml\Custom Controls\DirectMessageControl.g.cs
@@ -130,10 +60,6 @@ C:\Users\ELMO4982\Documents\final-project\FinalProject\FinalProject\obj\Debug\Ap
 C:\Users\ELMO4982\Documents\final-project\FinalProject\FinalProject\obj\Debug\GeneratedInternalTypeHelper.g.cs
 C:\Users\ELMO4982\Documents\final-project\FinalProject\FinalProject\obj\Debug\FinalProject_MarkupCompile.cache
 C:\Users\ELMO4982\Documents\final-project\FinalProject\FinalProject\obj\Debug\FinalProject_MarkupCompile.lref
-C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\obj\Debug\ViewXaml\ApplicationLogin.g.cs
-C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\obj\Debug\ViewXaml\ApplicationLogin.baml
-C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\obj\Debug\ViewXaml\Custom Controls\OwnUserControl.g.cs
-C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\obj\Debug\ViewXaml\Custom Controls\OwnUserControl.baml
 C:\Users\tyler\Documents\Programs\BACS387\final-project\FinalProject\FinalProject\bin\Debug\FinalProject.exe
 C:\Users\tyler\Documents\Programs\BACS387\final-project\FinalProject\FinalProject\bin\Debug\FinalProject.pdb
 C:\Users\tyler\Documents\Programs\BACS387\final-project\FinalProject\FinalProject\bin\Debug\Autofac.dll
@@ -303,12 +229,99 @@ C:\Users\Scott\source\repos\Final-Project\FinalProject\FinalProject\obj\Debug\Fi
 C:\Users\Scott\source\repos\Final-Project\FinalProject\FinalProject\obj\Debug\FinalProject.csproj.CoreCompileInputs.cache
 C:\Users\Scott\source\repos\Final-Project\FinalProject\FinalProject\obj\Debug\FinalProject.exe
 C:\Users\Scott\source\repos\Final-Project\FinalProject\FinalProject\obj\Debug\FinalProject.pdb
+C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\obj\Debug\FinalProject.csproj.App.config
 C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\obj\Debug\ViewXaml\Custom Controls\FilterMenu.g.cs
 C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\obj\Debug\ViewXaml\Custom Controls\LogMessageControl.g.cs
 C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\obj\Debug\ViewXaml\Custom Controls\SearchControl.g.cs
 C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\obj\Debug\ViewXaml\Custom Controls\UserMessageControl.g.cs
+C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\obj\Debug\ViewXaml\Custom Controls\OwnUserControl.g.cs
+C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\obj\Debug\ViewXaml\ApplicationLogin.g.cs
+C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\obj\Debug\ViewXaml\Custom Controls\ConversationControl.g.cs
+C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\obj\Debug\ViewXaml\Custom Controls\DirectMessageControl.g.cs
+C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\obj\Debug\ViewXaml\Custom Controls\SelectedUserControl.g.cs
+C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\obj\Debug\ViewXaml\Custom Controls\TweetSenderControl.g.cs
+C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\obj\Debug\ViewXaml\LoginWindow.g.cs
+C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\obj\Debug\ViewXaml\MainWindow.g.cs
+C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\obj\Debug\ViewXaml\Custom Controls\DirectMessageSenderControl.g.cs
+C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\obj\Debug\ViewXaml\Custom Controls\MessageCollectionControl.g.cs
+C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\obj\Debug\ViewXaml\Custom Controls\TweetControl.g.cs
+C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\obj\Debug\App.g.cs
+C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\obj\Debug\FinalProject_Content.g.cs
+C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\obj\Debug\FinalProject_MarkupCompile.cache
+C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\obj\Debug\FinalProject_MarkupCompile.lref
 C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\obj\Debug\ViewXaml\Custom Controls\FilterMenu.baml
 C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\obj\Debug\ViewXaml\Custom Controls\LogMessageControl.baml
 C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\obj\Debug\ViewXaml\Custom Controls\SearchControl.baml
 C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\obj\Debug\ViewXaml\Custom Controls\UserMessageControl.baml
-C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\obj\Debug\FinalProject.csprojResolveAssemblyReference.cache
+C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\obj\Debug\ViewXaml\Custom Controls\OwnUserControl.baml
+C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\obj\Debug\ViewXaml\ApplicationLogin.baml
+C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\obj\Debug\ViewXaml\Custom Controls\ConversationControl.baml
+C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\obj\Debug\ViewXaml\Custom Controls\DirectMessageControl.baml
+C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\obj\Debug\ViewXaml\Custom Controls\SelectedUserControl.baml
+C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\obj\Debug\ViewXaml\Custom Controls\TweetSenderControl.baml
+C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\obj\Debug\ViewXaml\LoginWindow.baml
+C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\obj\Debug\ViewXaml\MainWindow.baml
+C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\obj\Debug\ViewXaml\Custom Controls\DirectMessageSenderControl.baml
+C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\obj\Debug\ViewXaml\Custom Controls\MessageCollectionControl.baml
+C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\obj\Debug\ViewXaml\Custom Controls\TweetControl.baml
+C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\obj\Debug\FinalProject.g.resources
+C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\obj\Debug\FinalProject.csproj.CoreCompileInputs.cache
+C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\obj\Debug\FinalProject.exe.manifest
+C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\obj\Debug\FinalProject.exe
+C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\obj\Debug\FinalProject.pdb
+C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\bin\Debug\Resources\Credentials.txt
+C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\bin\Debug\FinalProject.exe.config
+C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\bin\Debug\FinalProject.exe.manifest
+C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\bin\Debug\FinalProject.application
+C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\bin\Debug\FinalProject.exe
+C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\bin\Debug\FinalProject.pdb
+C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\bin\Debug\Autofac.dll
+C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\bin\Debug\Microsoft.Expression.Interactions.dll
+C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\bin\Debug\Microsoft.Win32.Primitives.dll
+C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\bin\Debug\Nito.AsyncEx.Context.dll
+C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\bin\Debug\Nito.AsyncEx.Tasks.dll
+C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\bin\Debug\Nito.Disposables.dll
+C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\bin\Debug\PresentationCore.dll
+C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\bin\Debug\PresentationFramework.dll
+C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\bin\Debug\System.AppContext.dll
+C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\bin\Debug\System.Collections.Immutable.dll
+C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\bin\Debug\System.ComponentModel.Composition.dll
+C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\bin\Debug\System.Console.dll
+C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\bin\Debug\System.Data.dll
+C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\bin\Debug\System.dll
+C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\bin\Debug\System.Globalization.Calendars.dll
+C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\bin\Debug\System.IO.Compression.dll
+C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\bin\Debug\System.IO.Compression.ZipFile.dll
+C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\bin\Debug\System.IO.FileSystem.dll
+C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\bin\Debug\System.IO.FileSystem.Primitives.dll
+C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\bin\Debug\System.Net.Http.dll
+C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\bin\Debug\System.Net.Http.Extensions.dll
+C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\bin\Debug\System.Net.Http.Primitives.dll
+C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\bin\Debug\System.Net.Sockets.dll
+C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\bin\Debug\System.Reflection.TypeExtensions.dll
+C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\bin\Debug\System.Runtime.InteropServices.RuntimeInformation.dll
+C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\bin\Debug\System.Security.Cryptography.Algorithms.dll
+C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\bin\Debug\System.Security.Cryptography.Encoding.dll
+C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\bin\Debug\System.Security.Cryptography.Primitives.dll
+C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\bin\Debug\System.Security.Cryptography.X509Certificates.dll
+C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\bin\Debug\System.Windows.Interactivity.dll
+C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\bin\Debug\System.Xml.ReaderWriter.dll
+C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\bin\Debug\Tweetinvi.Controllers.dll
+C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\bin\Debug\Tweetinvi.Core.dll
+C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\bin\Debug\Tweetinvi.Credentials.dll
+C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\bin\Debug\Tweetinvi.dll
+C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\bin\Debug\Tweetinvi.Factories.dll
+C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\bin\Debug\Tweetinvi.Logic.dll
+C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\bin\Debug\Tweetinvi.Security.dll
+C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\bin\Debug\Tweetinvi.Streams.dll
+C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\bin\Debug\Tweetinvi.WebLogic.dll
+C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\bin\Debug\Autofac.xml
+C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\bin\Debug\Microsoft.Expression.Interactions.xml
+C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\bin\Debug\System.Collections.Immutable.xml
+C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\bin\Debug\System.Net.Http.Extensions.xml
+C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\bin\Debug\System.Net.Http.Primitives.xml
+C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\bin\Debug\System.Windows.Interactivity.xml
+C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\obj\Debug\FinalProject.application

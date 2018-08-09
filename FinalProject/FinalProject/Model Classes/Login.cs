@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Tweetinvi.Models;
 using System.IO;
+using FinalProject.Properties;
 
 namespace FinalProject
 {
@@ -20,19 +21,21 @@ namespace FinalProject
         public Login()
         {
             authentication = new Authentication();
+            ApplicationData.createFileIfNotPresent("Credentials.txt");
+            ApplicationData.createFileIfNotPresent("MessageLog.txt");
         }
 
-        public void RedirectToTwitter()
+        public string RedirectToTwitter()
         {
-            authentication.RedirectToTwitter();
+            return authentication.RedirectToTwitter();
         }
 
         public bool CheckCredentials(Account account)
         {
             string tempName, tempPassword;
             String tempLine;
-            StreamReader sr = new StreamReader("../../Credentials.txt");
-            tempLine = sr.ReadLine();
+            StringReader reader = new StringReader(ApplicationData.readFromStoredFile("Credentials.txt"));
+            tempLine = reader.ReadLine();
 
             while(tempLine != null)
             {
@@ -49,7 +52,7 @@ namespace FinalProject
                     }
                 }
 
-                tempLine = sr.ReadLine();
+                tempLine = reader.ReadLine();
             }
             return false;
         }
@@ -70,9 +73,7 @@ namespace FinalProject
         {
             if (account.Username == "" || account.Password == "") { return false; }
 
-            StreamWriter sw = new StreamWriter("../../Credentials.txt", true);
-            sw.WriteLine(account.Username+ " "+account.Password);
-            sw.Close();
+            ApplicationData.writeToStoredFile("Credentials.txt", account.Username + " " + account.Password);
             return true;
         }
     }

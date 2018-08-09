@@ -11,10 +11,10 @@ false
 DEBUG;TRACE
 C:\Users\Natha\Documents\final-project\FinalProject\FinalProject\App.xaml
 1585384020
-
-791969127586
-104-78656106
+1-1627586422
+80-191452225
+107919476047
 ViewXaml\Custom Controls\FilterMenu.xaml;ViewXaml\Custom Controls\LogMessageControl.xaml;ViewXaml\Custom Controls\SearchControl.xaml;ViewXaml\Custom Controls\UserMessageControl.xaml;ViewXaml\Custom Controls\OwnUserControl.xaml;ViewXaml\ApplicationLogin.xaml;ViewXaml\Custom Controls\ConversationControl.xaml;ViewXaml\Custom Controls\DirectMessageControl.xaml;ViewXaml\Custom Controls\SelectedUserControl.xaml;ViewXaml\Custom Controls\TweetSenderControl.xaml;ViewXaml\LoginWindow.xaml;ViewXaml\MainWindow.xaml;ViewXaml\Custom Controls\DirectMessageSenderControl.xaml;ViewXaml\Custom Controls\MessageCollectionControl.xaml;ViewXaml\Custom Controls\TweetControl.xaml;
 
-False
+True
 

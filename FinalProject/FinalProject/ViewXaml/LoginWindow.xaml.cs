@@ -27,7 +27,7 @@ namespace FinalProject
         {
             InitializeComponent();
             login = l;
-            login.RedirectToTwitter();
+            browser.Navigate(login.RedirectToTwitter());
 
         }
 
