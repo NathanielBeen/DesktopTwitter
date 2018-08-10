@@ -13,3 +13,5 @@ When the program launches, you will be met with a login screen. This is the appl
 The next window will contain a built-in web browser that directs you to authorize the app. Provide the credentials to your twitter account and select "Authorize" to recieve a pin number, then copy the pin number to the textbox and log in.
 
 The final window holds all the main features of the application. 
+
+![main application page](Images/MainPage.png)
