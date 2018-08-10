@@ -14,4 +14,4 @@ The next window will contain a built-in web browser that directs you to authoriz
 
 The final window holds all the main features of the application. 
 
-![main application page](Images/MainPage.png)
+![main application page](Images/MainPage.PNG)
