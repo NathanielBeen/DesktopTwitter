@@ -1,9 +1,9 @@
 # Desktop Twitter
 This application acts as a desktop wrapper for Twitter, using WPF and the Tweetinvi C# Library to allow the user to send Tweets, follow other accounts, view private messages, and much more. This project was created in a small group as a part of a final project for an Object Oriented Programming course. 
 ## Authors 
--Nathaniel Been 
--Scott Elmore
--Tyler Marler
+* Nathaniel Been 
+* Scott Elmore
+* Tyler Marler
 ## Goals
 While the primary focus of the project was to fufill the instructor's desires (have an application login, read and write to a text file, ect.), our group added the following goals for the project.
 * Follow SOLID Principles and the MVVM design pattern
